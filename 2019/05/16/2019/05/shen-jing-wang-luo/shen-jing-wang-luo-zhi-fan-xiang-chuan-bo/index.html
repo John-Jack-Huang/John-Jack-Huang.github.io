@@ -1,0 +1,2081 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="神经网络之反向传播, 程序;编程;日常;生活;人生;学习">
+    <meta name="description" content="天行健，君子以自强不息">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google-site-verification" content="pBWoGvVEP36FzzS4xIpoMejc5UKi3RKcxd9rWWcjiDg" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>神经网络之反向传播 | 木屋</title>
+
+    <link rel="icon" type="image/png" href="https://q2.qlogo.cn/headimg_dl?dst_uin=1769627803@qq.com,1769627803,&spec=100">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?aaa6c944b0ed07922901d7fc571a171d";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+<meta name="generator" content="Hexo 5.2.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="木屋" type="application/atom+xml">
+</head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://s1.ax1x.com/2022/07/14/jfp2Ks.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://q2.qlogo.cn/headimg_dl?dst_uin=1769627803@qq.com,1769627803,&spec=100" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">木屋</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/census">
+          
+          <i class="fas fa-layer-group" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>统计</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/archives">
+          
+          <i class="fas fa-paper-plane" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>时轴</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>分类</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tag" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>标签</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-heartbeat" style="zoom: 0.6;"></i>
+      
+      <span>清单</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/List/music">
+          
+          <i class="fas fa-music" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>音乐</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/List/galleries">
+          
+          <i class="fas fa-image" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>相册</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/List/movies">
+          
+          <i class="fas fa-film" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>视频</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-envelope" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tools" class="waves-effect waves-light">
+      
+      <i class="fas fa-suitcase" style="zoom: 0.6;"></i>
+      
+      <span>百宝箱</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/Windows" class="waves-effect waves-light">
+      
+      <i class="fas fa-desktop" style="zoom: 0.6;"></i>
+      
+      <span>Windows</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-link" style="zoom: 0.6;"></i>
+      
+      <span>友链</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/artitalk" class="waves-effect waves-light">
+      
+      <i class="fas fa-pen-alt" style="zoom: 0.6;"></i>
+      
+      <span>说说</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://q2.qlogo.cn/headimg_dl?dst_uin=1769627803@qq.com,1769627803,&spec=100" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">木屋</div>
+        <div class="logo-desc">
+            
+            天行健，君子以自强不息
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/census " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-layer-group" style="position: absolute;left:50px" ></i>
+			      
+		          <span>统计</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/archives " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-paper-plane" style="position: absolute;left:50px" ></i>
+			      
+		          <span>时轴</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/categories " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>分类</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/tags " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-tag" style="position: absolute;left:50px" ></i>
+			      
+		          <span>标签</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-heartbeat"></i>
+			
+			清单
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="/List/music " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-music" style="position: absolute;left:50px" ></i>
+			      
+		          <span>音乐</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/List/galleries " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-image" style="position: absolute;left:50px" ></i>
+			      
+		          <span>相册</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/List/movies " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-film" style="position: absolute;left:50px" ></i>
+			      
+		          <span>视频</span>
+                  </a>
+                </li>
+              
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-envelope"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tools" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-suitcase"></i>
+			
+			百宝箱
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/Windows" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-desktop"></i>
+			
+			Windows
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-link"></i>
+			
+			友链
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/artitalk" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-pen-alt"></i>
+			
+			ArtiTalk
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/posts/20200928015642.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">神经网络之反向传播</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        background-color: white;
+        width: 345px;
+        padding-left: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+    
+    #toc-content {
+        height: calc(100vh - 300px);
+        overflow: scroll;
+
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+        bottom: 120px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">神经网络</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-category">
+                                神经网络
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-05-16
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-07-14
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.7k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>风在摇它的叶子，草在结它的种子，我们这样站着，不说话就十分美好。——顾城<br><code>这句诗高中就读过了，当时我是想写给一个讨厌的女生的，因为她超级霸道，各种行为恶心我，导致我很反感她。所以就想用‘站着不说话就十分美好’这句诗来回应她，不想和她说话，不想和她有过多的交流......</code></p>
+</blockquote>
+<h2 id="Begin"><a href="#Begin" class="headerlink" title="Begin"></a>Begin</h2><h2 id="1-反向传播"><a href="#1-反向传播" class="headerlink" title="1.反向传播"></a>1.反向传播</h2><p>反向传播是用于训练模型参数，在所有参数上使用梯度下降法，使得神经网络模型在训练数据上的<strong>损失函数值</strong>最小。下面介绍一下反向传播需要到的损失函数、训练方法等。</p>
+<h2 id="2-损失函数（Loss）"><a href="#2-损失函数（Loss）" class="headerlink" title="2.损失函数（Loss）"></a>2.损失函数（Loss）</h2><p>损失函数是表示<strong>预测值（y）</strong>和**标准值（y_  )**之间的差距值。<br>损失函数有很多种计算方法，下面的是比较常用的方法。</p>
+<h3 id="2-1用均方误差（MSE）表示损失函数"><a href="#2-1用均方误差（MSE）表示损失函数" class="headerlink" title="2.1用均方误差（MSE）表示损失函数"></a>2.1用均方误差（MSE）表示损失函数</h3><p>均方误差（MSE）是<strong>求前向传播的计算结果$y$与标准值$y<br> _-$之间差的平方和，再求平均</strong>。<br><strong>均方误差（MSE）计算公式</strong>：<br>$$ MSE(y,y_-) = \frac{\sum_{i=0}^n (y - y_-)^2}{n} $$<br><strong>TensorFlow函数表示为</strong>：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">loss_mse <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>square<span class="token punctuation">(</span> y <span class="token operator">-</span> y_ <span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="2-2用交叉熵-Cross-Entropy-表示损失函数"><a href="#2-2用交叉熵-Cross-Entropy-表示损失函数" class="headerlink" title="2.2用交叉熵(Cross Entropy)表示损失函数"></a>2.2用交叉熵(Cross Entropy)表示损失函数</h3><p>交叉熵表示两个<strong>概率分布</strong>之间的距离。交叉熵越大，两个概率分布距离越远，两个概率分布越相异；交叉熵越小，两个概率分布距离越近，两个概率分布越相似。<br><strong>交叉熵（ce）计算公式</strong>：$$H(y,y_-)=- \sum{y_- \times \log y } $$<br><strong>TensorFlow函数表示为</strong>：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">loss_ce <span class="token operator">=</span> <span class="token operator">-</span>tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>y_<span class="token operator">*</span> tf<span class="token punctuation">.</span>log<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>clip_by_value<span class="token punctuation">(</span>y<span class="token punctuation">,</span> <span class="token number">1e</span><span class="token operator">-</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>其中，为了保证$\log$有意义，<code>tf.clip_by_value(y, 1e-12, 1.0)</code>表示当$y$小于$10^{-12}$时，$y$为$10^{-12}$；当$y$大于1时,则为1。<br>因为我们的输出一般都不是概率分布，所以我们要先把输出的值转化为概率分布，才能用交叉熵（ce）来表示损失函数。在TensorFlow中，一般让模型的输出经过<strong>softmax</strong>函数，用于获得输出分类的概率分布。再与标准值$y_-$对比，求出交叉熵，得到损失函数。下面介绍一下<strong>softmax</strong>函数。<br><strong>softmax函数</strong>：将n分类的n个输出（$ y_1,y_2,y_3…..,y_n$；$y_i$表示第$i$中情况出现的可能性大小)变为满足以下概率分布的函数：$$ \forall x , P(X =x)\in[0,1]且\sum{P_x{(X=x)}}=1 $$<br><strong>softmax函数数学表示</strong>：$$ softmax(y_i)=\frac{e^{y_i}}{\sum_{j=1}^n {e^{y_i}}}$$<br>让模型输出经过$softmax$函数，再与标准值$y_-$做交叉熵，得到损失函数。<strong>TensorFlow函数表示为</strong>：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#输出值经过softmax函数，再与标准值得到的交叉熵ce</span>
+ce <span class="token operator">=</span> tf<span class="token punctuation">.</span>nn<span class="token punctuation">.</span>sparse_softmax_cross_entropy_with_logits<span class="token punctuation">(</span>logits<span class="token operator">=</span>y<span class="token punctuation">,</span> labels<span class="token operator">=</span>tf<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>y_<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+cem <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>ce<span class="token punctuation">)</span><span class="token comment">#损失函数值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2-3自定义损失函数"><a href="#2-3自定义损失函数" class="headerlink" title="2.3自定义损失函数"></a>2.3自定义损失函数</h3><p>根据实际情况，定义合理切合实际情况的损失函数。</p>
+<h2 id="3-反向传播训练方法"><a href="#3-反向传播训练方法" class="headerlink" title="3.反向传播训练方法"></a>3.反向传播训练方法</h2><p>我们是以减少$loss$值为训练的优化目标,优化方法主要有以下几种：</p>
+<h3 id="3-1梯度下降方法"><a href="#3-1梯度下降方法" class="headerlink" title="3.1梯度下降方法"></a>3.1梯度下降方法</h3><p>使用随机梯度下降算法，使参数沿着梯度的反方向，即总损失减小的方向移动，实现更新参数。<br>参数更新公式：$$ \emptyset_{n+1} = \emptyset_{n}- a\frac{\partial J(\emptyset_{n})}{\partial \emptyset_{n}}  $$<br>其中，$ J(\emptyset)$为损失函数，$ \emptyset$为参数，$a$为学习率。<br>代码表示:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''梯度下降方法'''</span>
+<span class="token comment">#learning_rate为学习率，决定参数每次更新的幅度</span>
+<span class="token comment">#loss为损失函数值，即上面提到的loss_mse = tf.reduce_mean(tf.square( y - y_))</span>
+train_step<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>GradientDescentOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-2momentum-优化器"><a href="#3-2momentum-优化器" class="headerlink" title="3.2momentum 优化器"></a>3.2momentum 优化器</h3><p>momentum 优化器在更新参数时，利用了超参数，参数更新公式是:$$ d_i =\beta d_{i-1} +g(\emptyset_{i-1})  $$<br>$$ \emptyset_{i} = \emptyset_{i-1} -ad_i$$<br>其中，$a$为学习率，$\beta $为超参数，$\emptyset$为参数，$g(\emptyset_{i-1})$为损失函数的梯度。<br>代码表示:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''momentum 优化器优化方法'''</span>
+<span class="token comment">#learning_rate为学习率，决定参数每次更新的幅度</span>
+<span class="token comment">#loss为损失函数值</span>
+train_step<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>MomentumOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">,</span>momentum<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-3adam-优化器"><a href="#3-3adam-优化器" class="headerlink" title="3.3adam 优化器"></a>3.3adam 优化器</h3><p>adam 优化器是利用<strong>自适应学习率</strong>的优化算法，Adam算法和随机梯度下降算法不同。随机梯度下降算法保持单一的学习率更新所有的参数，学习率在训练过程中并不会改变。而Adam算法<strong>通过计算梯度的一阶矩估计和二阶矩估计而为不同的参数设计独立的自适应性学习率</strong>。<br>代码表示：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''adam 优化器优化方法'''</span>
+<span class="token comment">#learning_rate为学习率，决定参数每次更新的幅度</span>
+<span class="token comment">#loss为损失函数值</span>
+train_step<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>AdamOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="4-学习率"><a href="#4-学习率" class="headerlink" title="4.学习率"></a>4.学习率</h2><p>定义：学习率是决定每次参数更新的幅度。<br>由以上提到的3种优化方法得知，每一个方法都需要一个叫做学习率的参数，在选择学习率的时候，<strong>如果学习率过大，则会出现震荡不收敛的情况；如果学习率过小，会出现收敛速度过慢的情况，不利于快速得到结果</strong>。所以一般选择学习率为：0.01、0.001.</p>
+<h3 id="4-1固定学习率"><a href="#4-1固定学习率" class="headerlink" title="4.1固定学习率"></a>4.1固定学习率</h3><p>所谓固定学习率就是一个定值，不会动态更新。每次迭代的过程中，学习率保持不变。<br><strong>参数更新方式</strong>：$$ w_{n+1} =w_n -learning_-rate \times \nabla  $$<br>假设损失函数为：$loss = （w+1）^2$, 上式中的 $\nabla$是损失函数的导数：$2(w+1)$。假设初始值$w$=2，学习率$learning_-rate$=0.2,那么经过3轮迭代之后参数$w$如下：</p>
+<table>
+<thead>
+<tr>
+<th>迭代次数</th>
+<th align="center">更新前参数w</th>
+<th align="center">计算过程</th>
+<th align="center">更新后的参数w</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0次</td>
+<td align="center">2</td>
+<td align="center">0.8=2-0.2x2x（2+1）</td>
+<td align="center">0.8</td>
+</tr>
+<tr>
+<td>1次</td>
+<td align="center">0.8</td>
+<td align="center">0.08=0.8-0.2x2x（0.8+1）</td>
+<td align="center">0.08</td>
+</tr>
+<tr>
+<td>2次</td>
+<td align="center">0.08</td>
+<td align="center">-0.35=0.08-0.2x2x（0.08+1）</td>
+<td align="center">-0.35</td>
+</tr>
+</tbody></table>
+<p>用代码表示：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''固定学习率'''</span>
+<span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+learning_rate <span class="token operator">=</span><span class="token number">0.2</span><span class="token comment">#学习率</span>
+<span class="token comment">#定义参数，初始化为2</span>
+w <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span>tf<span class="token punctuation">.</span>float32 <span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#定义损失函数loss = （w+1）^2</span>
+loss <span class="token operator">=</span> tf<span class="token punctuation">.</span>square<span class="token punctuation">(</span> w <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment">#定义反向传播方法</span>
+train_step<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>GradientDescentOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss<span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> sess<span class="token punctuation">:</span>
+    <span class="token comment">#初始化所有变量</span>
+    init_op <span class="token operator">=</span> tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>init_op<span class="token punctuation">)</span>
+    
+    STEPS <span class="token operator">=</span> <span class="token number">20</span><span class="token comment">#训练20轮</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>STEPS<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>train_step<span class="token punctuation">)</span>
+        w_value <span class="token operator">=</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+        loss_value <span class="token operator">=</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>loss<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"迭代{}次，w的值为：{}f，损失值为：{}f"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>w_value<span class="token punctuation">,</span>loss_value<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">迭代<span class="token number">0</span>次，w的值为：<span class="token number">0.</span><span class="token number">7999999523162842f</span>，损失值为：<span class="token number">3.</span><span class="token number">239999771118164f</span>
+迭代<span class="token number">1</span>次，w的值为：<span class="token number">0.</span><span class="token number">07999998331069946f</span>，损失值为：<span class="token number">1.</span><span class="token number">1663998365402222f</span> 
+迭代<span class="token number">2</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">35199999809265137f</span>，损失值为：<span class="token number">0.</span><span class="token number">4199039936065674f</span>
+迭代<span class="token number">3</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">6111999750137329f</span>，损失值为：<span class="token number">0.</span><span class="token number">1511654555797577f</span>
+迭代<span class="token number">4</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">7667199969291687f</span>，损失值为：<span class="token number">0.</span><span class="token number">05441955849528313f</span>
+迭代<span class="token number">5</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">8600320219993591f</span>，损失值为：<span class="token number">0.</span><span class="token number">019591035321354866f</span>
+迭代<span class="token number">6</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9160192012786865f</span>，损失值为：<span class="token number">0.</span><span class="token number">007052774541079998f</span>
+迭代<span class="token number">7</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9496115446090698f</span>，损失值为：<span class="token number">0.</span><span class="token number">0025389965157955885f</span>
+迭代<span class="token number">8</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9697669148445129f</span>，损失值为：<span class="token number">0.</span><span class="token number">00091403943952173f</span>
+迭代<span class="token number">9</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9818601608276367f</span>，损失值为：<span class="token number">0.</span><span class="token number">00032905375701375306f</span>
+迭代<span class="token number">10</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9891160726547241f</span>，损失值为：<span class="token number">0.</span><span class="token number">00011845987319247797f</span>
+迭代<span class="token number">11</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9934696555137634f</span>，损失值为：<span class="token number">4.</span><span class="token number">264539893483743e</span><span class="token operator">-</span><span class="token number">05f</span>
+迭代<span class="token number">12</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9960817694664001f</span>，损失值为：<span class="token number">1.</span><span class="token number">5352530681411736e</span><span class="token operator">-</span><span class="token number">05f</span>
+迭代<span class="token number">13</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">997649073600769f</span>，损失值为：<span class="token number">5.</span><span class="token number">526855147763854e</span><span class="token operator">-</span><span class="token number">06f</span>
+迭代<span class="token number">14</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9985894560813904f</span>，损失值为：<span class="token number">1.</span><span class="token number">989634256460704e</span><span class="token operator">-</span><span class="token number">06f</span>
+迭代<span class="token number">15</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9991536736488342f</span>，损失值为：<span class="token number">7.</span><span class="token number">162682891248551e</span><span class="token operator">-</span><span class="token number">07f</span>
+迭代<span class="token number">16</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9994922280311584f</span>，损失值为：<span class="token number">2.</span><span class="token number">578323687885131e</span><span class="token operator">-</span><span class="token number">07f</span>
+迭代<span class="token number">17</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">999695360660553f</span>，损失值为：<span class="token number">9.</span><span class="token number">28051235860039e</span><span class="token operator">-</span><span class="token number">08f</span>
+迭代<span class="token number">18</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9998171925544739f</span>，损失值为：<span class="token number">3.</span><span class="token number">3418562139786445e</span><span class="token operator">-</span><span class="token number">08f</span>
+迭代<span class="token number">19</span>次，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9998903274536133f</span>，损失值为：<span class="token number">1.</span><span class="token number">2028067430946976e</span><span class="token operator">-</span><span class="token number">08f</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以看到，$w$=-0.999,接近于-1；损失值趋于0。而根据我们所说的，损失值越小，得到的参数越优。</p>
+<h3 id="4-2指数衰减学习率"><a href="#4-2指数衰减学习率" class="headerlink" title="4.2指数衰减学习率"></a>4.2指数衰减学习率</h3><p>指数衰减学习率是指学习率随着训练轮数动态更新。<br><strong>学习率计算公式如下</strong>：<br>$$learning_-rate = learning_-rate_-base \times learning_-rate_-decay \times \frac{global_-step}{learning_-rate_-batch_-size} $$<br>其中，$learning_-rate_-base$为学习率初始值，$learning_-rate_-decay$为学习率衰减率,$global_-step$记录了当前训练轮数，为不可训练型参数。学习率$learning_-rate$更新频率为输入数据集总样本数除以每次喂入样本数。<br>代码表示如下：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''指数衰减学习率'''</span>
+learning_rate_base <span class="token operator">=</span><span class="token number">0.2</span> <span class="token comment">#为学习率初始值</span>
+<span class="token comment">#设置学学习率衰减率,设置为略小于1的数，如0.99,0.98，不能超过1。</span>
+learning_rate_decay <span class="token operator">=</span> <span class="token number">0.99</span> 
+learning_rate_step <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment">#更新学习率的频率</span>
+<span class="token comment">#记录了当前训练轮数，初值设为0，设置为不被训练</span>
+global_step <span class="token operator">=</span>tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span>trainable<span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">)</span>
+<span class="token comment">#定义指数衰减学习率，学习率公式见上式,</span>
+<span class="token comment">#若staircase 设置为 True 时，表示 global_step/learning_rate_step取整数，学习率阶梯型衰减；</span>
+<span class="token comment">#若staircase设置为false时，学习率会是一条平滑下降的曲线。</span>
+learning_rate <span class="token operator">=</span> tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>exponential_decay<span class="token punctuation">(</span>learning_rate_base<span class="token punctuation">,</span>global_step<span class="token punctuation">,</span>learning_rate_step<span class="token punctuation">,</span>learning_rate_decay<span class="token punctuation">,</span>staircase<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span class="token comment">#定义待优化参数，初始值为2</span>
+w <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span>tf<span class="token punctuation">.</span>float32 <span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#定义损失函数loss = （w+1）^2</span>
+loss <span class="token operator">=</span> tf<span class="token punctuation">.</span>square<span class="token punctuation">(</span> w <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment">#定义反向传播方法</span>
+train_step<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>GradientDescentOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss<span class="token punctuation">,</span>global_step<span class="token operator">=</span>global_step<span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> sess<span class="token punctuation">:</span>
+    <span class="token comment">#初始化参数</span>
+    init_op <span class="token operator">=</span> tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>init_op<span class="token punctuation">)</span>
+    <span class="token comment">#迭代20次</span>
+    STEPS <span class="token operator">=</span> <span class="token number">20</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>STEPS<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>train_step<span class="token punctuation">)</span>
+        learning_rate_value <span class="token operator">=</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span>
+        global_step_value <span class="token operator">=</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>global_step<span class="token punctuation">)</span>
+        w_value <span class="token operator">=</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>w<span class="token punctuation">)</span>
+        loss_value <span class="token operator">=</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>loss<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"迭代{}次，global_step为{}，学习率为{}，w的值为：{}f，损失值为：{}f"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>global_step_value<span class="token punctuation">,</span>learning_rate_value<span class="token punctuation">,</span>w_value<span class="token punctuation">,</span>loss_value<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>输出结果：</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">迭代<span class="token number">0</span>次，global_step为<span class="token number">1</span>，学习率为<span class="token number">0.1979999989271164</span>，w的值为：<span class="token number">0.</span><span class="token number">7999999523162842f</span>，损失值为：<span class="token number">3.</span><span class="token number">239999771118164f</span>
+迭代<span class="token number">1</span>次，global_step为<span class="token number">2</span>，学习率为<span class="token number">0.1960200071334839</span>，w的值为：<span class="token number">0.</span><span class="token number">08719998598098755f</span>，损失值为：<span class="token number">1.</span><span class="token number">1820037364959717f</span>
+迭代<span class="token number">2</span>次，global_step为<span class="token number">3</span>，学习率为<span class="token number">0.1940598040819168</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">3390258848667145f</span>，损失值为：<span class="token number">0.</span><span class="token number">43688681721687317f</span>
+迭代<span class="token number">3</span>次，global_step为<span class="token number">4</span>，学习率为<span class="token number">0.19211921095848083</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">5955629348754883f</span>，损失值为：<span class="token number">0.</span><span class="token number">1635693460702896f</span>
+迭代<span class="token number">4</span>次，global_step为<span class="token number">5</span>，学习率为<span class="token number">0.19019801914691925</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">7509632110595703f</span>，损失值为：<span class="token number">0.</span><span class="token number">06201932206749916f</span>
+迭代<span class="token number">5</span>次，global_step为<span class="token number">6</span>，学习率为<span class="token number">0.18829604983329773</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">8456957936286926f</span>，损失值为：<span class="token number">0.</span><span class="token number">02380978874862194f</span>
+迭代<span class="token number">6</span>次，global_step为<span class="token number">7</span>，学习率为<span class="token number">0.18641309440135956</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9038055539131165f</span>，损失值为：<span class="token number">0.</span><span class="token number">009253371506929398f</span>
+迭代<span class="token number">7</span>次，global_step为<span class="token number">8</span>，学习率为<span class="token number">0.18454895913600922</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9396693706512451f</span>，损失值为：<span class="token number">0.</span><span class="token number">003639784874394536f</span>
+迭代<span class="token number">8</span>次，global_step为<span class="token number">9</span>，学习率为<span class="token number">0.18270348012447357</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9619373083114624f</span>，损失值为：<span class="token number">0.</span><span class="token number">0014487685402855277f</span>
+迭代<span class="token number">9</span>次，global_step为<span class="token number">10</span>，学习率为<span class="token number">0.18087643384933472</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9758456945419312f</span>，损失值为：<span class="token number">0.</span><span class="token number">0005834304611198604f</span>
+迭代<span class="token number">10</span>次，global_step为<span class="token number">11</span>，学习率为<span class="token number">0.1790676712989807</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9845835566520691f</span>，损失值为：<span class="token number">0.</span><span class="token number">00023766672529745847f</span>
+迭代<span class="token number">11</span>次，global_step为<span class="token number">12</span>，学习率为<span class="token number">0.17727699875831604</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9901047348976135f</span>，损失值为：<span class="token number">9.</span><span class="token number">79162723524496e</span><span class="token operator">-</span><span class="token number">05f</span>
+迭代<span class="token number">12</span>次，global_step为<span class="token number">13</span>，学习率为<span class="token number">0.17550423741340637</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9936131238937378f</span>，损失值为：<span class="token number">4.</span><span class="token number">079218706465326e</span><span class="token operator">-</span><span class="token number">05f</span>
+迭代<span class="token number">13</span>次，global_step为<span class="token number">14</span>，学习率为<span class="token number">0.1737491935491562</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9958549737930298f</span>，损失值为：<span class="token number">1.</span><span class="token number">7181242583319545e</span><span class="token operator">-</span><span class="token number">05f</span>
+迭代<span class="token number">14</span>次，global_step为<span class="token number">15</span>，学习率为<span class="token number">0.17201170325279236</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9972953796386719f</span>，损失值为：<span class="token number">7.</span><span class="token number">3149712989106774e</span><span class="token operator">-</span><span class="token number">06f</span>
+迭代<span class="token number">15</span>次，global_step为<span class="token number">16</span>，学习率为<span class="token number">0.17029158771038055</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9982258081436157f</span>，损失值为：<span class="token number">3.</span><span class="token number">147756842736271e</span><span class="token operator">-</span><span class="token number">06f</span>
+迭代<span class="token number">16</span>次，global_step为<span class="token number">17</span>，学习率为<span class="token number">0.16858866810798645</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9988300800323486f</span>，损失值为：<span class="token number">1.</span><span class="token number">3687126738659572e</span><span class="token operator">-</span><span class="token number">06f</span>
+迭代<span class="token number">17</span>次，global_step为<span class="token number">18</span>，学习率为<span class="token number">0.16690278053283691</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9992245435714722f</span>，损失值为：<span class="token number">6.</span><span class="token number">01332658334286e</span><span class="token operator">-</span><span class="token number">07f</span>
+迭代<span class="token number">18</span>次，global_step为<span class="token number">19</span>，学习率为<span class="token number">0.1652337610721588</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9994834065437317f</span>，损失值为：<span class="token number">2.</span><span class="token number">668687955065252e</span><span class="token operator">-</span><span class="token number">07f</span>
+迭代<span class="token number">19</span>次，global_step为<span class="token number">20</span>，学习率为<span class="token number">0.16358141601085663</span>，w的值为：<span class="token operator">-</span><span class="token number">0.</span><span class="token number">9996541142463684f</span>，损失值为：<span class="token number">1.</span><span class="token number">1963695101258054e</span><span class="token operator">-</span><span class="token number">07f</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>由输出结果可以得知，每一轮的学习率都是不一样的。</p>
+<h2 id="5-实战反向传播"><a href="#5-实战反向传播" class="headerlink" title="5.实战反向传播"></a>5.实战反向传播</h2><p>反向传播介绍的差不多了，我们来个小例子深入理解一下反向传播。</p>
+<h3 id="5-1例子1"><a href="#5-1例子1" class="headerlink" title="5.1例子1"></a>5.1例子1</h3><p>求解$ y=2*x +5.0$中的权重（weight）<strong>2</strong> 和偏置（biases）<strong>5</strong>。</p>
+<h4 id="5-1-1导入模块，生成数据集"><a href="#5-1-1导入模块，生成数据集" class="headerlink" title="5.1.1导入模块，生成数据集"></a>5.1.1导入模块，生成数据集</h4><p>导入模块，生成数据集，生成标准数据集。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+learning_rate <span class="token operator">=</span> <span class="token number">0.01</span>  <span class="token comment">#定义学习率</span>
+momentum <span class="token operator">=</span> <span class="token number">0.1</span><span class="token comment">#定义momentum 优化器中的参数</span>
+
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token comment">#生成数据集</span>
+y_ <span class="token operator">=</span> <span class="token number">2</span><span class="token operator">*</span>x <span class="token operator">+</span><span class="token number">5.0</span><span class="token comment">#生成标准值，用于与预测值对比</span>
+
+weight <span class="token operator">=</span>tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#定义权重（weight），初始值随意，这里定义为0</span>
+biases <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#定义偏置（bias），初始值随意，这里定义为0</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-1-2前向传播过程"><a href="#5-1-2前向传播过程" class="headerlink" title="5.1.2前向传播过程"></a>5.1.2前向传播过程</h4><p>如果是神经网络过程，就需要定义输入，输出，隐藏层。而我们现在这个例子，就相当于1个神经元，$x$为输入，$y$为输出，所以直接生成$y$即为前向传播过程。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">y <span class="token operator">=</span> weight<span class="token operator">*</span>x <span class="token operator">+</span>biases<span class="token comment">#生成预测值，即前向传播过程</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="5-1-3反向传播过程"><a href="#5-1-3反向传播过程" class="headerlink" title="5.1.3反向传播过程"></a>5.1.3反向传播过程</h4><p>定义损失函数、生成损失值（loss)、选择优化器优化损失值。<br>定义损失函数:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token triple-quoted-string string">'''定义损失函数'''</span>
+loss_mse <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_mean<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>square<span class="token punctuation">(</span> y <span class="token operator">-</span> y_<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#用均方误差（MSE)计算损失值</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>优化器有3种选择，我们现在都写出来，选择其中的1种来优化就好：</p>
+<p>1.使用梯度下降方法优化loss值:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#使用梯度下降方法优化loss值</span>
+train_step<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>GradientDescentOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss_mse<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>2.使用momentum 优化器方法优化loss值:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#momentum 优化器</span>
+train_step<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>MomentumOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">,</span>momentum<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss_mse<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>3.使用adam 优化器方法优化loss值:</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#adam 优化器</span>
+train_step<span class="token operator">=</span>tf<span class="token punctuation">.</span>train<span class="token punctuation">.</span>AdamOptimizer<span class="token punctuation">(</span>learning_rate<span class="token punctuation">)</span><span class="token punctuation">.</span>minimize<span class="token punctuation">(</span>loss_mse<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="5-1-4生成会话，训练-STEPS-轮"><a href="#5-1-4生成会话，训练-STEPS-轮" class="headerlink" title="5.1.4生成会话，训练 STEPS 轮"></a>5.1.4生成会话，训练 STEPS 轮</h4><p>初始化变量，训练，生成优化后的权重$（weight）$和偏置$（biases）$。每100次打印一次权重$（weight）$和偏置$（biases）$。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> sess<span class="token punctuation">:</span>
+    <span class="token comment">#初始化变量</span>
+    init_op <span class="token operator">=</span> tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>init_op<span class="token punctuation">)</span>
+    
+    <span class="token comment">#训练 STEPS 轮</span>
+    STEPS <span class="token operator">=</span><span class="token number">10000</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>STEPS<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>train_step<span class="token punctuation">)</span>
+        <span class="token comment">#每100次打印一次权重（weight）和偏置（biases）。</span>
+        <span class="token keyword">if</span> i <span class="token operator">%</span> <span class="token number">500</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>weight<span class="token punctuation">)</span><span class="token punctuation">,</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>biases<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="5-15最后的优化结果"><a href="#5-15最后的优化结果" class="headerlink" title="5.15最后的优化结果"></a>5.15最后的优化结果</h4><p>使用梯度下降方法,得到的最后结果如下，可以看出，最后得到的权重和偏置和生成标准值的公式$ y=2*x +5.0$中的差不多，$weight$=2.0001357、$biases$=4.999921。</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token number">0</span> <span class="token punctuation">[</span><span class="token number">0.06296354</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">0.11985631</span><span class="token punctuation">]</span>
+<span class="token number">500</span> <span class="token punctuation">[</span><span class="token number">2.2603815</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.8612204</span><span class="token punctuation">]</span>
+<span class="token number">1000</span> <span class="token punctuation">[</span><span class="token number">2.13117</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.930096</span><span class="token punctuation">]</span>
+<span class="token number">1500</span> <span class="token punctuation">[</span><span class="token number">2.0660753</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.964786</span><span class="token punctuation">]</span>
+<span class="token number">2000</span> <span class="token punctuation">[</span><span class="token number">2.033286</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.98226</span><span class="token punctuation">]</span>
+<span class="token number">2500</span> <span class="token punctuation">[</span><span class="token number">2.01677</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.991062</span><span class="token punctuation">]</span>
+<span class="token number">3000</span> <span class="token punctuation">[</span><span class="token number">2.0084522</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.995493</span><span class="token punctuation">]</span>
+<span class="token number">3500</span> <span class="token punctuation">[</span><span class="token number">2.0042667</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.997727</span><span class="token punctuation">]</span>
+<span class="token number">4000</span> <span class="token punctuation">[</span><span class="token number">2.002162</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.9988437</span><span class="token punctuation">]</span>
+<span class="token number">4500</span> <span class="token punctuation">[</span><span class="token number">2.0011044</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999415</span><span class="token punctuation">]</span>
+<span class="token number">5000</span> <span class="token punctuation">[</span><span class="token number">2.0005844</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.9996915</span><span class="token punctuation">]</span>
+<span class="token number">5500</span> <span class="token punctuation">[</span><span class="token number">2.0002885</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999845</span><span class="token punctuation">]</span>
+<span class="token number">6000</span> <span class="token punctuation">[</span><span class="token number">2.000162</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999908</span><span class="token punctuation">]</span>
+<span class="token number">6500</span> <span class="token punctuation">[</span><span class="token number">2.0001357</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999921</span><span class="token punctuation">]</span>
+<span class="token number">7000</span> <span class="token punctuation">[</span><span class="token number">2.0001357</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999921</span><span class="token punctuation">]</span>
+<span class="token number">7500</span> <span class="token punctuation">[</span><span class="token number">2.0001357</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999921</span><span class="token punctuation">]</span>
+<span class="token number">8000</span> <span class="token punctuation">[</span><span class="token number">2.0001357</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999921</span><span class="token punctuation">]</span>
+<span class="token number">8500</span> <span class="token punctuation">[</span><span class="token number">2.0001357</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999921</span><span class="token punctuation">]</span>
+<span class="token number">9000</span> <span class="token punctuation">[</span><span class="token number">2.0001357</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999921</span><span class="token punctuation">]</span>
+<span class="token number">9500</span> <span class="token punctuation">[</span><span class="token number">2.0001357</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token number">4.999921</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>原本还想加个全连接神经网络的例子，但是感觉这个例子也可以讲得明白了。后来又加了两种学习率的设置方法，还有加多了两种损失函数的定义方法，所以这篇有点长。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li>《TensorFlow实战Google深度学习框架》</li>
+<li>《人工智能实践：TensorFlow笔记》</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">John_Jack</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://huang-junjia.gitee.io/2019/05/16/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-fan-xiang-chuan-bo/">https://huang-junjia.gitee.io/2019/05/16/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-fan-xiang-chuan-bo/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">John_Jack</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">神经网络</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/null" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/null" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    .v[data-class="v"] .vwrap .vheader .vinput {
+      width: 32%;
+      border-bottom: 1px dashed #dedede;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+//这里要换行
+new Valine({
+        el: '#vcomments',
+        appId: 'Fr7I9pz4LaNMSvS0VxTfoW2J-gzGzoHsz',
+        appKey: 'nxop2oBGIyfJMGzpgroYJguv',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-CN',
+        placeholder: '留下你的足迹..',
+        meta: ["nick", "mail", "link"],
+        recordIP: 'true' === 'true',
+        enableQQ: 'monsterid',
+        requiredFields: ["730201520a0afb2f8ca537f756182598"],
+        master: ["730201520a0afb2f8ca537f756182598"],
+        friends: ["cb3e577ff029d6073400d5557effd41f", ""],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
+
+    });
+
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            const nick = document.querySelector('input[name=nick]');
+            const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            if (!email.value || !nick.value || !reg.test(email.value)) {
+                const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+
+                e.stopPropagation();
+
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 2500);
+            }
+        }
+        }, true);
+</script>
+
+
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2019/05/18/2019/05/zhong-mei-mao-yi-zhan-dui-wo-men-lai-shuo-yi-wei-zhao-shi-me/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/Post_Img/6.jpg" class="responsive-img" alt="中美贸易战对我们意味着什么">
+                        
+                        <span class="card-title">中美贸易战对我们意味着什么</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            知不可乎骤得，托遗响于悲风
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Life/" class="post-category">
+                                    Life
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Life/">
+                        <span class="chip bg-color">Life</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/05/15/2019/05/shou-zhong-liu-sha-zhi-shang-nian-hua/">
+                    <div class="card-image">
+                        
+                        <img src="http://files.eduuu.com/img/2014/05/23/211758_537f4a86499cc.jpg" class="responsive-img" alt="《手中流沙，纸上年华》">
+                        
+                        <span class="card-title">《手中流沙，纸上年华》</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            .
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-05-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Life/" class="post-category">
+                                    Life
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Life/">
+                        <span class="chip bg-color">Life</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 木屋<br />'
+            + '文章作者: John_Jack<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="1776127550"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">John_Jack</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">53k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "10";
+                    var startDate = "25";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+<script>
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?aaa6c944b0ed07922901d7fc571a171d";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+<!-- 深色模式按钮 -->
+    <script>
+        if (localStorage.getItem('dark') === '1') {
+        document.body.classList.add('dark');
+        }
+        else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
+        document.body.classList.add('dark');
+        } 
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+        }
+    </script>
+    <a onclick="switchNightMode()" id="sma">
+        <i class="fas fa-lightbulb" id="nightMode" aria-hidden="true"></i>
+    </a>
+
+    <!-- 天气接口控件   -->
+    
+        <script type="text/javascript">
+        WIDGET = {FID: 'zLkJSQpqsh'}
+        </script>
+    <!-- <script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"></script> -->
+
+    <script type="text/javascript">
+      var windowWidth = $(window).width();
+      if (windowWidth > 768) {
+          document.write('<script type="text/javascript" src="https://apip.weatherdt.com/float/static/js/r.js?v=1111"><\/script>');
+      }
+    </script>
+    
+
+    
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["DaoVoiceObject"] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            a.charset = "utf-8";
+            m.parentNode.insertBefore(a, m)
+        })(window, document, "script", ('https:' == document.location.protocol ? 'https:' : 'http:') +
+            "//widget.daovoice.io/widget/6984b559.js", "daovoice")
+        daovoice('init', {
+            app_id: "4xxxxxxxe"
+        });
+        daovoice('update');
+    </script>
+    
+
+	
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
