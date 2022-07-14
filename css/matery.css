@@ -241,7 +241,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #64b3f4 0%, #00ecbc 100%);
+    background-image: linear-gradient(to right,#8ac6d1 0%,#3DC7BE 100%);
 }
 
 .text-color {
@@ -257,7 +257,7 @@ mark {
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, #64b3f4 0%, #00ecbc 100%);
+    background: linear-gradient(to right, #fae3d9 0%, #ffb6b9 100%);
     opacity: 0.8;
 }
 
@@ -570,8 +570,7 @@ header .go-back i {
     animation: rainbow 60s infinite;
 }
 
-.bg-cover:before,
-.bg-cover:after {
+.bg-cover:before,.bg-cover:after {
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -2075,7 +2074,7 @@ footer .copy-right {
 
 /* 深色模式按钮设置 */
 #sma {
-    background: #000;
+    background: rgba(187,222,214,1);
     width: 48px;
     height: 47px;
     display: block;
@@ -2166,9 +2165,11 @@ body.dark header .side-nav,
 body.dark header .side-nav .menu-list .m-nav-show
 {
     background-color: #12121c;
+    background-image: url(#);  /*取消背景图片*/
 }
 
 /* 改变透明度 */
 body.dark .aplayer{background: #2f3742!important;}
 body.dark img, body.dark strong {
     filter: brightness(.7);
+}

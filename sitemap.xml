@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://huang-junjia.gitee.io/2019/03/23/2019/hello-world/</loc>
+    
+    <lastmod>2022-07-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huang-junjia.gitee.io/2019/05/18/2019/05/zhong-mei-mao-yi-zhan-dui-wo-men-lai-shuo-yi-wei-zhao-shi-me/</loc>
+    
+    <lastmod>2022-07-14</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://huang-junjia.gitee.io/artitalk/index.html</loc>
     
     <lastmod>2022-07-14</lastmod>
@@ -205,21 +219,7 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/2019/05/18/2019/05/zhong-mei-mao-yi-zhan-dui-wo-men-lai-shuo-yi-wei-zhao-shi-me/</loc>
-    
-    <lastmod>2022-07-13</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://huang-junjia.gitee.io/2019/05/15/2019/05/shou-zhong-liu-sha-zhi-shang-nian-hua/</loc>
-    
-    <lastmod>2022-07-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://huang-junjia.gitee.io/2019/03/23/2019/hello-world/</loc>
     
     <lastmod>2022-07-13</lastmod>
     
@@ -282,20 +282,6 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/about/index.html</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://huang-junjia.gitee.io/archives/index.html</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://huang-junjia.gitee.io/categories/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
@@ -317,13 +303,6 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/friends/index.html</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://huang-junjia.gitee.io/resource/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
@@ -332,6 +311,27 @@
   
   <url>
     <loc>https://huang-junjia.gitee.io/tags/index.html</loc>
+    
+    <lastmod>2021-06-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huang-junjia.gitee.io/archives/index.html</loc>
+    
+    <lastmod>2021-06-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huang-junjia.gitee.io/about/index.html</loc>
+    
+    <lastmod>2021-06-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huang-junjia.gitee.io/friends/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     

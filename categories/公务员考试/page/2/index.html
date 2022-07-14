@@ -446,7 +446,7 @@
 			
 			    <i class="fa-fw fas fa-pen-alt"></i>
 			
-			ArtiTalk
+			说说
 		</a>
           
         </li>
@@ -524,7 +524,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-default "
-                                  style="background-color: #84D5E4;">                                               
+                                  style="background-color: #330666;">                                               
                               <div class="notebook-skin
                                    chip-default "
                                   >Life                                  
@@ -541,7 +541,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-default "
-                                  style="background-color: #C75560;">                                               
+                                  style="background-color: #F6CBB1;">                                               
                               <div class="notebook-skin
                                    chip-default "
                                   >读书笔记                                  
@@ -558,7 +558,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-active "
-                                  style="background-color: #518BDE;">                                               
+                                  style="background-color: #807780;">                                               
                               <div class="notebook-skin
                                    chip-active "
                                   >公务员考试                                  
@@ -575,7 +575,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-default "
-                                  style="background-color: #9E12BC;">                                               
+                                  style="background-color: #6B2EB0;">                                               
                               <div class="notebook-skin
                                    chip-default "
                                   >法考                                  
@@ -592,7 +592,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-default "
-                                  style="background-color: #362D97;">                                               
+                                  style="background-color: #65135D;">                                               
                               <div class="notebook-skin
                                    chip-default "
                                   >Java                                  
@@ -609,7 +609,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-default "
-                                  style="background-color: #BF9EAA;">                                               
+                                  style="background-color: #9201AB;">                                               
                               <div class="notebook-skin
                                    chip-default "
                                   >面试                                  
@@ -626,7 +626,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-default "
-                                  style="background-color: #097A61;">                                               
+                                  style="background-color: #242983;">                                               
                               <div class="notebook-skin
                                    chip-default "
                                   >TensorFlow                                  
@@ -643,7 +643,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-default "
-                                  style="background-color: #AB4906;">                                               
+                                  style="background-color: #B1E46C;">                                               
                               <div class="notebook-skin
                                    chip-default "
                                   >推荐系统                                  
@@ -660,7 +660,7 @@
                       <div class="moleskine-notebook">
                           <div class="chip notebook-cover center-align waves-effect waves-light
                            chip-default "
-                                  style="background-color: #D2725A;">                                               
+                                  style="background-color: #5DDB61;">                                               
                               <div class="notebook-skin
                                    chip-default "
                                   >神经网络                                  
@@ -915,60 +915,6 @@
 
     <footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="tencent"
-                   type="playlist"
-                   id="1776127550"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
     <div class="container row center-align" style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
@@ -1012,8 +958,8 @@
                     var years = days * 365;
                     var today = new Date();
                     var startYear = "2019";
-                    var startMonth = "10";
-                    var startDate = "25";
+                    var startMonth = "2";
+                    var startDate = "23";
                     var startHour = "0";
                     var startMinute = "0";
                     var startSecond = "0";
@@ -1233,7 +1179,7 @@ $(function () {
         document.body.classList.add('dark');
         }
         else if (new Date().getHours() >= 22 || new Date().getHours() < 7) {
-        document.body.classList.add('dark');
+        // document.body.classList.add('dark'); //定时开启深色模式
         } 
         else if (matchMedia('(prefers-color-scheme: dark)').matches) {
         document.body.classList.add('dark');
