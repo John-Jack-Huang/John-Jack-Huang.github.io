@@ -4,6 +4,12 @@
     .container {
         width: 95%;
     }
+    .comment-scroll {
+        bottom: 68px!important;
+    }
+    #sma {
+        bottom: 122px!important;
+    }
     header .brand-logo .logo-img{
         display: none;
     }
