@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://huang-junjia.gitee.io/journal/index.html</loc>
+    
+    <lastmod>2022-07-18</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://huang-junjia.gitee.io/2019/03/23/2019/hello-world/</loc>
     
     <lastmod>2022-07-16</lastmod>
@@ -303,14 +310,14 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/archives/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/about/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/about/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/archives/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
