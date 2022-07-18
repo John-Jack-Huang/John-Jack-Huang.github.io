@@ -651,7 +651,143 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
+    <style>
+    /*归档页自定义样式*/
+    .archive-container{
+      padding: 20px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .archive:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    .archive .articles {
+      border-left: 1px solid #dbdbdb;
+    }
+
+    .archive .article {
+      border-top: none;
+      margin-left: -1px;
+      padding: 0.4rem 1.5rem;
+      border-left: 3px solid transparent;
+    }
+
+    .archive .article:hover {
+      transition: all .6s;
+      -webkit-transition: all .6s;
+      -o-transition: all .6s;
+      -moz-transition: all .6s;
+      border-left-color: #0f9d58 ;
+    }
+
+    .archive .article time {
+      font-size: 1rem;
+      color: deeppink;
+      /* color: darkgray; */
+    }
+    article-sort-item_title{
+      display: -webkit-box;
+      overflow: hidden;
+      height: 60px;
+      color: #4c4948;
+      font-size: .75rem;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -o-transition: all .3s;
+      -ms-transition: all .3s;
+      transition: all .3s;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .archive .article h6 {
+      margin: 0;
+    }
+
+    .archive .article h6 a {
+      line-height: 2.5;
+      color: inherit;
+      border-bottom: 1px dashed transparent;
+    }
+
+    .archive .article h6 a:hover {
+      border-bottom-color: #0f9d58;
+      padding-left: 16px;
+      transition: all .5s;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      -moz-transition: all .5s;
+    }
+
+    .archive .articles .imgcontent{
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .archive .articles .imgcontent .postimg{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .archive .articles .imgcontent .postimg:hover{
+      transform: scale(1.3);
+      transition: all .6s;
+      -webkit-transition: all .6s;
+      -o-transition: all .6s;
+      -moz-transition: all .6s;
+    }
+    .article-sort-post{
+      display: inline-block;
+      position: relative;
+      top: -16px;
+      left: 10px;
+    }
+
+    .hbe-input-container{
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+      margin: 100px auto;
+    }
+
+    .hbe-input-container  .btn-decrypt{
+      display: inline-block;
+      vertical-align: top;
+      width: 120px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #3f90ff;
+      text-align: center;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+    .about-cover {
+      height: 50vh;
+    }
+    .desc-content{
+      padding: 0 50px;
+    }
+    @media only screen and (max-width: 601px) {
+      .desc-content {
+        padding: 0 15px;
+      }
+    }
+
+    .v .vlist .vcard {
+      padding-top: 2.5em !important;
+    }
+
+ </style>
+
+<div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -696,7 +832,7 @@
 <main class="content">
 
     
-    <div class="container archive-calendar">
+        <div class="container archive-calendar">
     <div class="card">
         <div id="post-calendar" class="card-content"></div>
     </div>
@@ -781,378 +917,546 @@
 
     
 
+    <div class="container archive-container ">
+        <div class="card">
+            <div class="card-content">
+                <!-- 主题 挂件 （中） 
+                <div class="caishendengsd">        
+                  <div class="guguxiansd wenzhangxian">
+                    <img class="caishenpic gugus" src="/medias/christmas-img/2.png">
+                  </div>              
+                </div>
+                <div class="caishendeng">        
+                  <div class="guguxian wenzhangxian">
+                    <img class="caishenpic gugus" src="/medias/spring-img/2.png">
+                  </div>              
+                </div>-->
+                <div class="tag-chips">
+                    <span onclick="showTable()" id="sp-table" class="chip center-align waves-effect waves-light default"
+                          data-tagname="时间列表"
+                          style="background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); color:#fff">时间列表
+                    </span>
+                    <span onclick="showTime()" id="sp-timeline"
+                          class="chip center-align waves-effect waves-light default"
+                          data-tagname="时间轴" style="background-color: #F9EBEA;">时间轴
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cd-table" class="container archive-container">
+        <div class="card">
+            <div class="card-content">
+                
+                
+                    <div class="archive">
+                        <h4 class="archive-year" id="2019">2019年</h4>
+                        <div class="articles">
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/05/18/2019/05/zhong-mei-mao-yi-zhan-dui-wo-men-lai-shuo-yi-wei-zhao-shi-me/">
+                                    <div class="imgcontent"><img class="postimg" src="" alt="中美贸易战对我们意味着什么"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/05/18/2019/05/zhong-mei-mao-yi-zhan-dui-wo-men-lai-shuo-yi-wei-zhao-shi-me/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-05-18T13:26:00.000Z" itemprop="datePublished" >
+                                            2019-05-18 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/05/18/2019/05/zhong-mei-mao-yi-zhan-dui-wo-men-lai-shuo-yi-wei-zhao-shi-me/">中美贸易战对我们意味着什么</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/05/16/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-fan-xiang-chuan-bo/">
+                                    <div class="imgcontent"><img class="postimg" src="" alt="神经网络之反向传播"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/05/16/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-fan-xiang-chuan-bo/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-05-16T01:25:00.000Z" itemprop="datePublished" >
+                                            2019-05-16 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/05/16/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-fan-xiang-chuan-bo/">神经网络之反向传播</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/05/15/2019/05/shou-zhong-liu-sha-zhi-shang-nian-hua/">
+                                    <div class="imgcontent"><img class="postimg" src="http://files.eduuu.com/img/2014/05/23/211758_537f4a86499cc.jpg" alt="《手中流沙，纸上年华》"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/05/15/2019/05/shou-zhong-liu-sha-zhi-shang-nian-hua/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-05-15T05:11:00.000Z" itemprop="datePublished" >
+                                            2019-05-15 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/05/15/2019/05/shou-zhong-liu-sha-zhi-shang-nian-hua/">《手中流沙，纸上年华》</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/05/13/2019/05/ru-he-jiang-zheng-ze-pi-pei-de-shu-ju-bao-cun-dao-shu-zu-li/">
+                                    <div class="imgcontent"><img class="postimg" src="https://s1.ax1x.com/2022/05/23/XpANad.jpg" alt="如何将正则匹配的数据保存到数组里"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/05/13/2019/05/ru-he-jiang-zheng-ze-pi-pei-de-shu-ju-bao-cun-dao-shu-zu-li/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-05-13T11:58:38.000Z" itemprop="datePublished" >
+                                            2019-05-13 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/05/13/2019/05/ru-he-jiang-zheng-ze-pi-pei-de-shu-ju-bao-cun-dao-shu-zu-li/">如何将正则匹配的数据保存到数组里</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/05/13/2019/05/tui-jian-xi-tong/tui-jian-xi-tong-er-san-shi-zhi-yin-yu-yi-mo-xing/">
+                                    <div class="imgcontent"><img class="postimg" src="" alt="推荐系统二三事之隐语义模型."></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/05/13/2019/05/tui-jian-xi-tong/tui-jian-xi-tong-er-san-shi-zhi-yin-yu-yi-mo-xing/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-05-13T06:11:00.000Z" itemprop="datePublished" >
+                                            2019-05-13 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/05/13/2019/05/tui-jian-xi-tong/tui-jian-xi-tong-er-san-shi-zhi-yin-yu-yi-mo-xing/">推荐系统二三事之隐语义模型.</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/05/13/2019/05/tensorflow/tensorflow-zhi-sheng-cheng-han-shu/">
+                                    <div class="imgcontent"><img class="postimg" src="" alt="TensorFlow之生成函数"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/05/13/2019/05/tensorflow/tensorflow-zhi-sheng-cheng-han-shu/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-05-13T04:25:00.000Z" itemprop="datePublished" >
+                                            2019-05-13 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/05/13/2019/05/tensorflow/tensorflow-zhi-sheng-cheng-han-shu/">TensorFlow之生成函数</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
     
 
-    <div id="cd-timeline" class="container">
+    <div id="cd-timeline" class="container" style="display: none">
         
-        <div class="cd-timeline-block">
+            <div class="cd-timeline-block">
 
-            
-            
-            
-            <div class="cd-timeline-img year" data-aos="zoom-in-up">
-                <a href="/archives/2019">2019</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img year" data-aos="zoom-in-up">
+                        <a href="/archives/2019">2019</a>
+                    </div>
+                
 
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2019/05">05</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img month" data-aos="zoom-in-up">
+                        <a href="/archives/2019/05">05</a>
+                    </div>
+                
 
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>18</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/05/18/2019/05/zhong-mei-mao-yi-zhan-dui-wo-men-lai-shuo-yi-wei-zhao-shi-me/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="中美贸易战对我们意味着什么">
-                                
-                                <span class="card-title">中美贸易战对我们意味着什么</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    知不可乎骤得，托遗响于悲风
-                                
-                            </div>
-                            <div class="publish-info">
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>18</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/05/18/2019/05/zhong-mei-mao-yi-zhan-dui-wo-men-lai-shuo-yi-wei-zhao-shi-me/">
+                                <div class="card-image">
+                                    
+                                        
+                                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="中美贸易战对我们意味着什么">
+                                    
+                                    <span class="card-title">中美贸易战对我们意味着什么</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        知不可乎骤得，托遗响于悲风
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-05-18
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Life/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/Life/" class="post-category"
+                                                   target="_blank">
                                     Life
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/Life/"><span class="chip bg-color">Life</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/Life/"><span
+                                                    class="chip bg-color">Life</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>16</span>
+                </article>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/05/16/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-fan-xiang-chuan-bo/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="神经网络之反向传播">
-                                
-                                <span class="card-title">神经网络之反向传播</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    .
-                                
-                            </div>
-                            <div class="publish-info">
+        
+            <div class="cd-timeline-block">
+
+                
+                
+
+                
+                
+
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>16</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/05/16/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-fan-xiang-chuan-bo/">
+                                <div class="card-image">
+                                    
+                                        
+                                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="神经网络之反向传播">
+                                    
+                                    <span class="card-title">神经网络之反向传播</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        .
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-05-16
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-category"
+                                                   target="_blank">
                                     神经网络
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="chip bg-color">神经网络</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span
+                                                    class="chip bg-color">神经网络</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>15</span>
+                </article>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/05/15/2019/05/shou-zhong-liu-sha-zhi-shang-nian-hua/">
-                            <div class="card-image">
-                                
-                                <img src="http://files.eduuu.com/img/2014/05/23/211758_537f4a86499cc.jpg" class="responsive-img" alt="《手中流沙，纸上年华》">
-                                
-                                <span class="card-title">《手中流沙，纸上年华》</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    .
-                                
-                            </div>
-                            <div class="publish-info">
+        
+            <div class="cd-timeline-block">
+
+                
+                
+
+                
+                
+
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>15</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/05/15/2019/05/shou-zhong-liu-sha-zhi-shang-nian-hua/">
+                                <div class="card-image">
+                                    
+                                        <img src="http://files.eduuu.com/img/2014/05/23/211758_537f4a86499cc.jpg" class="responsive-img" alt="《手中流沙，纸上年华》">
+                                    
+                                    <span class="card-title">《手中流沙，纸上年华》</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        .
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-05-15
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Life/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/Life/" class="post-category"
+                                                   target="_blank">
                                     Life
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/Life/"><span class="chip bg-color">Life</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/Life/"><span
+                                                    class="chip bg-color">Life</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>13</span>
+                </article>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/05/13/2019/05/ru-he-jiang-zheng-ze-pi-pei-de-shu-ju-bao-cun-dao-shu-zu-li/">
-                            <div class="card-image">
-                                
-                                <img src="https://s1.ax1x.com/2022/05/23/XpANad.jpg" class="responsive-img" alt="如何将正则匹配的数据保存到数组里">
-                                
-                                <span class="card-title">如何将正则匹配的数据保存到数组里</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    .
-                                
-                            </div>
-                            <div class="publish-info">
+        
+            <div class="cd-timeline-block">
+
+                
+                
+
+                
+                
+
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>13</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/05/13/2019/05/ru-he-jiang-zheng-ze-pi-pei-de-shu-ju-bao-cun-dao-shu-zu-li/">
+                                <div class="card-image">
+                                    
+                                        <img src="https://s1.ax1x.com/2022/05/23/XpANad.jpg" class="responsive-img" alt="如何将正则匹配的数据保存到数组里">
+                                    
+                                    <span class="card-title">如何将正则匹配的数据保存到数组里</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        .
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-05-13
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Java/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/Java/" class="post-category"
+                                                   target="_blank">
                                     Java
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/Java/"><span class="chip bg-color">Java</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/Java/"><span
+                                                    class="chip bg-color">Java</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>13</span>
+                </article>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/05/13/2019/05/tui-jian-xi-tong/tui-jian-xi-tong-er-san-shi-zhi-yin-yu-yi-mo-xing/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="推荐系统二三事之隐语义模型.">
-                                
-                                <span class="card-title">推荐系统二三事之隐语义模型.</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    .
-                                
-                            </div>
-                            <div class="publish-info">
+        
+            <div class="cd-timeline-block">
+
+                
+                
+
+                
+                
+
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>13</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/05/13/2019/05/tui-jian-xi-tong/tui-jian-xi-tong-er-san-shi-zhi-yin-yu-yi-mo-xing/">
+                                <div class="card-image">
+                                    
+                                        
+                                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="推荐系统二三事之隐语义模型.">
+                                    
+                                    <span class="card-title">推荐系统二三事之隐语义模型.</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        .
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-05-13
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category"
+                                                   target="_blank">
                                     推荐系统
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"><span class="chip bg-color">推荐系统</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"><span
+                                                    class="chip bg-color">推荐系统</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>13</span>
+                </article>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/05/13/2019/05/tensorflow/tensorflow-zhi-sheng-cheng-han-shu/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="TensorFlow之生成函数">
-                                
-                                <span class="card-title">TensorFlow之生成函数</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    .
-                                
-                            </div>
-                            <div class="publish-info">
+        
+            <div class="cd-timeline-block">
+
+                
+                
+
+                
+                
+
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>13</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/05/13/2019/05/tensorflow/tensorflow-zhi-sheng-cheng-han-shu/">
+                                <div class="card-image">
+                                    
+                                        
+                                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="TensorFlow之生成函数">
+                                    
+                                    <span class="card-title">TensorFlow之生成函数</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        .
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-05-13
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/TensorFlow/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/TensorFlow/" class="post-category"
+                                                   target="_blank">
                                     TensorFlow
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/TensorFlow/"><span class="chip bg-color">TensorFlow</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/TensorFlow/"><span
+                                                    class="chip bg-color">TensorFlow</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
+                </article>
+            </div>
         
     </div>
 
 </main>
 
-
-<div class="container paging">
+    <div class="container paging">
     <div class="row">
         <div class="col s6 m4 l4">
             
@@ -1178,6 +1482,26 @@
 
 
 
+<script>
+    function showTime() {
+        $("#cd-timeline").show();
+        $("#cd-table").hide();
+        $("#sp-timeline").css('background', 'linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)');
+        $("#sp-timeline").css('color', '#fff');
+        $("#sp-table").css('background', '#F9EBEA')
+        $("#sp-table").css('color', 'rgba(0,0,0,0.6)');
+    }
+
+    function showTable() {
+        $("#cd-timeline").hide();
+        $("#cd-table").show();
+        $("#sp-table").css('background', 'linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)');
+        $("#sp-table").css('color', '#fff');
+        $("#sp-timeline").css('background', '#F9EBEA')
+        $("#sp-timeline").css('color', 'rgba(0,0,0,0.6)');
+    }
+
+</script>
 
     <footer class="page-footer bg-color">
     

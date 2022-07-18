@@ -651,7 +651,143 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
+    <style>
+    /*归档页自定义样式*/
+    .archive-container{
+      padding: 20px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .archive:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    .archive .articles {
+      border-left: 1px solid #dbdbdb;
+    }
+
+    .archive .article {
+      border-top: none;
+      margin-left: -1px;
+      padding: 0.4rem 1.5rem;
+      border-left: 3px solid transparent;
+    }
+
+    .archive .article:hover {
+      transition: all .6s;
+      -webkit-transition: all .6s;
+      -o-transition: all .6s;
+      -moz-transition: all .6s;
+      border-left-color: #0f9d58 ;
+    }
+
+    .archive .article time {
+      font-size: 1rem;
+      color: deeppink;
+      /* color: darkgray; */
+    }
+    article-sort-item_title{
+      display: -webkit-box;
+      overflow: hidden;
+      height: 60px;
+      color: #4c4948;
+      font-size: .75rem;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -o-transition: all .3s;
+      -ms-transition: all .3s;
+      transition: all .3s;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .archive .article h6 {
+      margin: 0;
+    }
+
+    .archive .article h6 a {
+      line-height: 2.5;
+      color: inherit;
+      border-bottom: 1px dashed transparent;
+    }
+
+    .archive .article h6 a:hover {
+      border-bottom-color: #0f9d58;
+      padding-left: 16px;
+      transition: all .5s;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      -moz-transition: all .5s;
+    }
+
+    .archive .articles .imgcontent{
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .archive .articles .imgcontent .postimg{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .archive .articles .imgcontent .postimg:hover{
+      transform: scale(1.3);
+      transition: all .6s;
+      -webkit-transition: all .6s;
+      -o-transition: all .6s;
+      -moz-transition: all .6s;
+    }
+    .article-sort-post{
+      display: inline-block;
+      position: relative;
+      top: -16px;
+      left: 10px;
+    }
+
+    .hbe-input-container{
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+      margin: 100px auto;
+    }
+
+    .hbe-input-container  .btn-decrypt{
+      display: inline-block;
+      vertical-align: top;
+      width: 120px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #3f90ff;
+      text-align: center;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+    .about-cover {
+      height: 50vh;
+    }
+    .desc-content{
+      padding: 0 50px;
+    }
+    @media only screen and (max-width: 601px) {
+      .desc-content {
+        padding: 0 15px;
+      }
+    }
+
+    .v .vlist .vcard {
+      padding-top: 2.5em !important;
+    }
+
+ </style>
+
+<div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -696,7 +832,7 @@
 <main class="content">
 
     
-    <div class="container archive-calendar">
+        <div class="container archive-calendar">
     <div class="card">
         <div id="post-calendar" class="card-content"></div>
     </div>
@@ -781,263 +917,409 @@
 
     
 
+    <div class="container archive-container ">
+        <div class="card">
+            <div class="card-content">
+                <!-- 主题 挂件 （中） 
+                <div class="caishendengsd">        
+                  <div class="guguxiansd wenzhangxian">
+                    <img class="caishenpic gugus" src="/medias/christmas-img/2.png">
+                  </div>              
+                </div>
+                <div class="caishendeng">        
+                  <div class="guguxian wenzhangxian">
+                    <img class="caishenpic gugus" src="/medias/spring-img/2.png">
+                  </div>              
+                </div>-->
+                <div class="tag-chips">
+                    <span onclick="showTable()" id="sp-table" class="chip center-align waves-effect waves-light default"
+                          data-tagname="时间列表"
+                          style="background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); color:#fff">时间列表
+                    </span>
+                    <span onclick="showTime()" id="sp-timeline"
+                          class="chip center-align waves-effect waves-light default"
+                          data-tagname="时间轴" style="background-color: #F9EBEA;">时间轴
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cd-table" class="container archive-container">
+        <div class="card">
+            <div class="card-content">
+                
+                
+                    <div class="archive">
+                        <h4 class="archive-year" id="2020">2020年</h4>
+                        <div class="articles">
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2020/11/29/2020/liang-cao-xian-xing-fa-kao-chu-liang-20201129/">
+                                    <div class="imgcontent"><img class="postimg" src="/medias/Post_Img/4.jpg" alt="粮草先行【法考储粮】"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2020/11/29/2020/liang-cao-xian-xing-fa-kao-chu-liang-20201129/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2020-11-29T08:00:00.000Z" itemprop="datePublished" >
+                                            2020-11-29 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2020/11/29/2020/liang-cao-xian-xing-fa-kao-chu-liang-20201129/">粮草先行【法考储粮】</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2020/11/28/2020/shen-lun-ji-jin-20201128/">
+                                    <div class="imgcontent"><img class="postimg" src="/medias/Post_Img/3.jpg" alt="申论集锦"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2020/11/28/2020/shen-lun-ji-jin-20201128/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2020-11-28T08:00:00.000Z" itemprop="datePublished" >
+                                            2020-11-28 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2020/11/28/2020/shen-lun-ji-jin-20201128/">申论集锦</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2020/11/15/2020/qiu-ri-xiao-yu-20201115/">
+                                    <div class="imgcontent"><img class="postimg" src="/medias/Post_Img/7.jpg" alt="秋日小雨"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2020/11/15/2020/qiu-ri-xiao-yu-20201115/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2020-11-15T08:00:00.000Z" itemprop="datePublished" >
+                                            2020-11-15 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2020/11/15/2020/qiu-ri-xiao-yu-20201115/">秋日小雨</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2020/02/17/2020/da-guo-jing-ji-yu-shi-jie-ge-ju-20200218/">
+                                    <div class="imgcontent"><img class="postimg" src="/medias/Post_Img/13.jpg" alt="大国经济与世界格局"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2020/02/17/2020/da-guo-jing-ji-yu-shi-jie-ge-ju-20200218/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2020-02-17T08:00:00.000Z" itemprop="datePublished" >
+                                            2020-02-17 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2020/02/17/2020/da-guo-jing-ji-yu-shi-jie-ge-ju-20200218/">大国经济与世界格局</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
     
 
-    <div id="cd-timeline" class="container">
+    <div id="cd-timeline" class="container" style="display: none">
         
-        <div class="cd-timeline-block">
+            <div class="cd-timeline-block">
 
-            
-            
-            
-            <div class="cd-timeline-img year" data-aos="zoom-in-up">
-                <a href="/archives/2020">2020</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img year" data-aos="zoom-in-up">
+                        <a href="/archives/2020">2020</a>
+                    </div>
+                
 
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2020/11">11</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img month" data-aos="zoom-in-up">
+                        <a href="/archives/2020/11">11</a>
+                    </div>
+                
 
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>29</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2020/11/29/2020/liang-cao-xian-xing-fa-kao-chu-liang-20201129/">
-                            <div class="card-image">
-                                
-                                <img src="/medias/Post_Img/4.jpg" class="responsive-img" alt="粮草先行【法考储粮】">
-                                
-                                <span class="card-title">粮草先行【法考储粮】</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    兵马未动，粮草先行。
-                                
-                            </div>
-                            <div class="publish-info">
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>29</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2020/11/29/2020/liang-cao-xian-xing-fa-kao-chu-liang-20201129/">
+                                <div class="card-image">
+                                    
+                                        <img src="/medias/Post_Img/4.jpg" class="responsive-img" alt="粮草先行【法考储粮】">
+                                    
+                                    <span class="card-title">粮草先行【法考储粮】</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        兵马未动，粮草先行。
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2020-11-29
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E6%B3%95%E8%80%83/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/%E6%B3%95%E8%80%83/" class="post-category"
+                                                   target="_blank">
                                     法考
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/%E6%B3%95%E8%80%83/"><span class="chip bg-color">法考</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/%E6%B3%95%E8%80%83/"><span
+                                                    class="chip bg-color">法考</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>28</span>
+                </article>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2020/11/28/2020/shen-lun-ji-jin-20201128/">
-                            <div class="card-image">
-                                
-                                <img src="/medias/Post_Img/3.jpg" class="responsive-img" alt="申论集锦">
-                                
-                                <span class="card-title">申论集锦</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    申论常用背诵句子
-                                
-                            </div>
-                            <div class="publish-info">
+        
+            <div class="cd-timeline-block">
+
+                
+                
+
+                
+                
+
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>28</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2020/11/28/2020/shen-lun-ji-jin-20201128/">
+                                <div class="card-image">
+                                    
+                                        <img src="/medias/Post_Img/3.jpg" class="responsive-img" alt="申论集锦">
+                                    
+                                    <span class="card-title">申论集锦</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        申论常用背诵句子
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2020-11-28
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/" class="post-category"
+                                                   target="_blank">
                                     公务员考试
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/"><span class="chip bg-color">公务员考试</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/"><span
+                                                    class="chip bg-color">公务员考试</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
-        
-        <div class="cd-timeline-block">
-
-            
-            
-
-            
-            
-
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>15</span>
+                </article>
             </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2020/11/15/2020/qiu-ri-xiao-yu-20201115/">
-                            <div class="card-image">
-                                
-                                <img src="/medias/Post_Img/7.jpg" class="responsive-img" alt="秋日小雨">
-                                
-                                <span class="card-title">秋日小雨</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    秋处露秋寒霜降。
-                                
-                            </div>
-                            <div class="publish-info">
+        
+            <div class="cd-timeline-block">
+
+                
+                
+
+                
+                
+
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>15</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2020/11/15/2020/qiu-ri-xiao-yu-20201115/">
+                                <div class="card-image">
+                                    
+                                        <img src="/medias/Post_Img/7.jpg" class="responsive-img" alt="秋日小雨">
+                                    
+                                    <span class="card-title">秋日小雨</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        秋处露秋寒霜降。
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2020-11-15
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Life/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/Life/" class="post-category"
+                                                   target="_blank">
                                     Life
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/Life/"><span class="chip bg-color">Life</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/Life/"><span
+                                                    class="chip bg-color">Life</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
+                </article>
+            </div>
         
-        <div class="cd-timeline-block">
+            <div class="cd-timeline-block">
 
-            
-            
+                
+                
 
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2020/02">02</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img month" data-aos="zoom-in-up">
+                        <a href="/archives/2020/02">02</a>
+                    </div>
+                
 
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>17</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2020/02/17/2020/da-guo-jing-ji-yu-shi-jie-ge-ju-20200218/">
-                            <div class="card-image">
-                                
-                                <img src="/medias/Post_Img/13.jpg" class="responsive-img" alt="大国经济与世界格局">
-                                
-                                <span class="card-title">大国经济与世界格局</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    《用经济思维看懂世界格局》读后感。
-                                
-                            </div>
-                            <div class="publish-info">
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>17</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2020/02/17/2020/da-guo-jing-ji-yu-shi-jie-ge-ju-20200218/">
+                                <div class="card-image">
+                                    
+                                        <img src="/medias/Post_Img/13.jpg" class="responsive-img" alt="大国经济与世界格局">
+                                    
+                                    <span class="card-title">大国经济与世界格局</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        《用经济思维看懂世界格局》读后感。
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2020-02-17
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category"
+                                                   target="_blank">
                                     读书笔记
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><span class="chip bg-color">读书笔记</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"><span
+                                                    class="chip bg-color">读书笔记</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
+                </article>
+            </div>
         
     </div>
 
 </main>
 
 
+<script>
+    function showTime() {
+        $("#cd-timeline").show();
+        $("#cd-table").hide();
+        $("#sp-timeline").css('background', 'linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)');
+        $("#sp-timeline").css('color', '#fff');
+        $("#sp-table").css('background', '#F9EBEA')
+        $("#sp-table").css('color', 'rgba(0,0,0,0.6)');
+    }
 
+    function showTable() {
+        $("#cd-timeline").hide();
+        $("#cd-table").show();
+        $("#sp-table").css('background', 'linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)');
+        $("#sp-table").css('color', '#fff');
+        $("#sp-timeline").css('background', '#F9EBEA')
+        $("#sp-timeline").css('color', 'rgba(0,0,0,0.6)');
+    }
+
+</script>
 
     <footer class="page-footer bg-color">
     

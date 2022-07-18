@@ -651,7 +651,143 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
+    <style>
+    /*归档页自定义样式*/
+    .archive-container{
+      padding: 20px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    .archive:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    .archive .articles {
+      border-left: 1px solid #dbdbdb;
+    }
+
+    .archive .article {
+      border-top: none;
+      margin-left: -1px;
+      padding: 0.4rem 1.5rem;
+      border-left: 3px solid transparent;
+    }
+
+    .archive .article:hover {
+      transition: all .6s;
+      -webkit-transition: all .6s;
+      -o-transition: all .6s;
+      -moz-transition: all .6s;
+      border-left-color: #0f9d58 ;
+    }
+
+    .archive .article time {
+      font-size: 1rem;
+      color: deeppink;
+      /* color: darkgray; */
+    }
+    article-sort-item_title{
+      display: -webkit-box;
+      overflow: hidden;
+      height: 60px;
+      color: #4c4948;
+      font-size: .75rem;
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -o-transition: all .3s;
+      -ms-transition: all .3s;
+      transition: all .3s;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .archive .article h6 {
+      margin: 0;
+    }
+
+    .archive .article h6 a {
+      line-height: 2.5;
+      color: inherit;
+      border-bottom: 1px dashed transparent;
+    }
+
+    .archive .article h6 a:hover {
+      border-bottom-color: #0f9d58;
+      padding-left: 16px;
+      transition: all .5s;
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      -moz-transition: all .5s;
+    }
+
+    .archive .articles .imgcontent{
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+    }
+
+    .archive .articles .imgcontent .postimg{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .archive .articles .imgcontent .postimg:hover{
+      transform: scale(1.3);
+      transition: all .6s;
+      -webkit-transition: all .6s;
+      -o-transition: all .6s;
+      -moz-transition: all .6s;
+    }
+    .article-sort-post{
+      display: inline-block;
+      position: relative;
+      top: -16px;
+      left: 10px;
+    }
+
+    .hbe-input-container{
+      width: 80%;
+      max-width: 800px;
+      position: relative;
+      margin: 100px auto;
+    }
+
+    .hbe-input-container  .btn-decrypt{
+      display: inline-block;
+      vertical-align: top;
+      width: 120px;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #3f90ff;
+      text-align: center;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+    .about-cover {
+      height: 50vh;
+    }
+    .desc-content{
+      padding: 0 50px;
+    }
+    @media only screen and (max-width: 601px) {
+      .desc-content {
+        padding: 0 15px;
+      }
+    }
+
+    .v .vlist .vcard {
+      padding-top: 2.5em !important;
+    }
+
+ </style>
+
+<div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -696,7 +832,7 @@
 <main class="content">
 
     
-    <div class="container archive-calendar">
+        <div class="container archive-calendar">
     <div class="card">
         <div id="post-calendar" class="card-content"></div>
     </div>
@@ -781,212 +917,317 @@
 
     
 
+    <div class="container archive-container ">
+        <div class="card">
+            <div class="card-content">
+                <!-- 主题 挂件 （中） 
+                <div class="caishendengsd">        
+                  <div class="guguxiansd wenzhangxian">
+                    <img class="caishenpic gugus" src="/medias/christmas-img/2.png">
+                  </div>              
+                </div>
+                <div class="caishendeng">        
+                  <div class="guguxian wenzhangxian">
+                    <img class="caishenpic gugus" src="/medias/spring-img/2.png">
+                  </div>              
+                </div>-->
+                <div class="tag-chips">
+                    <span onclick="showTable()" id="sp-table" class="chip center-align waves-effect waves-light default"
+                          data-tagname="时间列表"
+                          style="background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); color:#fff">时间列表
+                    </span>
+                    <span onclick="showTime()" id="sp-timeline"
+                          class="chip center-align waves-effect waves-light default"
+                          data-tagname="时间轴" style="background-color: #F9EBEA;">时间轴
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cd-table" class="container archive-container">
+        <div class="card">
+            <div class="card-content">
+                
+                
+                    <div class="archive">
+                        <h4 class="archive-year" id="2019">2019年</h4>
+                        <div class="articles">
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/05/09/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-qian-xiang-chuan-bo/">
+                                    <div class="imgcontent"><img class="postimg" src="" alt="神经网络之前向传播"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/05/09/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-qian-xiang-chuan-bo/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-05-09T01:25:00.000Z" itemprop="datePublished" >
+                                            2019-05-9 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/05/09/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-qian-xiang-chuan-bo/">神经网络之前向传播</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/04/26/2019/04/2019-04-26-zhong-qi-da-bian/">
+                                    <div class="imgcontent"><img class="postimg" src="" alt="第一篇正经的日常"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/04/26/2019/04/2019-04-26-zhong-qi-da-bian/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-04-26T01:25:00.000Z" itemprop="datePublished" >
+                                            2019-04-26 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/04/26/2019/04/2019-04-26-zhong-qi-da-bian/">第一篇正经的日常</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                                <div class="article content>">
+                                <!--  <a href="/2019/03/23/2019/hello-world/">
+                                    <div class="imgcontent"><img class="postimg" src="medias/banner/1.jpg" alt="你好呀"></div>  
+                                  </a> -->
+                                  <div class="article-sort-post">
+                                    <div class="article-sort-item_title">
+                                      <a href="/2019/03/23/2019/hello-world/">
+                                        <h5>
+                                          <i class="fa fa-clock" style="font-size: 1rem;cursor: pointer;"></i>
+                                          <time class="is-text-small" datetime="2019-03-23T05:11:00.000Z" itemprop="datePublished" >
+                                            2019-03-23 
+                                          </time>
+                                        </h5>
+                                        <h6 class="is-6"><a href="/2019/03/23/2019/hello-world/">你好呀</a></h6>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
     
 
-    <div id="cd-timeline" class="container">
+    <div id="cd-timeline" class="container" style="display: none">
         
-        <div class="cd-timeline-block">
+            <div class="cd-timeline-block">
 
-            
-            
-            
-            <div class="cd-timeline-img year" data-aos="zoom-in-up">
-                <a href="/archives/2019">2019</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img year" data-aos="zoom-in-up">
+                        <a href="/archives/2019">2019</a>
+                    </div>
+                
 
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2019/05">05</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img month" data-aos="zoom-in-up">
+                        <a href="/archives/2019/05">05</a>
+                    </div>
+                
 
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>09</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/05/09/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-qian-xiang-chuan-bo/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="神经网络之前向传播">
-                                
-                                <span class="card-title">神经网络之前向传播</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    .
-                                
-                            </div>
-                            <div class="publish-info">
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>09</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/05/09/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-qian-xiang-chuan-bo/">
+                                <div class="card-image">
+                                    
+                                        
+                                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="神经网络之前向传播">
+                                    
+                                    <span class="card-title">神经网络之前向传播</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        .
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-05-09
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-category"
+                                                   target="_blank">
                                     神经网络
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span class="chip bg-color">神经网络</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/"><span
+                                                    class="chip bg-color">神经网络</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
+                </article>
+            </div>
         
-        <div class="cd-timeline-block">
+            <div class="cd-timeline-block">
 
-            
-            
+                
+                
 
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2019/04">04</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img month" data-aos="zoom-in-up">
+                        <a href="/archives/2019/04">04</a>
+                    </div>
+                
 
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>26</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/04/26/2019/04/2019-04-26-zhong-qi-da-bian/">
-                            <div class="card-image">
-                                
-                                
-                                <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第一篇正经的日常">
-                                
-                                <span class="card-title">第一篇正经的日常</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    .
-                                
-                            </div>
-                            <div class="publish-info">
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>26</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/04/26/2019/04/2019-04-26-zhong-qi-da-bian/">
+                                <div class="card-image">
+                                    
+                                        
+                                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第一篇正经的日常">
+                                    
+                                    <span class="card-title">第一篇正经的日常</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        .
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-04-26
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Life/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/Life/" class="post-category"
+                                                   target="_blank">
                                     Life
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/Life/"><span class="chip bg-color">Life</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/Life/"><span
+                                                    class="chip bg-color">Life</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
+                </article>
+            </div>
         
-        <div class="cd-timeline-block">
+            <div class="cd-timeline-block">
 
-            
-            
+                
+                
 
-            
-            
-            
-            <div class="cd-timeline-img month" data-aos="zoom-in-up">
-                <a href="/archives/2019/03">03</a>
-            </div>
-            
+                
+                
+                    
+                    <div class="cd-timeline-img month" data-aos="zoom-in-up">
+                        <a href="/archives/2019/03">03</a>
+                    </div>
+                
 
-            
-            <div class="cd-timeline-img day" data-aos="zoom-in-up">
-                <span>23</span>
-            </div>
-            <article class="cd-timeline-content" data-aos="fade-up">
-                <div class="article col s12 m6">
-                    <div class="card">
-                        <a href="/2019/03/23/2019/hello-world/">
-                            <div class="card-image">
-                                
-                                <img src="/medias/banner/1.jpg" class="responsive-img" alt="你好呀">
-                                
-                                <span class="card-title">你好呀</span>
-                            </div>
-                        </a>
-                        <div class="card-content article-content">
-                            <div class="summary block-with-text">
-                                
-                                    所有的不期而遇都是久别重逢
-                                
-                            </div>
-                            <div class="publish-info">
+                
+                <div class="cd-timeline-img day" data-aos="zoom-in-up">
+                    <span>23</span>
+                </div>
+                <article class="cd-timeline-content" data-aos="fade-up">
+                    <div class="article col s12 m6">
+                        <div class="card">
+                            <a href="/2019/03/23/2019/hello-world/">
+                                <div class="card-image">
+                                    
+                                        <img src="medias/banner/1.jpg" class="responsive-img" alt="你好呀">
+                                    
+                                    <span class="card-title">你好呀</span>
+                                </div>
+                            </a>
+                            <div class="card-content article-content">
+                                <div class="summary block-with-text">
+                                    
+                                        所有的不期而遇都是久别重逢
+                                    
+                                </div>
+                                <div class="publish-info">
                                 <span class="publish-date">
                                     <i class="far fa-clock fa-fw icon-date"></i>2019-03-23
                                 </span>
-                                <span class="publish-author">
-                                    
-                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                    
-                                    <a href="/categories/Life/" class="post-category">
+                                    <span class="publish-author">
+                                        
+                                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                            
+                                                <a href="/categories/Life/" class="post-category"
+                                                   target="_blank">
                                     Life
                                     </a>
-                                    
-                                    
-                                </span>
+                                            
+                                        
+                                    </span>
+                                </div>
                             </div>
-                        </div>
 
-                        
-                        <div class="card-action article-tags">
                             
-                            <a href="/tags/Life/"><span class="chip bg-color">Life</span></a>
+                                <div class="card-action article-tags">
+                                    
+                                        <a href="/tags/Life/"><span
+                                                    class="chip bg-color">Life</span></a>
+                                    
+                                </div>
                             
                         </div>
-                        
                     </div>
-                </div>
-            </article>
-        </div>
+                </article>
+            </div>
         
     </div>
 
 </main>
 
-
-<div class="container paging">
+    <div class="container paging">
     <div class="row">
         <div class="col s6 m4 l4">
             
@@ -1011,6 +1252,26 @@
 
 
 
+<script>
+    function showTime() {
+        $("#cd-timeline").show();
+        $("#cd-table").hide();
+        $("#sp-timeline").css('background', 'linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)');
+        $("#sp-timeline").css('color', '#fff');
+        $("#sp-table").css('background', '#F9EBEA')
+        $("#sp-table").css('color', 'rgba(0,0,0,0.6)');
+    }
+
+    function showTable() {
+        $("#cd-timeline").hide();
+        $("#cd-table").show();
+        $("#sp-table").css('background', 'linear-gradient(to right, #4cbf30 0%, #0f9d58 100%)');
+        $("#sp-table").css('color', '#fff');
+        $("#sp-timeline").css('background', '#F9EBEA')
+        $("#sp-timeline").css('color', 'rgba(0,0,0,0.6)');
+    }
+
+</script>
 
     <footer class="page-footer bg-color">
     
