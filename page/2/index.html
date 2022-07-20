@@ -373,11 +373,11 @@
     <ul class="sub-nav menus_item_child ">
       
       <li>
-        <a href="/census">
+        <a href="/categories">
           
-          <i class="fas fa-layer-group" style="margin-top: -20px; zoom: 0.6;"></i>
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
           
-          <span>统计</span>
+          <span>分类</span>
         </a>
       </li>
       
@@ -391,20 +391,20 @@
       </li>
       
       <li>
-        <a href="/categories">
-          
-          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
-          
-          <span>分类</span>
-        </a>
-      </li>
-      
-      <li>
         <a href="/tags">
           
           <i class="fas fa-tag" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>标签</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/census">
+          
+          <i class="fas fa-layer-group" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>统计</span>
         </a>
       </li>
       
@@ -414,8 +414,10 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="fas fa-link" class="waves-effect waves-light">
+    <a href="" class="waves-effect waves-light">
 
+      
+      <i class="fas fa-toggle-off" style="zoom: 0.6;"></i>
       
       <span>链接</span>
       <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
@@ -425,12 +427,16 @@
       <li>
         <a href="/friends">
           
+          <i class="fas fa-user-circle" style="margin-top: -20px; zoom: 0.6;"></i>
+          
           <span>友情链接</span>
         </a>
       </li>
       
       <li>
         <a href="/collection">
+          
+          <i class="fas fa-link" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>网址收藏</span>
         </a>
@@ -455,7 +461,7 @@
     
     <a href="/contact" class="waves-effect waves-light">
       
-      <i class="fas fa-pen-alt" style="zoom: 0.6;"></i>
+      <i class="fas  fa-pen-alt" style="zoom: 0.6;"></i>
       
       <span>说说</span>
     </a>
@@ -466,7 +472,7 @@
     
     <a href="/about" class="waves-effect waves-light">
       
-      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      <i class="fas fa-graduation-cap" style="zoom: 0.6;"></i>
       
       <span>关于</span>
     </a>
@@ -568,11 +574,11 @@
               
                 <li>
 
-                  <a href="/census " style="margin-left:75px">
+                  <a href="/categories " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-layer-group" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
 			      
-		          <span>统计</span>
+		          <span>分类</span>
                   </a>
                 </li>
               
@@ -588,21 +594,21 @@
               
                 <li>
 
-                  <a href="/categories " style="margin-left:75px">
-				  
-				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
-			      
-		          <span>分类</span>
-                  </a>
-                </li>
-              
-                <li>
-
                   <a href="/tags " style="margin-left:75px">
 				  
 				   <i class="fa fas fa-tag" style="position: absolute;left:50px" ></i>
 			      
 		          <span>标签</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="/census " style="margin-left:75px">
+				  
+				   <i class="fa fas fa-layer-group" style="position: absolute;left:50px" ></i>
+			      
+		          <span>统计</span>
                   </a>
                 </li>
               
@@ -614,7 +620,7 @@
 	  
 		<a href="javascript:;">
 			
-				<i class="fas fa-fw fa-link"></i>
+				<i class="fa-fw fas fa-toggle-off"></i>
 			
 			链接
 			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
@@ -625,6 +631,8 @@
 
                   <a href="/friends " style="margin-left:75px">
 				  
+				   <i class="fa fas fa-user-circle" style="position: absolute;left:50px" ></i>
+			      
 		          <span>友情链接</span>
                   </a>
                 </li>
@@ -633,6 +641,8 @@
 
                   <a href="/collection " style="margin-left:75px">
 				  
+				   <i class="fa fas fa-link" style="position: absolute;left:50px" ></i>
+			      
 		          <span>网址收藏</span>
                   </a>
                 </li>
@@ -656,7 +666,7 @@
 	  
 		<a href="/contact" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-pen-alt"></i>
+			    <i class="fa-fw fas  fa-pen-alt"></i>
 			
 			说说
 		</a>
@@ -667,7 +677,7 @@
 	  
 		<a href="/about" class="waves-effect waves-light">
 			
-			    <i class="fa-fw fas fa-user-circle"></i>
+			    <i class="fa-fw fas fa-graduation-cap"></i>
 			
 			关于
 		</a>
@@ -747,7 +757,35 @@
                             
                             <img src="/medias/Post_Img/7.jpg" class="responsive-img" alt="Java基础—循环结构">
                             
-                            <span class="card-title">Java基础—循环结构</span>
+                            <span class="card-title">Java基础—循环结构
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -793,7 +831,35 @@
                             
                             <img src="/medias/Post_Img/1.png" class="responsive-img" alt="Java基础—概念知识">
                             
-                            <span class="card-title">Java基础—概念知识</span>
+                            <span class="card-title">Java基础—概念知识
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -839,7 +905,35 @@
                             
                             <img src="/medias/Post_Img/26.jpg" class="responsive-img" alt="公安基础知识">
                             
-                            <span class="card-title">公安基础知识</span>
+                            <span class="card-title">公安基础知识
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -885,7 +979,35 @@
                             
                             <img src="/medias/Post_Img/2.jpg" class="responsive-img" alt="名人诗句">
                             
-                            <span class="card-title">名人诗句</span>
+                            <span class="card-title">名人诗句
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -931,7 +1053,35 @@
                             
                             <img src="/medias/Post_Img/4.jpg" class="responsive-img" alt="粮草先行【法考储粮】">
                             
-                            <span class="card-title">粮草先行【法考储粮】</span>
+                            <span class="card-title">粮草先行【法考储粮】
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -977,7 +1127,35 @@
                             
                             <img src="/medias/Post_Img/3.jpg" class="responsive-img" alt="申论集锦">
                             
-                            <span class="card-title">申论集锦</span>
+                            <span class="card-title">申论集锦
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -1023,7 +1201,35 @@
                             
                             <img src="/medias/Post_Img/7.jpg" class="responsive-img" alt="秋日小雨">
                             
-                            <span class="card-title">秋日小雨</span>
+                            <span class="card-title">秋日小雨
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -1069,7 +1275,35 @@
                             
                             <img src="/medias/Post_Img/13.jpg" class="responsive-img" alt="大国经济与世界格局">
                             
-                            <span class="card-title">大国经济与世界格局</span>
+                            <span class="card-title">大国经济与世界格局
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -1115,7 +1349,35 @@
                             
                             <img src="/medias/Post_Img/11.jpg" class="responsive-img" alt="秋意已暮，新冬将至">
                             
-                            <span class="card-title">秋意已暮，新冬将至</span>
+                            <span class="card-title">秋意已暮，新冬将至
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -1162,7 +1424,35 @@
                             
                             <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="地震之夜">
                             
-                            <span class="card-title">地震之夜</span>
+                            <span class="card-title">地震之夜
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -1208,7 +1498,35 @@
                             
                             <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571933941727&di=dee1a64c3fe5ad3d0eb6c56205103ac3&imgtype=0&src=http%3A%2F%2Fimg1.qunarzz.com%2Ftravel%2Fd4%2F1807%2Fb5%2Fd937d6814e86deb5.jpg_r_720x480x95_a420cd20.jpg" class="responsive-img" alt="一个跨越四年的约定">
                             
-                            <span class="card-title">一个跨越四年的约定</span>
+                            <span class="card-title">一个跨越四年的约定
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
@@ -1255,7 +1573,35 @@
                             
                             <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="神经网络之滑动平均与正则化">
                             
-                            <span class="card-title">神经网络之滑动平均与正则化</span>
+                            <span class="card-title">神经网络之滑动平均与正则化
+                            <!-- 文章卡片hover线条效果 -->
+                            <span class="titlesline">
+                                <style>
+                                    .titlesline {
+                                    width: 0px;
+                                    height: 4px;
+                                    background-color: #fadca6;
+                                    border-radius: 2px;
+                                    position: absolute;
+                                    top: 10px;
+                                    left: 24px;
+                                    }
+
+                                    body.dark .titlesline {
+                                    filter: brightness(.7);
+                                    }
+
+                                    article .card .titlesline {
+                                    transition: all 0.36s ease;
+                                    }
+
+                                    article .card-image:hover .titlesline {
+                                    width: 36px;
+                                    }
+                                </style>
+                                </span>
+                            
+                            </span>
                         </div>
                     </a>
 
