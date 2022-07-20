@@ -2039,7 +2039,7 @@ footer .copy-right {
     height: 1em;
     /* fix the problem of hidden failure */
     margin-top: 0.4em;
-    /* bg color = bg color under block */
+    /*  color = bg color under block */
     background: white;
 }
 
