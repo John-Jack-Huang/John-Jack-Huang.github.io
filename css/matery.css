@@ -1923,7 +1923,7 @@ footer .copy-right {
 }
 
 .top-scroll .btn-floating {
-    background: linear-gradient(to bottom right, #FF5E3A 0%, #FF2A68 100%);
+    background: linear-gradient(to bottom right, #ea7070 0%, #ea7070 100%);
     width: 48px;
     height: 48px;
 }
@@ -2161,7 +2161,7 @@ footer .copy-right {
 }
 
 /* 深色模式按钮设置 */
-#sma {
+/* #sma {
     background: rgba(187,222,214,1);
     width: 48px;
     height: 47px;
@@ -2195,6 +2195,8 @@ footer .copy-right {
 .fa-comments:before {
     content: "\f086";
 }
+*/
+
 
 /* 深色模式设置 */
 /* 字体颜色变灰白色 */
