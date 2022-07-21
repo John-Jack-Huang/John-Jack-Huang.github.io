@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="自然风景, 程序;编程;日常;生活;人生;学习">
+    <meta name="keywords" content="余音绕梁，念念不忘, 程序;编程;日常;生活;人生;学习">
     <meta name="description" content="天行健，君子以自强不息">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>自然风景 | 木屋</title>
+    <title>余音绕梁，念念不忘 | 木屋</title>
 
     <link rel="icon" type="image/png" href="https://q2.qlogo.cn/headimg_dl?dst_uin=1769627803@qq.com,1769627803,&spec=100">
 
@@ -97,7 +97,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="自然风景, 程序;编程;日常;生活;人生;学习">
+    <meta name="keywords" content="余音绕梁，念念不忘, 程序;编程;日常;生活;人生;学习">
     <meta name="description" content="天行健，君子以自强不息">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -110,7 +110,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>自然风景 | 木屋</title>
+    <title>余音绕梁，念念不忘 | 木屋</title>
 
     <link rel="icon" type="image/png" href="https://q2.qlogo.cn/headimg_dl?dst_uin=1769627803@qq.com,1769627803,&spec=100">
 
@@ -696,19 +696,29 @@
 
 </header>
 
-    <link rel="stylesheet" href="/css/gallery.css">
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/justifiedGallery/3.7.0/css/justifiedGallery.min.css">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/Post_Img/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">自然风景</h1>
+                    <h1 class="description center-align post-title">余音绕梁，念念不忘</h1>
                 </div>
             </div>
         </div>
@@ -718,203 +728,753 @@
 
 
 
-<!--   "  <p class=\"photo-name\">" + photo + "</p>\n" +
-文件名先注释掉  -->
+<main class="post-container content">
 
-<!-- 不加密写法 -->
-<!-- <div class="container">
-    <div class="photo-wrapper" >
-        <div class="waterfall" id="mygallery">
-            <a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/01.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/01.jpg"
-       alt=自然风景/01.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/02.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/02.jpg"
-       alt=自然风景/02.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/03.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/03.jpg"
-       alt=自然风景/03.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/04.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/04.jpg"
-       alt=自然风景/04.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/05.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/05.jpg"
-       alt=自然风景/05.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/06.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/06.jpg"
-       alt=自然风景/06.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/07.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/07.jpg"
-       alt=自然风景/07.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/08.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/08.jpg"
-       alt=自然风景/08.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/09.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/09.jpg"
-       alt=自然风景/09.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/10.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/10.jpg"
-       alt=自然风景/10.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/11.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/11.jpg"
-       alt=自然风景/11.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/12.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/12.jpg"
-       alt=自然风景/12.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/13.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/13.jpg"
-       alt=自然风景/13.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/14.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/14.jpg"
-       alt=自然风景/14.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/15.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/15.jpg"
-       alt=自然风景/15.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/16.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/16.jpg"
-       alt=自然风景/16.jpg>
-    </a>
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        background-color: white;
+        width: 345px;
+        padding-left: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+    
+    #toc-content {
+        height: calc(100vh - 300px);
+        overflow: scroll;
+
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #ffb6b9;
+        font-weight: 1000;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #8ac6d1;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/">
+                                <span class="chip bg-color">公务员考试</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/" class="post-category">
+                                公务员考试
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-07-21
+                </div>
+                
+                  
+                <!-- 
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-07-21
+                </div>
+                -->
+
+                <!--是否显示更新日期-->
+                
+                    
+                
+
+
+
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    359
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
+
+                
+            </div>
         </div>
-    </div>
-</div> -->
+        <hr class="clearfix">
 
-<main class="content" >
-<!-- 加密写法 -->
-<div class="container">
-    <div class="photo-wrapper">
         
-            <div class="waterfall" id="encrypt-blog">
-                <a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/01.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/01.jpg"
-       alt=自然风景/01.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/02.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/02.jpg"
-       alt=自然风景/02.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/03.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/03.jpg"
-       alt=自然风景/03.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/04.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/04.jpg"
-       alt=自然风景/04.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/05.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/05.jpg"
-       alt=自然风景/05.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/06.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/06.jpg"
-       alt=自然风景/06.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/07.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/07.jpg"
-       alt=自然风景/07.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/08.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/08.jpg"
-       alt=自然风景/08.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/09.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/09.jpg"
-       alt=自然风景/09.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/10.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/10.jpg"
-       alt=自然风景/10.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/11.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/11.jpg"
-       alt=自然风景/11.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/12.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/12.jpg"
-       alt=自然风景/12.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/13.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/13.jpg"
-       alt=自然风景/13.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/14.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/14.jpg"
-       alt=自然风景/14.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/15.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/15.jpg"
-       alt=自然风景/15.jpg>
-    </a><a target="_blank" href="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed/galleries/自然风景/16.jpg"
-     class="photo-item" rel="example_group noopener"
-     data-fancybox="images">
-      <img src="https://cdn.jsdelivr.net/gh/LuckyZmj/imgbed@master/galleries/自然风景/16.jpg"
-       alt=自然风景/16.jpg>
-    </a>
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <div class="note info no-icon"> 我做了很多的题，走了很远的路，才有站在你面前的希望。 </div>
+<div class="note primary no-icon">我相信，在秋天俯身采种子的人，来年会拥有整个春天。</div>
+
+<h2 id="Begin"><a href="#Begin" class="headerlink" title="Begin"></a>Begin</h2><p>今天省考的笔试成绩出来了，行测和申论比去年有所降低，考的不是很好。公安专业成绩比去年好一点，可能也是因为题目比较简单吧，所以总成绩较去年高一点。但是还是很有希望进入面试的，其实我也希望可以进入面试，保佑！！！！<br><img src="https://s1.328888.xyz/2022/07/21/m4rZN.png" alt="保佑成功进入面试.png"></p>
+<p>其实自己一开始心里还是比较激动的，因为比去年高了6分左右。但是转念一想，自己申论行测考的不是很好，所以心情又恢复平静了。还是安安心心等待面试名单出来吧，希望自己可以进面吃面！</p>
+<p>上个月去<a href="https://huang-junjia.gitee.io/2022/06/25/2022/20220625-xin-cheng-suo-zhi-bi-you-hui-xiang/">北海考人才引进</a>的时候，去普度寺许愿笔面第一，如果这次真的顺利上岸，笔面通过，那么我必须得去普度寺还愿~~<br><a target="_blank" rel="noopener" href="https://imgtu.com/i/jkx6V1"><img src="https://s1.ax1x.com/2022/06/26/jkx6V1.jpg" alt="保佑成功上岸.jpg"></a><br><a target="_blank" rel="noopener" href="https://imgtu.com/i/jkxcUx"><img src="https://s1.ax1x.com/2022/06/26/jkxcUx.jpg" alt="笔面体测第一.jpg"></a></p>
+<p>如果进入了面试，要及时准备稿体能测试和准备面试了！！不能再拖时间了！！！</p>
+<p>今天再次听了 兰州大学生态学硕士毕业生 张盘红 <a href="https://huang-junjia.gitee.io/2022/07/21/2022/20220721-gan-dong-de-shi/">《我相信》</a>,这是一首温暖的小诗，奋斗且上进，我相信努力不会辜负我，加油吧！！</p>
+<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><blockquote>
+<ul>
+<li>22°6’39”N</li>
+<li>108°37’55”E</li>
+</ul>
+</blockquote>
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">John_Jack</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://huang-junjia.gitee.io/2022/07/21/2022/20220721-yu-yin-rao-liang-nian-nian-bu-wang/">https://huang-junjia.gitee.io/2022/07/21/2022/20220721-yu-yin-rao-liang-nian-nian-bu-wang/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">John_Jack</a>
+                    !
+                </span>
             </div>
         
     </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%85%AC%E5%8A%A1%E5%91%98%E8%80%83%E8%AF%95/">
+                                    <span class="chip bg-color">公务员考试</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+
+    
+
 </div>
-<main>
-<script src=""></script>
-<script src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-<script src="https://cdn.staticfile.org/justifiedGallery/3.7.0/js/jquery.justifiedGallery.min.js"></script>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/null" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/null" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script>
-  // $(".waterfall").lazyload();
-
-$("a[rel=example_group]").fancybox();
-//  不加密写法
-// $("#mygallery").justifiedGallery({margins: 5, rowHeight: 150});
-$("#encrypt-blog").justifiedGallery({margins: 5, rowHeight: 150});
-
+    $(function () {
+        $('.tabs').tabs();
+    });
 </script>
+
+            
+        </div>
+    </div>
+  <!--是否开启评论-->
+    
+    
+     <!--上一篇 下一篇-->
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/07/21/2022/20220721-gan-dong-de-shi/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/Post_Img/21.jpg" class="responsive-img" alt="感动的诗">
+                        
+                        <span class="card-title">感动的诗</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            诗歌
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-07-21
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    读书笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">读书笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/07/15/2022/ji-zhu-wen-zhang-mo-ban/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/Post_Img/2.jpg" class="responsive-img" alt="技术文章模板">
+                        
+                        <span class="card-title">技术文章模板</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文章模板
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    读书笔记
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">读书笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 木屋<br />'
+            + '文章作者: John_Jack<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+<!-- 随笔信伐 -->
+<style> .ititle { 
+    margin: 15px 0; text-align:center; font-family: 'Architects Daughter', cursive; } 
+    .ipage { line-height: 30px; 
+        margin: 0 auto; padding: 15px 32px 29px; 
+        background-color: #f9f9f9; 
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+        -moz-border-radius-bottomleft: 20px 500px; 
+        -moz-border-radius-bottomright: 500px 30px; 
+        -moz-border-radius-topright: 5px 100px; 
+        -webkit-border-bottom-left-radius: 20px 500px; 
+        -webkit-border-bottom-right-radius: 64px 10px; 
+        -webkit-border-top-right-radius: 5px 100px; 
+        border-bottom-left-radius: 20px 500px; 
+        border-bottom-right-radius: 64px 10px; 
+        border-top-right-radius: 5px 100px; 
+        -webkit-background-size: 100% 30px; 
+        -moz-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2); 
+        -webkit-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.2); 
+        text-shadow: 0 1px 0 #F6EF97;
+         position: relative; 
+        } 
+    .izhengwen { 
+        position: relative; 
+        top: 0; 
+        left: 0; 
+        z-index: 2; 
+        height: auto; 
+        background: repeating-linear-gradient(to bottom, #f9f9f9, #f9f9f9 31px, #6BA2D8 1px, #f9f9f9); 
+        background-size: 100% 32px; 
+        } 
+        #articleContent p { margin: 0 } .ititle { 
+            font-family: 'Architects Daughter', cursive; 
+            font-size: 1.45rem!important; 
+            padding: 10px auto; } 
+            .izhengwen p { 
+            position: relative; 
+            line-height: 2.2rem!important; 
+            text-indent: 2em; 
+            font-family: 'Architects Daughter', cursive!important; 
+            font-size: 1.45rem!important; } 
+            .ipage::before { content: " "; 
+            display: inline-block; 
+            position: absolute; 
+            top: 0px; 
+            bottom: 0; 
+            right: 52px; 
+            z-index: 4; 
+            width: 4px; 
+            height: 100%; border-left: 1px solid #fca1a1; } 
+            .izhengwen p:nth-child(odd):before { 
+                content: " "; display: inline-block; 
+                position: absolute; 
+                top: 0; left: -16px; z-index: 3; width: 24px;
+                height: 24px; background-color: #fff; 
+                -webkit-border-radius: 50%; 
+                -moz-border-radius: 50%; 
+                border-radius: 50%; 
+                box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.26); 
+                } .ipage:after { content: " "; 
+                display: inline-block; 
+                position: absolute; top: 0; 
+                bottom: 0; left: 52px; 
+                z-index: 3; width: 4px; 
+                height: 100%; 
+                border-left: 4px double #fca1a1;
+                 } .ipage p { padding: 0 2em; color: #333!important; }
+                  body.dark .ipage { opacity: 0.85; } 
+/*小屏幕下(手机类)的样式*/ 
+@media only screen and (max-width: 600px) 
+{ .ipage { padding: 15px 23px 29px; 
+} .ipage:after { left: 36px; } .ipage::before { right: 36px; } .ipage p { padding: 0 0.9em; } } 
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
 
 
     <footer class="page-footer bg-color">
