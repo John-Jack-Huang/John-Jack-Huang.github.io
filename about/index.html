@@ -50,43 +50,87 @@
 
 
 
-   <style>
+   
+
+
+
+
+<!-- 设置背景图片 -->
+
+<!-- <style type="text/css">
+        body{
+            background-image: url("/medias/background/0.jpg");
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-attachment:fixed;
+        }
+</style>
+
+
+<script type="text/javascript">
+    var imgs=["/medias/background/0.jpg","/medias/background/1.jpg","/medias/background/2.jpg","/medias/background/3.jpg","/medias/background/4.jpg"];
+    var index;
+    
+    function qiehuan(){
+      
+            index=Math.floor(Math.random()*imgs.length);
+            console.log(index);
+            document.body.style.backgroundImage="url("+imgs[index]+")";    
+            
+                
+    }
+
+    // document.body.onload = function(){
+    //         qiehuan();
+    // } 
+
+    setInterval("qiehuan()",10* 1000);
+
+</script> -->
+
+
+<!-- 设置背景图片切换
+
+<script>
+ 
+    var imgs =["/medias/background/0.jpg","/medias/background/1.jpg","/medias/background/2.jpg","/medias/background/3.jpg","/medias/background/4.jpg"];
+    var index=Math.round(Math.random()*7);
+    var img = imgs[index];
+     
+    function showbg(){
+     
+    document.body.style.backgroundImage="url("+img+")";
+     
+    }
+    document.body.onload = function(){
+     
+    showbg();
+    }
+    setInterval("showbg()",2 * 1000);
+
+     
+    </script>
+ -->    
+
+
+
+ <style>
     body{
-        
-            
-
-            
-
-            
-
-            
-
-            
-
-            
-                background-image: url("/medias/background/5.jpg");
-            
-
-
-            
 
           
         
+           
+            background-image: url(https://s1.ax1x.com/2022/07/17/jIUkJs.jpg);
           
 
-       background-repeat:no-repeat;
-       background-size:cover;
-       background-attachment:fixed;
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment:fixed;
+
+       
        
     }
 </style>
-
-<!-- 
-   /* background-image: url("/medias/banner/2.jpg");
-       
-    background-image: url(https://s1.ax1x.com/2022/07/17/jIUkJs.jpg);
-*/
--->
 
 
 <body>
@@ -900,7 +944,7 @@
         },
         xAxis: {
             type: 'category',
-            data: ["2021-07","2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07"]
+            data: ["2021-08","2021-09","2021-10","2021-11","2021-12","2022-01","2022-02","2022-03","2022-04","2022-05","2022-06","2022-07","2022-08"]
         },
         yAxis: {
             type: 'value',
@@ -910,7 +954,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,2,9,5],
+                data: [0,0,0,0,0,0,0,0,0,2,9,5,0],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
