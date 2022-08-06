@@ -1081,6 +1081,36 @@
       width: 32%;
       border-bottom: 1px dashed #dedede;
     }
+
+    /* 鼠标放置头像旋转  1s  开始*/
+    img.vimg {
+     transition: all 1s   /* 旋转时间为 1s */
+    }
+    img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+    }
+/* 鼠标放置头像旋转  1s  结束*/
+    /* 评论卡片式背景 开始 */
+    #vcomments .vcards .vcard {
+        padding: 15px 20px 0 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 0 4px 1px rgba(217,217,243,1);
+        transition: all .3s
+    }
+    #vcomments .vcards .vcard:hover {
+        box-shadow: 0 0 8px 3px rgba(240, 131, 131, 0.12)
+    }
+    #vcomments .vcards .vcard .vh .vcard {
+        border: none;
+        box-shadow: none;
+    }
+    /* 评论卡片式背景 结束 */
+    
 </style>
 
 <div class="card valine-card" data-aos="fade-up">
@@ -1123,6 +1153,8 @@ new Valine({
         if (e.target.classList.contains('vsubmit')) {
             const email = document.querySelector('input[type=email]');
             const nick = document.querySelector('input[name=nick]');
+            // const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            
             const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
             if (!email.value || !nick.value || !reg.test(email.value)) {
                 const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
@@ -1171,7 +1203,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-building"></i>&nbsp;本站总字数:&nbsp;<span
-                class="white-color">54.8k</span>&nbsp;字
+                class="white-color">55.5k</span>&nbsp;字
             
             
             
