@@ -2342,7 +2342,7 @@ span.inline-tag {
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
-    border-radius: .1rem;
+    border-radius: .1rem ;
     border-radius: 6px;
     background-color: var(--Color)
 }
@@ -2362,25 +2362,26 @@ span.green {
 p.blue,
 span.blue {
     --Color: rgb(3, 169, 244);
-    --ColorA: rgba(3, 169, 244, 0.2);
+    --ColorA: rgba(243, 245, 247, 0.2);
 }
 
 p.yellow,
 span.yellow {
     --Color: rgb(255, 193, 7);
-    --ColorA: rgba(255, 193, 7, 0.2);
+    --ColorA: rgba(252, 251, 248, 0);
 }
 
 p.grey,
 span.grey {
     --Color: rgb(76, 76, 76);
-    --ColorA: rgba(76, 76, 76, 0.2);
+    --ColorA: rgba(76, 76, 76, 0);
 }
 
 p.div-border {
+    color: #fff;
     padding: 10px;
-    border: 1px solid var(--Color,#333);
-    border-radius: 0.4rem;
+    border: 2px solid var(--Color,#fff7f7);
+    border-radius: 0.6rem;
     background-color: var(--ColorA, transparent);
 }
 
@@ -2532,20 +2533,20 @@ ol{
   ol li:before {
       display: block;
       float: left;
-      width: 19px;   /* 宽度和高度需要根据自己的字体大小进行修正 */
-      height: 18px;
-      line-height: 19px;
-      margin: 4px 12px 0 0;
+      width: 15px;   /* 宽度和高度需要根据自己的字体大小进行修正 */
+      height: 15px;
+      line-height: 15px;
+      margin: 5px 8px 0 0;
       color: #fff;
-      font-size: 16px;
-      font-weight: 300;
+      font-size: 13px;
+      font-weight: 400;
       font-style: normal;
       background-color: #49b1f5;
       border-radius: 50%;
       text-align: center;
       content: counter(ol-li);
       counter-increment: ol-li;
-      transition: all 0.6s;
+      transition: all 0.5s;
   }
   ol li:hover::before{
     transform: rotate(360deg);
