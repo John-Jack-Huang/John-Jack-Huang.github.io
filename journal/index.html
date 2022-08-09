@@ -799,8 +799,6 @@
             padding: 0;
         }
 
-
-
         .box {
             width: 100%;
             max-width: 1200px;
@@ -810,7 +808,8 @@
 
         a {
             text-decoration: none;
-            color: #ffffff;
+            color: #eb2323;
+            text-align: 0;
         }
 
         .tit {
@@ -867,7 +866,6 @@
             height: 100%;
             float: left;
             position: relative;
-            /* background: red; */
         }
 
 
@@ -883,13 +881,15 @@
         .list_nr {
             width: 65%;
             height: auto;
-            padding: 15px;
+            padding: 10px 8px 8px 8px;
             background: #118DF0;
-            border-radius: 6px;
+            border-radius: 10px;
             color: #f6f7f8;
             float: left;
             margin-top: -15px;
             margin-left: 19%;
+            font-weight: 510;
+            
         }
 
         .nr_tit {
@@ -897,23 +897,25 @@
             font-weight: 700;
             margin: 10px 0;
             margin-top: 0px;
+            
         }
 
         .nr_nr {
             line-height: 25px;
             position: relative;
+            
+            
         }
 
         .date {
-            position:  static;
-            right: -1.8%;
+            position:absolute;
+            right: 0%;
             padding: 5px;
-            top: -32px;
+            top: -20px;
             color: #313131;
             border-radius: 10px;
-            font-size: 16px;
-            
-
+            font-size: 14px;
+            font-weight:bold  
         }
 </style>    
 <main class="content">
@@ -947,6 +949,8 @@
                                             1.设置本站仅能博主和小伙伴评论
                                             2.增加文章评论开启关闭功能
                                             3.文章评论关闭时增加动态气泡效果
+                                            4.调整本页面内容卡片位置
+                                            5.优化本页面在手机端的显示更舒适
                                             </div>
                                     </div>
                                 </div>
@@ -988,16 +992,15 @@
                                         <div class="nr_nr">
                                             1.增加书单页面
                                             2.增加分类仿书本页面
-                                            3.增加本页面
-                                            4.增加时轴页面
-                                            5.增加音乐页面
-                                            6.增加背景图功能
-                                            7.增加文章背景仿信伐
-                                            8.增加点击文章出现小黄条功能
-                                            9.增加目录栏可滚动功能
-                                            10.增加文章内标签美化功能
-                                            11.增加文章内思维导图功能
-                                            12.更换网站配色</div>
+                                            3.增加时轴页面
+                                            4.增加音乐页面
+                                            5.增加背景图功能
+                                            6.增加文章背景仿信伐
+                                            7.增加点击文章出现小黄条功能
+                                            8.增加目录栏可滚动功能
+                                            9.增加文章内标签美化功能
+                                            10.增加文章内思维导图功能
+                                            </div>
                                     </div>
                                 </div>
                             </div> 
@@ -1029,7 +1032,7 @@
                             let hx = $(".hx");
                             let list_nr = $(".list_nr");
                             let date = $(".date");
-                            let arr_color = ['#e8a0b8', '#ffc300', '#bccf3d', '#8ac6d1', '#02c9c9'];
+                            let arr_color = ['#e8a0b8', '#d5a4cf', '#bccf3d', '#8ac6d1', '#02c9c9'];
                             let flag = 0;
                             let wy = $("body").width();
 
@@ -1073,7 +1076,7 @@
                                         })
                                         d.css({
                                             "right": 'unset',
-                                            "left": "-1.2%"
+                                            "left": "0.5%"
                                         })
 
                                     }
@@ -1081,8 +1084,8 @@
                                 $(".list").slideDown(800);
                             }
 
+                            // 手机端样式更改
                             function move() {
-
                                 if (wy > 700) {
                                     window.history.go(0);
                                 }
@@ -1097,15 +1100,35 @@
                                 }
 
                                 $(".list").css("margin-top", "60px");
-                                $(".line").css("left", "10%");
-                                $(".dian").css("left", "10%");
+                                $(".line").css("left", "1%");
+                                $(".dian").css("left", "1%");
                                 $(".list_box").css("width", "100%");
                                 $(".hx").css("float", "left");
                                 $(".list_nr").css({
-                                    "max-height": "146px",
-                                    "line-height": "17px",
-                                    "font-size": "12px"
+                                    "max-height": "210px",
+                                    "line-height": "3px",
+                                    "font-size": "12px",
+                                    "font-weight":"bold",
                                 });
+                                // 手机端日期位置调整
+                                $(".date").css({
+                                    "position":"absolute",
+                                    // "right": "2%",
+                                    "left":"-78%",
+                                    "top":"-15px",
+                                    "padding": "2px",
+                                    // "top": "-32px",
+                                    "color": "#313131",
+                                    // "border-radius": "10px",
+                                    "font-size": "12px",
+                                    "font-weight":"550" 
+                                });
+
+                                // 手机端内容卡片大小调整
+                                $(".list_nr").css({
+                                    "width": "80%", 
+                                });
+
                                 $($(".list")['0']).css("margin-top", "20px");
                                 $(".list").slideDown(800);
 
