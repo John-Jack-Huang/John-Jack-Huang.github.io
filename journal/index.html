@@ -808,7 +808,7 @@
 
         a {
             text-decoration: none;
-            color: #eb2323;
+            color: #ffffff;
             text-align: 0;
         }
 
@@ -881,7 +881,7 @@
         .list_nr {
             width: 65%;
             height: auto;
-            padding: 10px 8px 8px 8px;
+            padding: 10px 25px 10px 25px;
             background: #118DF0;
             border-radius: 10px;
             color: #f6f7f8;
@@ -889,7 +889,8 @@
             margin-top: -15px;
             margin-left: 19%;
             font-weight: 510;
-            
+            /* 增加滚动条 */
+            overflow: auto;  
         }
 
         .nr_tit {
@@ -901,10 +902,9 @@
         }
 
         .nr_nr {
-            line-height: 25px;
+            line-height: 20px;
             position: relative;
-            
-            
+            text-align: left;
         }
 
         .date {
@@ -946,11 +946,11 @@
                                             <a href="">增加本站功能</a>
                                         </div>
                                         <div class="nr_nr">
-                                            1.设置本站仅能博主和小伙伴评论
-                                            2.增加文章评论开启关闭功能
-                                            3.文章评论关闭时增加动态气泡效果
-                                            4.调整本页面内容卡片位置
-                                            5.优化本页面在手机端的显示更舒适
+                                            <p>1.设置本站仅博主和小伙伴能评论</p>
+                                            <p>2.增加文章评论开启关闭功能</p>
+                                            <p>3.文章评论关闭时增加动态气泡效果</p>
+                                            <p>4.调整本页面内容卡片在PC端位置</p>
+                                            <p>5.优化本页面在手机端的显示，使观感更舒适</p>
                                             </div>
                                     </div>
                                 </div>
@@ -968,11 +968,11 @@
                                             <a href="">美化本站内容</a>
                                         </div>
                                         <div class="nr_nr">
-                                            1.美化文章分割线
-                                            2.美化有序标签
-                                            3.美化侧边滚动条
-                                            4.添加渐变式note标签和tag标签
-                                            5.美化说说板块效果
+                                            <p>1.美化文章分割线</p>
+                                            <p>2.美化有序标签</p>
+                                            <p>3.美化侧边滚动条</p>
+                                            <p>4.添加渐变式note标签和tag标签</p>
+                                            <p>5.美化说说板块效果</p>
                                             </div>
                                     </div>
                                 </div>
@@ -987,19 +987,19 @@
                                     <div class="list_nr">
                                         <p class="date">2022-07-12</p>
                                         <div class="nr_tit">
-                                            <a href="">本站更新功能</a>
+                                            <a href="">增加本站功能</a>
                                         </div>
                                         <div class="nr_nr">
-                                            1.增加书单页面
-                                            2.增加分类仿书本页面
-                                            3.增加时轴页面
-                                            4.增加音乐页面
-                                            5.增加背景图功能
-                                            6.增加文章背景仿信伐
-                                            7.增加点击文章出现小黄条功能
-                                            8.增加目录栏可滚动功能
-                                            9.增加文章内标签美化功能
-                                            10.增加文章内思维导图功能
+                                            <p>1.增加书单页面</p>
+                                            <p>2.增加分类仿书本页面</p>
+                                            <p>3.增加时轴页面</p>
+                                            <p>4.增加音乐页面</p>
+                                            <p>5.增加背景图功能</p>
+                                            <p>6.增加文章背景仿信伐</p>
+                                            <p>7.增加点击文章出现小黄条功能</p>
+                                            <p>8.增加目录栏可滚动功能</p>
+                                            <p>9.增加文章内标签美化功能</p>
+                                            <p>10.增加文章内思维导图功能</p>
                                             </div>
                                     </div>
                                 </div>
@@ -1015,8 +1015,13 @@
                                         <div class="nr_tit">
                                             <a href="https://huang-junjia.gitee.io/2019/03/23/2019/hello-world/">本站破壳诞生</a>
                                         </div>
-                                        <div class="nr_nr">
-                                            本网站在今天成功建立运行啦</div>
+                                        <div class="nr_nr" >
+                                            
+                                            <p>1.本网站在今天成功建立运行啦!</p>
+                                            <p>2.记录生活碎片，书写此刻心情!</p>
+                                            <p>3.以梦为马，不负韶华!</p>
+                                        
+                                        </div>
                                     </div>
                                 </div>
                             </div> 
@@ -1106,9 +1111,10 @@
                                 $(".hx").css("float", "left");
                                 $(".list_nr").css({
                                     "max-height": "210px",
-                                    "line-height": "3px",
+                                    "line-height": "2px",
                                     "font-size": "12px",
                                     "font-weight":"bold",
+                                    "padding": "10px 8px 8px 8px",
                                 });
                                 // 手机端日期位置调整
                                 $(".date").css({
