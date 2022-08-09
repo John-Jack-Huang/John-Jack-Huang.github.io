@@ -1153,12 +1153,33 @@
     /* Valine 评论框外颜色 */
     .v[data-class=v] .vwrap {
         border: 1px solid #d9d9f3;
-        border-radius: 4px;
+        box-shadow: 0 0 4px 1px #e0e0e0;
+        border-radius: 6px;
         margin-bottom: 10px;
         overflow: hidden;
         position: relative;
         padding: 10px;
     }
+    /* 评论框内样式 */
+    .v[data-class=v] .vinput {
+        border: 0px;
+        resize: none;
+        outline: none;
+        padding: 0px 0px;
+        max-width: 100%;
+        font-size: 15px;
+        box-shadow: 0 0 8px 1px rgb(0 0 0 / 10%);
+        border-radius: 10px;
+        text-align: center;
+    }
+    /* 拒绝评论提示样式 */
+    .v[data-class=v] .txt-center {
+    text-align: center;
+    box-shadow: 0 0 4px 1px rgba(202,62,71,1);
+    border-radius: 10px;
+    color: #f44336;
+    font-size: 16px;
+}
     
 </style>
 
@@ -1188,13 +1209,13 @@ new Valine({
         avatar: 'monsterid',
         pageSize: '10',
         lang: 'zh-CN',
-        placeholder: '留下你的足迹..',
+        placeholder: '万人都要将火熄灭，我一人独将此火高高举起',
         meta: ["nick", "mail", "link"],
         recordIP: 'true' === 'true',
         enableQQ: 'monsterid',
         requiredFields: ["730201520a0afb2f8ca537f756182598"],
         master: ["730201520a0afb2f8ca537f756182598"],
-        friends: ["cb3e577ff029d6073400d5557effd41f", ""],
+        friends: ["1e8c540097650cd8a200e68b7e5c40cc", "1E8C540097650CD8A200E68B7E5C40CC"],
         tagMeta: ["博主", "小伙伴", "访客"],
         metaPlaceholder: metaPlaceholder,
 
@@ -1203,12 +1224,29 @@ new Valine({
     document.body.addEventListener('click', function(e) {
         if (e.target.classList.contains('vsubmit')) {
             const email = document.querySelector('input[type=email]');
+            console.log(email);
             const nick = document.querySelector('input[name=nick]');
+            // 注销以下注释仍有作用
             // const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-            
-            const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
-            if (!email.value || !nick.value || !reg.test(email.value)) {
-                const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+            // if (!email.value || !nick.value || !reg.test(email.value)) {
+            //     const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+            //     const vmark = document.querySelector('.vmark');
+            //     vmark.innerHTML = str;
+            //     vmark.style.display = 'block';
+
+            //     e.stopPropagation();
+
+            //     setTimeout(function() {
+            //         vmark.style.display = 'none';
+            //         vmark.innerHTML = '';
+            //     }, 2500);
+            // }
+
+            // 设置为仅博主和小伙伴可以评论
+            const myEmail_1 = "1769627803@qq.com";
+            const myEmail_2 = "2470776614@qq.com";
+            if (!(email.value == myEmail_1||email.value ==myEmail_2)) {
+                const str = `<div class="valert txt-center"><div class="vtext">抱歉，您暂无权限发表！</div></div>`;
                 const vmark = document.querySelector('.vmark');
                 vmark.innerHTML = str;
                 vmark.style.display = 'block';
@@ -1218,7 +1256,7 @@ new Valine({
                 setTimeout(function() {
                     vmark.style.display = 'none';
                     vmark.innerHTML = '';
-                }, 2500);
+                }, 5000);
             }
         }
         }, true);
