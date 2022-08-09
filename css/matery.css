@@ -2564,8 +2564,8 @@ ol{
   }
   
   ::-webkit-scrollbar-track {
-    background-color: rgba(212,237,244,1);
-    border-radius: 2em;
+    background-color: rgba(188, 230, 241, 0.37);
+    border-radius: 15px;
   }
   
   ::-webkit-scrollbar-thumb {
@@ -2580,7 +2580,7 @@ ol{
       transparent 75%,
       transparent
     ); */
-    border-radius: 2em;
+    border-radius: 15px;
   }
   
   ::-webkit-scrollbar-corner {
