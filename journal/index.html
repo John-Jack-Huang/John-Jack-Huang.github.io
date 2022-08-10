@@ -867,8 +867,7 @@
             float: left;
             position: relative;
         }
-
-
+     
         .hx {
             width: 150px;
             height: 4px;
@@ -891,6 +890,11 @@
             font-weight: 510;
             /* 增加滚动条 */
             overflow: auto;  
+        }
+        /* 鼠标悬停在卡片上显示阴影效果 */
+        .list_nr:hover {
+            box-shadow: 0 0 3px 3px rgb(250, 247, 99);
+            /* border:1px solid rgba(255,182,185,1); */
         }
 
         .nr_tit {
@@ -934,6 +938,26 @@
                         <div class="min">
                             <div class="line"></div>
                             <div class="vas">
+
+
+                                 <!--一个模板-->
+                            <div class="list">
+                                <div class="dian"></div>
+                                <div class="list_box">
+                                    <div class="hx"></div>
+                                    <div class="list_nr">
+                                        <p class="date">2022-08-10</p>
+                                        <div class="nr_tit">
+                                            <a href="">优化本站功能</a>
+                                        </div>
+                                        <div class="nr_nr">
+                                            <p>1.优化文章目录在ipad端的显示效果</p>
+                                            <p>2.优化流沙页面内容卡片在鼠标悬停时的显示效果</p>
+                                            <p>3.优化说说内容在鼠标悬停时的显示效果</p>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div> 
 
                             <!--一个模板-->
                             <div class="list">
@@ -1153,14 +1177,14 @@
                             $(window).resize(win);
                             win();
                         });
+                        // 点击卡片弹出内容显示
+                        // $(".nr_nr").click((e) => {
 
-                        $(".nr_nr").click((e) => {
+                        //     if ($("body").width() <= 700) {
+                        //         alert(e.delegateTarget.innerText);
+                        //     }
 
-                            if ($("body").width() <= 700) {
-                                alert(e.delegateTarget.innerText);
-                            }
-
-                        })
+                        // })
 
                         $(".top img").click(_ => {
                             $(document).scrollTop(0);

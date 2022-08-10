@@ -1126,11 +1126,18 @@
         color: #fdc4b6;
         cursor: pointer;
         float: right; */
-        padding: 4px 10px;
+        padding: 1px 3px;
         box-shadow: 0 0 4px 1px rgb(0 0 0 / 12%);
+        /* border:1px solid rgba(255,182,185,1); */
         margin-right: 5px;
         /* transition: all .3s; */
         border-radius: 10px;
+        transform: translateX(0px) translateY(-23px);
+    }
+    /* 鼠标悬停在“回复”出现阴影效果 */
+    span.vat:hover {
+        box-shadow: 0 0 3px 3px rgba(255,182,185,1);
+        border:1px solid rgba(255,182,185,1);
     }
     /*时间的颜色 */
     .v[data-class=v] .vsys, .v[data-class=v] .vtime {
@@ -1172,7 +1179,7 @@
         border-radius: 10px;
         text-align: center;
     }
-    /* 拒绝评论提示样式 */
+    /* 评论权限提示样式 */
     .v[data-class=v] .txt-center {
     text-align: center;
     box-shadow: 0 0 4px 1px rgba(202,62,71,1);
@@ -1243,10 +1250,10 @@ new Valine({
             // }
 
             // 设置为仅博主和小伙伴可以评论
-            const myEmail_1 = "1769627803@qq.com";
-            const myEmail_2 = "2470776614@qq.com";
+            const myEmail_1 = "1769627803@qq.com";// 博主邮箱
+            const myEmail_2 = "2470776614@qq.com";// 小伙伴邮箱
             if (!(email.value == myEmail_1||email.value ==myEmail_2)) {
-                const str = `<div class="valert txt-center"><div class="vtext">抱歉，您暂无权限发表！</div></div>`;
+                const str = `<div class="valert txt-center"><div class="vtext">抱歉，您暂时无权限发表！</div></div>`;
                 const vmark = document.querySelector('.vmark');
                 vmark.innerHTML = str;
                 vmark.style.display = 'block';
