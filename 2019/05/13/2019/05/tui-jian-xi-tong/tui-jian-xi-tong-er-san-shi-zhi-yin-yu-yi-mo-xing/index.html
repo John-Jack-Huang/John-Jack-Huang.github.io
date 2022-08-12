@@ -958,9 +958,9 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Begin"><a href="#Begin" class="headerlink" title="Begin"></a>Begin</h2><h2 id="1-隐语义模型LFM（Latent-Factor-Model）"><a href="#1-隐语义模型LFM（Latent-Factor-Model）" class="headerlink" title="1.隐语义模型LFM（Latent Factor Model）"></a>1.隐语义模型<strong>LFM</strong>（Latent Factor Model）</h2><p>隐语义模型是通过挖掘隐藏含义，利用<code>隐藏因子</code>将用户和物品联系起来的一种思想。其中挖掘出来的<code>隐藏因子</code>可以被人理解且描述，而有一些是人无法理解，仅可以被计算机理解。<br>隐语义模型利用到<strong>矩阵分解MF</strong>（Matri</p>
-<p>x Factorization）的思想，由此来挖掘<code>隐藏因子</code>。<br><strong>隐语义模型示意图</strong><br><img src="https://s2.ax1x.com/2019/04/30/EGaO0J.png" alt="矩阵分解MF图解"></p>
+<p>x Factorization）的思想，由此来挖掘<code>隐藏因子</code>。<br><strong>隐语义模型示意图</strong><br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/04/30/EGaO0J.png" alt="矩阵分解MF图解"></p>
 <h2 id="2-隐语义模型的计算过程"><a href="#2-隐语义模型的计算过程" class="headerlink" title="2.隐语义模型的计算过程"></a>2.隐语义模型的计算过程</h2><h3 id="2-1模型分解"><a href="#2-1模型分解" class="headerlink" title="2.1模型分解"></a>2.1模型分解</h3><p>隐语义模型通过以下公式计算用户u对电影i的兴趣，这个<code>兴趣</code>就是<code>隐藏因子</code>$k$:<br>$$ Preference(u,i)=R_{ui}=P_uQ_i=\sum_{k=1}^K P_{u，k}Q_{k，i}     $$</p>
-<p>其中，$P_{u,k}$代表用户$u$的兴趣和第$k$个隐类的关系,$Q_{k,i}$代表第$k$个隐类和第$i$部电影之间的关系。<br><img src="https://s2.ax1x.com/2019/05/01/EGbBAH.png" alt="矩阵分解MF图解"></p>
+<p>其中，$P_{u,k}$代表用户$u$的兴趣和第$k$个隐类的关系,$Q_{k,i}$代表第$k$个隐类和第$i$部电影之间的关系。<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/01/EGbBAH.png" alt="矩阵分解MF图解"></p>
 <h3 id="2-2寻找参数-P-和-Q"><a href="#2-2寻找参数-P-和-Q" class="headerlink" title="2.2寻找参数$P$和$Q$"></a>2.2寻找参数$P$和$Q$</h3><p>通过优化损失函数，来寻找最合适的参数$P$和$Q$:<br>$$C =\sum_{u，i\in{K}} （R_{ui} -\widehat R_{ui}）^2$$<br>将上式展开：$$=\sum_{u,i\in K<br>}(R_{ui}-\sum_{k=1}^KP_{u，k}Q_{k，i})^2+\lambda||P_u||^2+\lambda||Q_i||^2 $$<br>其中，$\lambda||P_u||^2+\lambda||Q_i||^2$是用来防止过拟合的正则化项，$\lambda$可以通过实验获得。  </p>
 <h3 id="2-3隐语义模型中的参数"><a href="#2-3隐语义模型中的参数" class="headerlink" title="2.3隐语义模型中的参数"></a>2.3隐语义模型中的参数</h3><ul>
 <li>隐特征的个数$F$;（通常$F$=100,不是越大越好）</li>
@@ -969,7 +969,7 @@
 <li>负样本/正样本$ration$;</li>
 </ul>
 <h2 id="Not-End"><a href="#Not-End" class="headerlink" title="Not End"></a>Not End</h2><p>未完，待补充，先去学神经网络，再回来宠你。</p>
-<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
             <hr/>
@@ -1677,7 +1677,7 @@
             <br>
             
             &nbsp;<i class="fas fa-building"></i>&nbsp;本站总字数:&nbsp;<span
-                class="white-color">55.5k</span>&nbsp;字
+                class="white-color">56.6k</span>&nbsp;字
             
             
             
@@ -1979,6 +1979,12 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
 
 </html>

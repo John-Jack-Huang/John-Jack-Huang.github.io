@@ -958,18 +958,18 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="Begin"><a href="#Begin" class="headerlink" title="Begin"></a>Begin</h2><p>昨晚灏哥发了个工程过来给我，说看到一个数组里是乱码，在数组2切割成数组3的时候，数组3变成了乱码。由于昨晚弄到12点多，而且今天早上想了一下，发现这个问题非常简单，但是自己又弄了那么久才弄出来，实属自己基础不扎实。下面说说我昨晚遇到的几个问题：</p>
-<h3 id="问题1：数组首地址当成数组内容乱码"><a href="#问题1：数组首地址当成数组内容乱码" class="headerlink" title="问题1：数组首地址当成数组内容乱码"></a>问题1：数组首地址当成数组内容乱码</h3><p>灏哥说输出的conten3[]数组，我打开工程看了一下，如下图<br><img src="https://s2.ax1x.com/2019/05/03/ENTPtH.png" alt="输出的内容"></p>
+<h3 id="问题1：数组首地址当成数组内容乱码"><a href="#问题1：数组首地址当成数组内容乱码" class="headerlink" title="问题1：数组首地址当成数组内容乱码"></a>问题1：数组首地址当成数组内容乱码</h3><p>灏哥说输出的conten3[]数组，我打开工程看了一下，如下图<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/03/ENTPtH.png" alt="输出的内容"></p>
 <p>他在工程里面写了log语句：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Log</span><span class="token punctuation">.</span><span class="token function">e</span><span class="token punctuation">(</span>TAG<span class="token punctuation">,</span> <span class="token string">"run: content3==="</span> <span class="token operator">+</span> content3<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>而他写的conten2 字符串的log打印语句是这样的：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Log</span><span class="token punctuation">.</span><span class="token function">e</span><span class="token punctuation">(</span>TAG<span class="token punctuation">,</span> <span class="token string">"run: content2==="</span> <span class="token operator">+</span> contentForm2<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>然后可以在logcat窗口可以看到如下，的确输出了content2 <code>字符串</code>，<img src="https://s2.ax1x.com/2019/05/03/ENTGj0.png" alt="content2内容"><br>而content3[] <code>字符串类型数组</code>却没有输出来，看着输出的<code>[L.java.lang.String:@aa3d04d]</code>确实像是乱码…..<br><strong>拨乱反正：</strong><br>1.在打印<code>字符串</code>时，<code>Log.e()</code>语句可以打印完整的字符串内容出来；而打印<code>字符串类型数组</code>时，<code>Log.e()</code>语句只会打印数组<code>首地址</code>，而不会完整输出数组内容，此时content3[]的首地址就是<code>[L.java.lang.String:@aa3d04d]</code>，并非乱码…….<br>2.要想看到数组里面的内容，用个for循环，就可以将数组内容全部打印出来了。如：</p>
+<p>然后可以在logcat窗口可以看到如下，的确输出了content2 <code>字符串</code>，<img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/03/ENTGj0.png" alt="content2内容"><br>而content3[] <code>字符串类型数组</code>却没有输出来，看着输出的<code>[L.java.lang.String:@aa3d04d]</code>确实像是乱码…..<br><strong>拨乱反正：</strong><br>1.在打印<code>字符串</code>时，<code>Log.e()</code>语句可以打印完整的字符串内容出来；而打印<code>字符串类型数组</code>时，<code>Log.e()</code>语句只会打印数组<code>首地址</code>，而不会完整输出数组内容，此时content3[]的首地址就是<code>[L.java.lang.String:@aa3d04d]</code>，并非乱码…….<br>2.要想看到数组里面的内容，用个for循环，就可以将数组内容全部打印出来了。如：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"> <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>content3<span class="token punctuation">.</span>length<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>                              
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"数据"</span><span class="token operator">+</span>content3<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//打印数组内容数据</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="问题2：误以为日期格式不能储存在String-类型的数组里"><a href="#问题2：误以为日期格式不能储存在String-类型的数组里" class="headerlink" title="问题2：误以为日期格式不能储存在String 类型的数组里"></a>问题2：误以为日期格式不能储存在String 类型的数组里</h3><p>  昨晚我看字符串content2的内容，除了数字之外，还有好多日期格式：2019-04-07，我误以为content3[]数组乱码产生产生乱码的原因是无法储存这种日期格式，其实是可以存储的，String 类型的数组非常强大，可以存储非常多杂七杂八的类型数据，各种标点符号之类的。</p>
 <h3 id="问题3：因为问题2的原因，想到的解决方法是只匹配数据，把日期和其他格式的都过滤掉。"><a href="#问题3：因为问题2的原因，想到的解决方法是只匹配数据，把日期和其他格式的都过滤掉。" class="headerlink" title="问题3：因为问题2的原因，想到的解决方法是只匹配数据，把日期和其他格式的都过滤掉。"></a>问题3：因为问题2的原因，想到的解决方法是只匹配数据，把日期和其他格式的都过滤掉。</h3><p>所以这个问题才是我昨晚一直在解决的问题，我想到了用正则匹配，来对字符串content2里的内容进行匹配，只匹配浮点数（因为所需要的数据就是浮点数），其他的过滤掉。</p>
-<p>先分析content2里的内容：<br><img src="https://s2.ax1x.com/2019/05/03/ENTGj0.png" alt="content2内容"><br>里面有日期格式，还有字母，还有浮点数，其中浮点数是我们所需要的数据，那就利用正则匹配，将浮点数匹配出来。</p>
+<p>先分析content2里的内容：<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/03/ENTGj0.png" alt="content2内容"><br>里面有日期格式，还有字母，还有浮点数，其中浮点数是我们所需要的数据，那就利用正则匹配，将浮点数匹配出来。</p>
 <h4 id="1-先导入正则表达式需要的包："><a href="#1-先导入正则表达式需要的包：" class="headerlink" title="1.先导入正则表达式需要的包："></a>1.先导入正则表达式需要的包：</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span></span><span class="token class-name">Matcher</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>regex<span class="token punctuation">.</span></span><span class="token class-name">Pattern</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h4 id="2-构造正则表达式"><a href="#2-构造正则表达式" class="headerlink" title="2.构造正则表达式:"></a>2.构造正则表达式:</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//正则表达式,浮点数的正则表达式：\d+\.\d+</span>
@@ -997,7 +997,7 @@
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> k<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>k<span class="token operator">&lt;</span>content3<span class="token punctuation">.</span>length<span class="token punctuation">;</span>k<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"数据"</span><span class="token operator">+</span>content3<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//打印content3[]中的数据</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>这样就可以从字符串content2中匹配出来所有的浮点数数据，然后将其转存到String 类型的数据content3[]里面了。以下是DeBug模式下看到的content3[]数组里的内容：<br><img src="https://s2.ax1x.com/2019/05/03/ENLy7V.png" alt="content3[]数组里的内容"></p>
+<p>这样就可以从字符串content2中匹配出来所有的浮点数数据，然后将其转存到String 类型的数据content3[]里面了。以下是DeBug模式下看到的content3[]数组里的内容：<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/03/ENLy7V.png" alt="content3[]数组里的内容"></p>
 </li>
 </ul>
 <h3 id="正则匹配遇到的疑难杂症一"><a href="#正则匹配遇到的疑难杂症一" class="headerlink" title="正则匹配遇到的疑难杂症一"></a>正则匹配遇到的疑难杂症一</h3><p>当时我想输出匹配出来的数据，即<code>m.group()</code>,是利用以下代码输出所有匹配出来的数据的：</p>
@@ -1021,9 +1021,9 @@
 <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token class-name">String</span> num<span class="token operator">:</span>number<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"数字"</span><span class="token operator">+</span>num<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>最后输出的数组如下：<br><img src="https://s2.ax1x.com/2019/05/03/ENzuff.png" alt="最后输出的数组"></p>
+<p>最后输出的数组如下：<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/03/ENzuff.png" alt="最后输出的数组"></p>
 <h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>好了，记录一下这些基础的东西，要不然每次出错都很难找到问题在哪。正则匹配自己也正好学习一下。</p>
-<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
             <hr/>
@@ -1731,7 +1731,7 @@
             <br>
             
             &nbsp;<i class="fas fa-building"></i>&nbsp;本站总字数:&nbsp;<span
-                class="white-color">55.5k</span>&nbsp;字
+                class="white-color">56.6k</span>&nbsp;字
             
             
             
@@ -2033,6 +2033,12 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
 
 </html>

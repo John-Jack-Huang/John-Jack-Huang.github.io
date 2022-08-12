@@ -1034,7 +1034,7 @@ result <span class="token operator">=</span> tf<span class="token punctuation">.
 <p>输出结果如下:</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">Tensor<span class="token punctuation">(</span><span class="token string">"add:0"</span><span class="token punctuation">,</span> shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>float32<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>其中<code>add:0</code>为结点名，表示第0个输出；<code>shape=(2,)</code>表示一个一维长度为2的数组；<code>dtype=float32</code>表示数据类型为32位浮点数。<br><strong>注意</strong>：如果想看最后的<code>result</code>的结果，需要运用会话（session）,才会显示最终结果，这现在只是中间存储的张量，张量本身不存储具体的数字。</p>
-<h4 id="2-2-3利用张量构建一个神经元的计算过程"><a href="#2-2-3利用张量构建一个神经元的计算过程" class="headerlink" title="2.2.3利用张量构建一个神经元的计算过程"></a>2.2.3利用张量构建一个神经元的计算过程</h4><p>神经元如下图所示，$y=XW=x_1w_1+x_2w_2$<br><img src="https://s2.ax1x.com/2019/05/07/EyYtwn.png" alt="神经元"><br>将$x_1、x_2$的值放入一个1x2（1行2列）的矩阵$X$中，将$w_1、w_2$的值放入2x1（2行1列）的矩阵$W$，将矩阵$X$点乘矩阵$W$，最后结果就是一个数，即$y$值。<br>代码如下：</p>
+<h4 id="2-2-3利用张量构建一个神经元的计算过程"><a href="#2-2-3利用张量构建一个神经元的计算过程" class="headerlink" title="2.2.3利用张量构建一个神经元的计算过程"></a>2.2.3利用张量构建一个神经元的计算过程</h4><p>神经元如下图所示，$y=XW=x_1w_1+x_2w_2$<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/07/EyYtwn.png" alt="神经元"><br>将$x_1、x_2$的值放入一个1x2（1行2列）的矩阵$X$中，将$w_1、w_2$的值放入2x1（2行1列）的矩阵$W$，将矩阵$X$点乘矩阵$W$，最后结果就是一个数，即$y$值。<br>代码如下：</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#将x1、x2的值放入一个1x2（1行2列）的矩阵X中</span>
 x <span class="token operator">=</span> tf<span class="token punctuation">.</span>constant<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1.0</span><span class="token punctuation">,</span><span class="token number">2.0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>name<span class="token operator">=</span><span class="token string">'x'</span><span class="token punctuation">)</span>
 <span class="token comment">#将w1、w2的值放入2x1（2行1列）的矩阵W</span>
@@ -1066,7 +1066,7 @@ output <span class="token operator">=</span> tf<span class="token punctuation">.
     <span class="token keyword">print</span><span class="token punctuation">(</span>  sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>output<span class="token punctuation">,</span> feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>input1<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span>input2<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>最后输出：<br><code>[30.]</code></p>
 <h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>了解<code>计算图（graph）</code>、<code>张量（tensor）</code>、<code>会话（session）</code>、<code>占位符（placeholder）</code>这几个基本概念，其中我们也知道了一个神经元如何来表示，那么神经网络就是由很多个神经元组成的<a href="#223-%E5%88%A9%E7%94%A8%E5%BC%A0%E9%87%8F%E6%9E%84%E5%BB%BA%E4%B8%80%E4%B8%AA%E7%A5%9E%E7%BB%8F%E5%85%83%E7%9A%84%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B">（2.2.3）</a>，这样来说，我们就可以建立一个简单的神经网络了。</p>
-<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css">
+<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
             <hr/>
@@ -1775,7 +1775,7 @@ output <span class="token operator">=</span> tf<span class="token punctuation">.
             <br>
             
             &nbsp;<i class="fas fa-building"></i>&nbsp;本站总字数:&nbsp;<span
-                class="white-color">55.5k</span>&nbsp;字
+                class="white-color">56.6k</span>&nbsp;字
             
             
             
@@ -2077,6 +2077,12 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+
 
 </html>
