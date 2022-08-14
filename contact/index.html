@@ -420,7 +420,7 @@
       <li>
         <a href="/categories">
           
-          <i class="fas fa-map" style="margin-top: -20px; zoom: 0.6;"></i>
+          <i class="fas fa-balance-scale" style="margin-top: -20px; zoom: 0.6;"></i>
           
           <span>分类</span>
         </a>
@@ -621,7 +621,7 @@
 
                   <a href="/categories " style="margin-left:75px">
 				  
-				   <i class="fa fas fa-map" style="position: absolute;left:50px" ></i>
+				   <i class="fa fas fa-balance-scale" style="position: absolute;left:50px" ></i>
 			      
 		          <span>分类</span>
                   </a>
@@ -785,13 +785,13 @@
 
 <main class="content">
     <div id="contact" class="container chip-container">
-        <div class="card">
+        <!-- <div class="card">
             <div class="card-content">
                 <div class="tag-title center-align">
                     <i class="fas fa-comments"></i>&nbsp;&nbsp;见字如面
                 </div>
 <script>$.get("https://v1.hitokoto.cn?c=i&c=j&c=d&c=h",function(data,status){if(status=='success'){$('#poem').html(data.hitokoto);if(data.from_who!=null){$('#info').html(data.from_who+" · "+"《 "+data.from+" 》");}else{$('#info').html(data.from);}}else{$('#poem').html("获取出错啦");}});</script>
-    <!-- 加入网易云音乐热门评论，实时更新 -->
+    加入网易云音乐热门评论，实时更新
     <div class="poem-wrap">
         <div class="poem-border poem-left">
         </div>
@@ -803,8 +803,74 @@
     </div>
                 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
             </div>
-        </div>
+        </div> -->
+        
         <div class="card">
+
+            <!--动态信封-->
+            <link rel="stylesheet" href="/css/envelope.css"/> 
+                <!--除注释外，其余各处均不用更改-->
+            <div id="computer">
+                <div id="maincontent"><br>
+                    <div id="form-wrap">
+                        
+                        <img src="/medias/envelope/envelope_head.png" id="beforeimg">
+                    <div id="envelope">
+                        <form>
+                        <div class="formmain">
+                            <!--插入自己的名片，比如我的流氓兔图片。注意！图片大小！图片大小！图片大小！-->
+                            <img class="headerimg"
+                            src="/medias/envelope/envelope_bg.jpg" />
+                            <div style="padding: 5px 20px;">
+                            <!--自己的信封说明-->
+                            <center>
+                                <h3 calss="title3">见字如面</h3>
+                            </center>
+                            <center class="comments">
+                                我分娩了一个畸形的我<br>
+                                充满懒惰、胆怯、不自信<br>
+                                我身穿铠甲，手持长剑<br>
+                                与另一个我战斗<br>
+                            </center>
+                            <div class="bottomcontent">
+                                <img class="bottomimg" src="https://ae01.alicdn.com/kf/U0968ee80fd5c4f05a02bdda9709b041eE.png" />
+                            </div>
+                            <p class="bottomhr">永远年轻，永远热泪盈眶</p>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <img id="afterimg" src="/medias/envelope/envelope_foot.png">
+                    </div>
+                </div>
+            </div>
+                  
+            <div id="mobile">
+            <form>
+                <div class="formmain">
+                    <!--插入自己的名片，比如我的流氓兔图片。注意！图片大小！图片大小！图片大小！-->
+                    <img class="headerimg"
+                    src="/medias/envelope/envelope_bg.jpg" />
+                <div style="padding: 5px 20px;">
+                    <!--自己的信封说明-->
+                    <center>
+                    <h3 class="title3"><i class="fas fa-comments fa-fw"></i>&nbsp;&nbsp;见字如面</h3>
+                    </center>
+                    <center class="comments">
+                    我奋笔疾书<br>
+                    刻录内心深处的秘密<br>
+                    </center>
+                    <!-- <div class="bottomcontent">
+                    <img src="https://ae01.alicdn.com/kf/U0968ee80fd5c4f05a02bdda9709b041eE.png" class="bottomhr">
+                    </div> -->
+                    <p class="bottomhr"">永远年轻，永远热泪盈眶</p>
+                </div> 
+                </div>
+            </form>
+            </div>
+                
+                
+             
             
 
             
@@ -1300,7 +1366,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-building"></i>&nbsp;本站总字数:&nbsp;<span
-                class="white-color">56.6k</span>&nbsp;字
+                class="white-color">56.9k</span>&nbsp;字
             
             
             

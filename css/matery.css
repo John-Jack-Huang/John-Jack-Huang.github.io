@@ -2230,7 +2230,8 @@ footer .copy-right {
 /* note语法 开始 */
 span.inline-tag {
     display: inline;
-    padding: 0em .3em .07em;
+    padding: 0em .3em .07em .3em;
+    margin: 2px 2px 2px 2px;
     font-size: 90%;
     font-weight: 500;
     line-height: 1;
@@ -2240,7 +2241,7 @@ span.inline-tag {
     vertical-align: baseline;
     /* border-radius: .1rem ; */
     border-radius: 6px;
-    border:0 px;
+    border:0px;
     background-color: var(--Color)
 }
 

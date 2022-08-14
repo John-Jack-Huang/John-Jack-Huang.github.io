@@ -7,12 +7,12 @@ body{
 /* 增加每日一言模块 */
 .poem-wrap {
     position: relative;
-    width: 730px;
-    max-width: 80%;
+    width: 800px;
+    max-width: 90%;
     border: 2px solid #797979;
     border-top: 0;
     text-align: center;
-    margin: 80px auto;
+    margin: 60px auto;
 }
 .poem-left {
     left: 0;
@@ -30,11 +30,12 @@ body{
     position: relative;
     margin-top: -20px;
     display: inline-block;
-    letter-spacing: 4px;
-    color: #797979;
+    /* letter-spacing: 4px; */
+    color: rgba(38,56,89,1);
+    font-size: 26px;
 }
 .poem-wrap p:nth-of-type(1) {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     margin: 0 auto;
 }
