@@ -2,15 +2,15 @@
     margin: 20px 0;
     padding: 15px;
     border: 1px solid #dadada;
-    background: #fff7f7;
+    background: #e1f4f791;
     position: relative;
     clear: both;
     border-radius: 12px;
     transition:all .6s
 }
 .spoiler:hover {
-    box-shadow: 0 0 3px 3px rgba(255,182,185,1);
-    border:1px solid rgba(255,182,185,1);
+    box-shadow: 0 0 3px 3px #5bd1d7;
+    /* border:1px solid rgba(255,182,185,1); */
 }
 
 .spoiler .spoiler-title {
