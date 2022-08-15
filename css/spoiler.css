@@ -55,9 +55,22 @@
     max-height: 0;
 }
 
-.spoiler.expanded .spoiler-content {
-    max-height: 3000px;
-    overflow: auto;
+
+
+/*大屏幕下(桌面类)的样式*/
+@media only screen and (min-width: 993px) {
+    .spoiler.expanded .spoiler-content {
+        max-height: 560px;
+        overflow: auto;
+    }
+
+}
+/*中等屏幕下(平板类)的样式*/
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+    .spoiler.expanded .spoiler-content {
+        max-height: 600px;
+        overflow: auto;
+    }
 }
 
 /* 宽度小于530px（即手机端）设置最大宽度，且内容可以滑动 */
