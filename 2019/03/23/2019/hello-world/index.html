@@ -1260,7 +1260,7 @@
 
     #vcomments textarea {
         box-sizing: border-box;
-        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+        background: url("/medias/1.gif") 100% 100% no-repeat;
         
     }
 
@@ -1636,7 +1636,15 @@
         box-shadow: 0 0 8px 3px rgba(107,119,141,1);
         
     }
-
+   /* 打字时评论区图片消失 */
+   #vcomments textarea {
+    box-sizing: border-box;
+    background: url(/medias/1.gif) 50% 100% no-repeat;
+}
+    #vcomments textarea:hover{
+    box-sizing: border-box;
+    background: none;
+}
 
     
 </style>
@@ -2094,7 +2102,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-building"></i>&nbsp;本站总字数:&nbsp;<span
-                class="white-color">66.4k</span>&nbsp;字
+                class="white-color">66.9k</span>&nbsp;字
             
             
             
