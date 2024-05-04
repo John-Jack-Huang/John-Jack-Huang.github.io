@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="神经网络之前向传播, 程序;编程;日常;生活;人生;学习">
+    <meta name="keywords" content="新年伊始，万象更新, 程序;编程;日常;生活;人生;学习">
     <meta name="description" content="天行健，君子以自强不息">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>神经网络之前向传播 | 木屋</title>
+    <title>新年伊始，万象更新 | 木屋</title>
 
     <link rel="icon" type="image/jpeg" href="/%5Cmedias%5Clogo%5Clogo.jpg">
 
@@ -158,7 +158,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="神经网络之前向传播, 程序;编程;日常;生活;人生;学习">
+    <meta name="keywords" content="新年伊始，万象更新, 程序;编程;日常;生活;人生;学习">
     <meta name="description" content="天行健，君子以自强不息">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -171,7 +171,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>神经网络之前向传播 | 木屋</title>
+    <title>新年伊始，万象更新 | 木屋</title>
 
     <link rel="icon" type="image/jpeg" href="/%5Cmedias%5Clogo%5Clogo.jpg">
 
@@ -755,12 +755,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/Post_Img/1.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">神经网络之前向传播</h1>
+                    <h1 class="description center-align post-title">新年伊始，万象更新</h1>
                 </div>
             </div>
         </div>
@@ -884,8 +884,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">神经网络</span>
+                            <a href="/tags/Life/">
+                                <span class="chip bg-color">Life</span>
                             </a>
                         
                     </div>
@@ -896,8 +896,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="post-category">
-                                神经网络
+                            <a href="/categories/Life/" class="post-category">
+                                Life
                             </a>
                         
                     </div>
@@ -909,14 +909,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-05-09
+                    2023-01-01
                 </div>
                 
                   
                 <!-- 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-14
+                    2024-05-04
                 </div>
                 -->
 
@@ -929,14 +929,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    530
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    1 分
                 </div>
                 
 
@@ -954,65 +954,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <blockquote>
-<p><code>I love you three thousand times.——《复仇联盟4：终局之战》</code><br><br><code>我想译为：“吻你万千”。</code></p>
-</blockquote>
-<h2 id="Begin"><a href="#Begin" class="headerlink" title="Begin"></a>Begin</h2><h2 id="1-什么是前向传播？"><a href="#1-什么是前向传播？" class="headerlink" title="1.什么是前向传播？"></a>1.什么是前向传播？</h2><p>在介绍前向传播之前，先介绍一下神经网络的实现过程，这样子能更好地理解前向传播的作用。</p>
-<h3 id="1-1神经网络实现过程"><a href="#1-1神经网络实现过程" class="headerlink" title="1.1神经网络实现过程"></a>1.1神经网络实现过程</h3><p>我们先来理解一下神经网络的实现过程：</p>
-<ol>
-<li>准备数据集，提取特征，将特征数据作为输入喂入神经网络（Neural Network）；</li>
-<li>搭建神经网络结构，先搭建计算图，再用会话运行。（<strong>利用前向传播算法——&gt;计算输出</strong>）；</li>
-<li>将大量特征数据喂入神经网络，优化神经网络的参数（即每条边的权重）（<strong>利用反向传播算法，得到使得loss最小的参数，即最优</strong>）；</li>
-<li>固定好参数，使用训练好的模型预测分类。</li>
-</ol>
-<h3 id="1-2前向传播的过程"><a href="#1-2前向传播的过程" class="headerlink" title="1.2前向传播的过程"></a>1.2前向传播的过程</h3><p>根据神经网络的实现过程可知，前向传播在神经网络中占据重要的作用。所以想要先向弄清楚神经网络，那么首先就要了解前向传播算法。<strong>前向传播算法就是给定输入，然后计算每一个神经元的输出，再将该神经元的输出作为下一个神经元的输入，依序进行，最后计算出整个神经网络的输出值</strong>。</p>
-<h3 id="1-3前向传播需要三部分信息"><a href="#1-3前向传播需要三部分信息" class="headerlink" title="1.3前向传播需要三部分信息"></a>1.3前向传播需要三部分信息</h3><h4 id="1-3-1第一部分：神经网络的输入"><a href="#1-3-1第一部分：神经网络的输入" class="headerlink" title="1.3.1第一部分：神经网络的输入"></a>1.3.1第一部分：神经网络的输入</h4><p>输入就是从实体中提取出来的特征向量，比如零件的特征向量可以是长度、重量，人的特征向量可以是身高、体重。</p>
-<h4 id="1-3-2第二部分：神经网络的连接结构"><a href="#1-3-2第二部分：神经网络的连接结构" class="headerlink" title="1.3.2第二部分：神经网络的连接结构"></a>1.3.2第二部分：神经网络的连接结构</h4><p>神经网络是由神经元组成的，神经网络的结构给出不同神经元之间的连接结构。比如全连接神经网络，就是相邻两层之间任意两个神经元之间都有连接。</p>
-<h4 id="1-3-3第三部分：神经元的参数"><a href="#1-3-3第三部分：神经元的参数" class="headerlink" title="1.3.3第三部分：神经元的参数"></a>1.3.3第三部分：神经元的参数</h4><p>如下图，神经元$ a_{11}$的参数有：$W_{1,1}^{(1)}$、$W_{2,1}^{(1)}$、$W_{1,1}^{(2)}$，其中$W_{1,1}^{(1)}$是第一层神经元的参数，表示连接$x_1$、$a_{11}$边上的权重；$W_{1,1}^{(2)}$是第二层神经元的参数，表示连接$a_{11}$、$Y$边上的权重。求解神经网络的过程，其实就是求解边上权重的过程。给定了神经网络的结构和边上的权重，就可以通过前向传播算法来计算这个神经网络的输出了。<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/09/Eg0gmV.png" alt="全连接网络"></p>
-<h2 id="2-前向传播过程实战"><a href="#2-前向传播过程实战" class="headerlink" title="2.前向传播过程实战"></a>2.前向传播过程实战</h2><p>我们利用一个全连接神经网络，来解释一下前向传播算法的过程。<br>依旧是以下面这张图为例子：<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/09/Eg0gmV.png" alt="全连接网络"></p>
-<h3 id="2-1梳理一下前向传播"><a href="#2-1梳理一下前向传播" class="headerlink" title="2.1梳理一下前向传播"></a>2.1梳理一下前向传播</h3><h4 id="2-1-1输入特征数据"><a href="#2-1-1输入特征数据" class="headerlink" title="2.1.1输入特征数据"></a>2.1.1输入特征数据</h4><p>输入的数据为两个特征，即体积和重量。体积：0.7，重量：0.5。</p>
-<h4 id="2-1-2计算隐藏层节点"><a href="#2-1-2计算隐藏层节点" class="headerlink" title="2.1.2计算隐藏层节点"></a>2.1.2计算隐藏层节点</h4><p>隐藏层有3个节点，分别是$a_{11}$、$a_{12}$、$a_{13}$。$a_{11}$的计算过程如下：<br>$a_{11} =x_1w_{1,1}^{(1)}+x_2w_{2,1}^{(1)}= 0.7\times0.2+0.5\times0.3=0.29$</p>
-<p>同理可得：$a_{12}=0.32$、$a_{13}=0.38$。</p>
-<h4 id="2-1-3得到输出层"><a href="#2-1-3得到输出层" class="headerlink" title="2.1.3得到输出层"></a>2.1.3得到输出层</h4><p>最后得到输出层$ y=-0.015$，这便是前向传播的过程。</p>
-<h3 id="2-2网络层推理构建"><a href="#2-2网络层推理构建" class="headerlink" title="2.2网络层推理构建"></a>2.2网络层推理构建</h3><ol>
-<li>第一层：<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/09/E2Fk4A.png" alt="第一层网络"></li>
-<li>第二层：<br><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://s2.ax1x.com/2019/05/09/E2F8Cn.png" alt="第二层网络"></li>
-</ol>
-<h4 id="2-2-1构建第一层："><a href="#2-2-1构建第一层：" class="headerlink" title="2.2.1构建第一层："></a>2.2.1构建第一层：</h4><ul>
-<li>输入为体积和重量，所以输入为一个1行2列的矩阵$X$。如果输入一组数据则是1行2列，如果是N组数据则为N行2列的矩阵。此处暂定输入矩阵$X$为1行2列：$$X=[[0.7,0.5]]$$。</li>
-<li>第一层权重矩阵$W^{（1）}$的构建，因为$W^{（1）}$<strong>前面有2个节点</strong>，<strong>后面有3个节点</strong>，所以$W^{（1）}$矩阵为<strong>2行3列</strong>。<br>$$<br>W^{(1)}= \begin{bmatrix}<br> [w_{1,1}^{(1)} &amp; w_{1,2}^{(1)} &amp; w_{1,3}^{(1)} ]\<br> [w_{2,1}^{(1)}&amp; w_{2,2}^{(1)}&amp;w_{2,3}^{(1)}] \<br> \end{bmatrix}= \begin{bmatrix}<br> [0.2 &amp; 0.1 &amp; 0.4 ]\<br> [0.3&amp; 0.5&amp;0.2] \<br> \end{bmatrix}<br>$$</li>
-<li>输出的$a$节点可以组成的矩阵$A$得到这样的表示：$$A =XW^{（1）}=\begin{bmatrix}<br> [a_{11} &amp; a_{12} &amp; a_{13} ]\<br> \end{bmatrix}=\begin{bmatrix}<br> [0.29 &amp; 0.32 &amp; 0.38 ]\<br> \end{bmatrix}$$因为$X$矩阵为<strong>1行2列</strong>，$W^{(1)}$矩阵为<strong>2行3列</strong>，所以得到的$a$节点的矩阵应该为<strong>1行3列</strong>。这里提醒一下，为什么是<code>[[</code>呢？因为<code>[[</code>表示的是矩阵，而一个<code>[</code>表示的是向量。<h4 id="2-2-2构建第二层："><a href="#2-2-2构建第二层：" class="headerlink" title="2.2.2构建第二层："></a>2.2.2构建第二层：</h4></li>
-<li>输入即为$A$矩阵：$$A =\begin{bmatrix}<br> [a_{11} &amp; a_{12} &amp; a_{13} ]\<br> \end{bmatrix}=\begin{bmatrix}<br> [0.29 &amp; 0.32 &amp; 0.38 ]\<br> \end{bmatrix}$$</li>
-<li>第二层权重矩阵$W^{（2）}$的构建，因为$W^{（2）}$<strong>前面有3个节点，后面有一个节点</strong>，所以$W^{（2）}$是<strong>3行1列</strong>：$$W^{(2)}= \begin{bmatrix}<br> [w_{1,1}^{(2)} ]\<br> [w_{2,1}^{(2)}] \<br>[w_{3,1}^{(2)}] \<br> \end{bmatrix} = \begin{bmatrix}<br> [0.1 ]\<br> [0.1] \<br>[-0.2] \<br> \end{bmatrix}$$</li>
-<li>输出$y$可以用矩阵相乘得到结果：$$ y=AW^{（2）}=0.29\times0.1+0.32\times0.1+0.38\times(-0.2)=-0.015$$,因为矩阵$A$为<strong>1行3列</strong>，矩阵$W^{(2)}$为<strong>3行1列</strong>，所以最后得到的$y$为<strong>1行1列</strong>。</li>
-</ul>
-<h2 id="3-利用TensorFlow构建网络"><a href="#3-利用TensorFlow构建网络" class="headerlink" title="3.利用TensorFlow构建网络"></a>3.利用TensorFlow构建网络</h2><p>根据2的网络层结构推理，我们一层一层地利用TensorFlow来构建网络。</p>
-<h3 id="3-1TensorFlow构建第一层网络"><a href="#3-1TensorFlow构建第一层网络" class="headerlink" title="3.1TensorFlow构建第一层网络"></a>3.1TensorFlow构建第一层网络</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#构建第一层网络</span>
-X <span class="token operator">=</span> tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>float32<span class="token punctuation">,</span>shape<span class="token operator">=</span><span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#定义输入的特征数据，为N行2列。如果喂入1组数据，可将shape=(1,2),这样就是1行2列。</span>
-W1 <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.2</span><span class="token punctuation">,</span><span class="token number">0.1</span><span class="token punctuation">,</span><span class="token number">0.4</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0.3</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">#定义第一层权重矩阵W1，2行3列</span>
-A <span class="token operator">=</span> tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>X<span class="token punctuation">,</span>W1<span class="token punctuation">)</span><span class="token comment">#输出的a节点可以组成的矩阵A，A=X*W1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+                <div class="note info no-icon">丢弃昨天零零碎碎的我，拥抱今日完完整整的自己！</div>
 
-<h3 id="3-2TensorFlow构建第二层网络"><a href="#3-2TensorFlow构建第二层网络" class="headerlink" title="3.2TensorFlow构建第二层网络"></a>3.2TensorFlow构建第二层网络</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#构建第二层网络</span>
-W2 <span class="token operator">=</span> tf<span class="token punctuation">.</span>Variable<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">#定义第二层权重矩阵W1，3行1列</span>
-y <span class="token operator">=</span>tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>A<span class="token punctuation">,</span>W2<span class="token punctuation">)</span><span class="token comment">#矩阵相乘，得到输出y</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="3-3用会话计算结果"><a href="#3-3用会话计算结果" class="headerlink" title="3.3用会话计算结果"></a>3.3用会话计算结果</h3><p>会话计算每个节点前，记得要先初始化所有变量：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">init_op <span class="token operator">=</span> tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>init_op<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>会话计算结果：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">with</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> sess<span class="token punctuation">:</span>
-    init_op <span class="token operator">=</span> tf<span class="token punctuation">.</span>global_variables_initializer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#初始化所有变量</span>
-    sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>init_op<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>y<span class="token punctuation">,</span> feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>X<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.7</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#喂入的1组特征数据：[[0.7, 0.5]]，计算结果y</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>  sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>y<span class="token punctuation">,</span> feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>X<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0.7</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0.8</span><span class="token punctuation">,</span><span class="token number">0.6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0.7</span><span class="token punctuation">,</span><span class="token number">0.4</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token comment">#喂入的3组特征数据：[[0.7,0.5],[0.8,0.6],[0.7,0.4]]，计算结果y</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>喂入的1组特征数据：<code>[[0.7, 0.5]]</code>，输出结果$y$:<br>\begin{bmatrix}<br>[0.02300001]\<br>\end{bmatrix}</li>
-<li>喂入的3组特征数据：<code>[[0.7,0.5],[0.8,0.6],[0.7,0.4]]</code><br>输出结果$y$:\begin{bmatrix}<br>[0.02300001]\<br>[0.02800001]\<br>[0.017     ]<br> \end{bmatrix}</li>
-</ul>
-<h2 id="End"><a href="#End" class="headerlink" title="End"></a>End</h2><p>一个全连接的神经网络前向传播算法就介绍完毕了，因为我们预先给定了各个边的权重$w$,所以这个前向传播实则就是数学运算，矩阵相乘，最后得到网络的输出结果。<br>而实际当中，我们是不知道各个边的权重$w$是多少的，所以我们就要利用手中的数据，通过<strong>反向传播算法</strong>来算出这个神经网络中各个边最优的权重$w$,那如何判定是最优呢？这就扯到损失函数了，下面我会讲到的。</p>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><ul>
-<li>《TensorFlow实战Google深度学习框架》</li>
-<li>《人工智能实践：TensorFlow笔记》</li>
-</ul>
+<p>2022年终于过去了，去年这一年来泪水、汗水、痛苦、欢喜，各种情绪交杂而来，晦气的1月至7月，柳暗花明的8月-9月，全面欢喜的10月-12月。去年这一年的心路历程坎坷至极，不过幸好努力换来了回报。<br>2022年的最后一天，给自己准备了烤肉跨年，自己一个人一瓶啤酒，慢慢悠悠喝到了十点多，时间缓缓流逝，烤肉的香味融入这麦汁啤酒中，一口吞入心头，所有的悲伤与难过，都随着2022年最后的钟声成为我的青春记忆。<br><a target="_blank" rel="noopener" href="https://imgloc.com/i/nM03U"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.328888.xyz/2023/01/01/nM03U.md.jpeg" alt="2022跨年烤肉"></a><br>然后再打游戏，在晚上十点多的时候，段位终于打上了最强王者，玩了王者荣耀这个游戏三年了，第一次上最强王者。我以前一直认为，能力强且优秀的人，都是可以上最强王者的，三年来一直上不了，现在终于证明我也是能力强且优秀的人了！<br><a target="_blank" rel="noopener" href="https://imgloc.com/i/nMC5v"><img src="https://cdn.jsdelivr.net/gh/shw2018/cdn@1.0/sakura/img/loader/orange.progress-bar-stripe-loader.svg" data-original="https://i.328888.xyz/2023/01/01/nMC5v.md.jpeg" alt="2022最后一天冲上王者"></a><br>2022年在烤肉与游戏当中结束了，我很满意这个结局。有朋友叫我去海丝首港看烟花，但是我还是想在家度过跨年，所以拒绝了。<br><span class="inline-tag purple">一直都认为：</span> 孤独是人生的常态，自己一个人也可以享受生活。<br>2023年的第一天 ，早起看央视的直播天安门升旗仪式，自己也站起来行注目礼。之后写今年的第一篇日记，更新这个网站内容，给大妈打了庆祝新年的电话，煮了热水吃了面包，iPad播放着毛不易的歌曲《无名的人》。<br>歌曲音符环绕，日光倾泻而下，暖意盎然升起，指尖在键盘上敲击下此刻，目光在屏幕中注视着未来，新一年的生活随着第一缕阳光在慢慢开始。</p>
+<div class="admonition info"><p class="admonition-title">2023，你好！ 
+</p><blockquote>
+<p>走好每一步路，干好每一件事。祝愿自己乘风破浪，一往无前！</p>
+</blockquote>
+</div>
+
 <script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
@@ -1029,7 +979,7 @@ y <span class="token operator">=</span>tf<span class="token punctuation">.</span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">John_Jack</a>
+                    <a href="/about" rel="external nofollow noreferrer">JacksonHuang</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -1039,7 +989,7 @@ y <span class="token operator">=</span>tf<span class="token punctuation">.</span
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://huang-junjia.gitee.io/2019/05/09/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-qian-xiang-chuan-bo/">https://huang-junjia.gitee.io/2019/05/09/2019/05/shen-jing-wang-luo/shen-jing-wang-luo-zhi-qian-xiang-chuan-bo/</a>
+                    <a href="https://huang-junjia.gitee.io/2023/01/01/20240504-wu-si-qing-nian-xiang-yang-er-sheng/">https://huang-junjia.gitee.io/2023/01/01/20240504-wu-si-qing-nian-xiang-yang-er-sheng/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1052,7 +1002,7 @@ y <span class="token operator">=</span>tf<span class="token punctuation">.</span
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">John_Jack</a>
+                    <a href="/about" target="_blank">JacksonHuang</a>
                     !
                 </span>
             </div>
@@ -1077,8 +1027,8 @@ y <span class="token operator">=</span>tf<span class="token punctuation">.</span
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">神经网络</span>
+                                <a href="/tags/Life/">
+                                    <span class="chip bg-color">Life</span>
                                 </a>
                             
                         </div>
@@ -1236,118 +1186,505 @@ y <span class="token operator">=</span>tf<span class="token punctuation">.</span
     </div>
   <!--是否开启评论-->
     
-        <div class="card">
-            <div class="card-content">
-                <div class="music-player">
-                    <!-- 
-                        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
+
         
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
+
+        
+
+        
+
+        
+
+        
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+        
+        background-color: #ffffff;
     }
 
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
         
-        font-size: 15px;
-        color: #bbded6;
     }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/1.gif") 100% 100% no-repeat;
+        
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+        
+
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+        
+        background-color: #fa1414;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #96ceb4;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+    
+
+    #vcomments ol li {
+        list-style-type: decimal;
+        
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+        
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+        
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+        
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+        
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #c50d66;
+        
+    }
+
+    #vcomments table, th, td {
+        
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #f07810;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+        
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+        
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+        
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+        
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+        
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+        
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #282222;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+        
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+        
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+        
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+        
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+        
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #c50d66;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    .v[data-class="v"] .vwrap .vheader .vinput {
+      width: 32%;
+      border-bottom: 1px dashed #dedede;
+    }
+
+    /* 鼠标放置头像旋转  1s  开始*/
+    img.vimg {
+     transition: all 0.5s   /* 旋转时间为 1s */
+    }
+    img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+    }
+/* 鼠标放置头像旋转  1s  结束*/
+    /* 评论卡片式背景 开始 */
+    #vcomments .vcards .vcard {
+        padding: 15px 5px 0 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 0 4px 1px rgb(165, 165, 221);
+        /* transition: all .1s */
+    }
+    #vcomments .vcards .vcard:hover {
+        box-shadow: 0 0 8px 3px rgba(107,119,141,1);
+    }
+    #vcomments .vcards .vcard .vh .vcard {
+        border: none;
+        box-shadow: none;
+        
+    }
+    /* 评论卡片式背景 结束 */
+
+    /* “回复”两字的颜色 */
+    .v[data-class=v] .vcards .vcard .vh .vmeta .vat {
+        font-size: .8125em;
+        color: #ea7070;
+        cursor: pointer;
+        float: right;
+    }
+    /* “回复”两字外框控制 */
+    span.vat {
+        /* font-size: .8125em;
+        color: #fdc4b6;
+        cursor: pointer;
+        float: right; */
+        padding: 1px 3px;
+        box-shadow: 0 0 4px 1px rgb(0 0 0 / 12%);
+        /* border:1px solid rgba(255,182,185,1); */
+        margin-right: 5px;
+        /* transition: all .3s; */
+        border-radius: 10px;
+        transform: translateX(0px) translateY(-23px);
+    }
+    /* 鼠标悬停在“回复”出现阴影效果 */
+    span.vat:hover {
+        box-shadow: 0 0 3px 3px rgba(255,182,185,1);
+        border:1px solid rgba(255,182,185,1);
+    }
+    /*时间的颜色 */
+    .v[data-class=v] .vsys, .v[data-class=v] .vtime {
+        color: rgba(255,182,185,1);
+    }   
+    /* “博主”两字的颜色 */
+    .vtag.vmaster {
+        background: rgb(255 87 34 / 75%);
+    }
+    /* 头像外框颜色 */
+    .v[data-class=v] .vcards .vcard .vimg {
+        width: 3.125em;
+        height: 3.125em;
+        float: left;
+        border-radius: 50%;
+        margin-right: 0.7525em;
+        border: 1px solid rgb(187 222 214);
+        padding: 0.125em;
+    }
+    /* Valine 评论框外颜色 */
+    .v[data-class=v] .vwrap {
+        border: 1px solid #d9d9f3;
+        box-shadow: 0 0 4px 1px #e0e0e0;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        position: relative;
+        padding: 10px;
+    }
+    /* 评论框内样式 */
+    .v[data-class=v] .vinput {
+        border: 0px;
+        resize: none;
+        outline: none;
+        padding: 0px 0px;
+        max-width: 100%;
+        font-size: 15px;
+        box-shadow: 0 0 8px 1px rgb(0 0 0 / 10%);
+        border-radius: 10px;
+        text-align: center;
+    }
+    /* 评论权限提示样式 */
+    .v[data-class=v] .txt-center {
+    text-align: center;
+    box-shadow: 0 0 4px 1px rgba(202,62,71,1);
+    border-radius: 10px;
+    color: #f44336;
+    font-size: 16px;
+    }
+    /* 二级回复框竖线颜色 */
+    .v[data-class=v] .vcards .vcard .vquote {
+        padding-left: 1em;
+        border-left: 1px dashed #78fee0;
+    }
+    /* 二级回复框调整 */
+    #vcomments .vcards .vcard .vh .vcard {
+        /* border: 1px rgb(255 87 34 / 75%); */
+        box-shadow: rgb(0 0 0 / 10%);
+        box-shadow: 0 0 4px 1px #42b9836e;
+        width: 99%;
+    }
+    #vcomments .vcards .vcard .vh .vcard:hover {
+        box-shadow: 0 0 8px 3px rgba(107,119,141,1);
+        
+    }
+   /* 打字时评论区图片消失 */
+   #vcomments textarea {
+    box-sizing: border-box;
+    background: url(/medias/1.gif) 100% 100% no-repeat;
+}
+    #vcomments textarea:hover{
+    box-sizing: border-box;
+    background: none;
+}
 
     
 </style>
-<div class="music-player">
-    
-        <div class="title center-align">
-            <i class="fas fa-headphones"></i>&nbsp;&nbsp;听听音乐
-        </div>
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="567496715"
-                   fixed='false'
-                   autoplay='true'
-                   theme='#bbded6'
-                   loop='all'
-                   order='list'
-                   preload='auto'
-                   volume='0.7'
-                   listMaxHeight='525px'
-                   list-folded='false'
-        >
-        </meting-js>
+
+
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;" align="center">
+        <i class="fas  fa-pen-alt"  aria-hidden="true"></i>
+        <span>记录此刻</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
     </div>
 </div>
 
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+//这里要换行
+new Valine({
+        el: '#vcomments',
+        appId: 'Fr7I9pz4LaNMSvS0VxTfoW2J-gzGzoHsz',
+        appKey: 'nxop2oBGIyfJMGzpgroYJguv',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-CN',
+        placeholder: '万人都要将火熄灭，我一人独自将此火高高举起',
+        meta: ["nick", "mail", "link"],
+        recordIP: 'true' === 'true',
+        enableQQ: 'monsterid',
+        requiredFields: ["730201520a0afb2f8ca537f756182598"],
+        master: ["730201520a0afb2f8ca537f756182598"],
+        friends: ["1e8c540097650cd8a200e68b7e5c40cc", "1E8C540097650CD8A200E68B7E5C40CC"],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
 
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
- -->
- 
-                        <!-- <div  align="center" text-weight="800">
-                            <span class="inline-tag orange">注意</span>本文未开启评论区！
-                        </div> -->
+    });
 
-                        <div class='tip warning' align="center"><p>本文评论未开启！<p></div>
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            console.log(email);
+            const nick = document.querySelector('input[name=nick]');
+            // 注销以下注释仍有作用
+            // const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            // if (!email.value || !nick.value || !reg.test(email.value)) {
+            //     const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+            //     const vmark = document.querySelector('.vmark');
+            //     vmark.innerHTML = str;
+            //     vmark.style.display = 'block';
 
-                        <style>
-                        .bubbles > .particle {
-                            /*初始透明度为0*/
-                            opacity: 0;
-                            position: absolute;
-                            /*初始颜色为荧光色，透明度为0.7*/
-                            background-color: rgba(8,255,200,1);
-                            /*使用bubbles动画，持续时间18秒，缓慢进入，无限循环*/
-                            animation: bubbles 18s ease-in infinite;
-                            border-radius: 100%;
-                        }
-                        /*css keyframes 动画*/
-                        @keyframes bubbles {
-                            0% {
-                                opacity: 0;
-                            }
-                            5% {
-                                opacity: 1;
-                                transform: translate(0, -20%);
-                            }
-                            /*这里-8000%表示是气泡的8000%*/
-                            100% {
-                                opacity: 0;
-                                transform: translate(0, -6000%);
-                            }
-                        }
-                        </style>
-                        <!-- 这里让元素宽度100%（和页面等宽） -->
-                        <div style="width: 100%; height: 100%; position: relative; bottom: 0px;" class="particletext bubbles">
-                        </div>
-                        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-                        <script>
-                          function bubbles() {
-                             $.each($(".particletext.bubbles"), function(){
-                                var bubblecount = ($(this).width()/50)*10;
-                                for(var i = 0; i <= bubblecount; i++) {
-                                   var size = ($.rnd(40,80)/10);
-                                   //这里的animation-delay很重要，关系到你的特效是否看上去是连续无断层的，上一步中css是18秒，所以这一步中延迟时间就设置成$.rnd(0,180)/10)
-                                   $(this).append('<span class="particle" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,180)/10) + 's;"></span>');
-                                }
-                             });
-                          }
-                          jQuery.rnd = function(m,n) {
-                              m = parseInt(m);
-                              n = parseInt(n);
-                              return Math.floor( Math.random() * (n - m + 1) ) + m;
-                          }
-                          bubbles();
-                        </script>
-                        
-                    
-                </div>
-            </div>
-        </div>
+            //     e.stopPropagation();
 
+            //     setTimeout(function() {
+            //         vmark.style.display = 'none';
+            //         vmark.innerHTML = '';
+            //     }, 2500);
+            // }
+
+            // 设置为仅博主和小伙伴可以评论
+            const myEmail_1 = "1769627803@qq.com";// 博主邮箱
+            const myEmail_2 = "2470776614@qq.com";// 小伙伴邮箱
+            if (!(email.value == myEmail_1||email.value ==myEmail_2)) {
+                const str = `<div class="valert txt-center"><div class="vtext">抱歉，您暂时无权限发表！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+
+                e.stopPropagation();
+
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 5000);
+            }
+        }
+        }, true);
+</script>
+
+
+
+        
+
+        
+
+        
     
     
      <!--上一篇 下一篇-->
@@ -1356,46 +1693,47 @@ y <span class="token operator">=</span>tf<span class="token punctuation">.</span
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/05/11/2019/05/tensorflow/tensorflow-zhi-chu-jian-duan-ni/">
+                <a href="/2023/01/01/20240504-wu-si-qing-nian-xiang-yang-er-sheng/">
                     <div class="card-image">
                         
+                        <img src="/medias/Post_Img/1.jpg" class="responsive-img" alt="新年伊始，万象更新">
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="TensorFlow之初见端倪">
-                        
-                        <span class="card-title">TensorFlow之初见端倪</span>
+                        <span class="card-title">新年伊始，万象更新</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            .
+                            2023，你好！
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-05-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/TensorFlow/" class="post-category">
-                                    TensorFlow
+                            <a href="/categories/Life/" class="post-category">
+                                    Life
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TensorFlow/">
-                        <span class="chip bg-color">TensorFlow</span>
+                    <a href="/tags/Life/">
+                        <span class="chip bg-color">Life</span>
                     </a>
                     
                 </div>
@@ -1409,24 +1747,23 @@ y <span class="token operator">=</span>tf<span class="token punctuation">.</span
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/04/26/2019/04/2019-04-26-zhong-qi-da-bian/">
+                <a href="/2023/01/01/2023/20230101-xin-nian-yi-shi-wan-xiang-geng-xin/">
                     <div class="card-image">
                         
+                        <img src="/medias/Post_Img/1.jpg" class="responsive-img" alt="新年伊始，万象更新">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="第一篇正经的日常">
-                        
-                        <span class="card-title">第一篇正经的日常</span>
+                        <span class="card-title">新年伊始，万象更新</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            .
+                            2023，你好！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-04-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-01
                             </span>
                         <span class="publish-author">
                             
@@ -1694,13 +2031,6 @@ y <span class="token operator">=</span>tf<span class="token punctuation">.</span
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
