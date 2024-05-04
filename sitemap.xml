@@ -373,13 +373,6 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/categories/index.html</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://huang-junjia.gitee.io/about/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
@@ -388,6 +381,13 @@
   
   <url>
     <loc>https://huang-junjia.gitee.io/archives/index.html</loc>
+    
+    <lastmod>2021-06-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huang-junjia.gitee.io/categories/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -408,13 +408,6 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/tags/index.html</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://huang-junjia.gitee.io/resource/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
@@ -422,14 +415,14 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/galleries/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/tags/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/tools/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/List/galleries/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -450,7 +443,7 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/galleries/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%A3%8E/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/List/tools/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -464,7 +457,7 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/galleries/%E5%8A%A8%E6%BC%AB%E9%A3%8E%E6%99%AF/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/List/galleries/%E4%BA%8C%E6%AC%A1%E5%85%83%E9%A3%8E/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -478,13 +471,6 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/galleries/%E6%B8%85%E6%96%B0%E8%8A%B1%E5%8D%89/index.html</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://huang-junjia.gitee.io/List/galleries/%E5%8A%A8%E6%BC%AB%E6%8F%92%E7%94%BB/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
@@ -492,7 +478,7 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/galleries/%E7%82%AB%E9%85%B7%E8%B7%91%E8%BD%A6/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/List/galleries/%E5%8A%A8%E6%BC%AB%E9%A3%8E%E6%99%AF/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -506,6 +492,13 @@
   </url>
   
   <url>
+    <loc>https://huang-junjia.gitee.io/List/galleries/%E6%B8%85%E6%96%B0%E8%8A%B1%E5%8D%89/index.html</loc>
+    
+    <lastmod>2021-06-12</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://huang-junjia.gitee.io/List/galleries/%E5%9F%8E%E5%B8%82%E9%A3%8E%E5%85%89/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
@@ -513,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/galleries/%E8%87%AA%E7%84%B6%E9%A3%8E%E6%99%AF/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/List/galleries/%E7%82%AB%E9%85%B7%E8%B7%91%E8%BD%A6/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -528,6 +521,13 @@
   
   <url>
     <loc>https://huang-junjia.gitee.io/List/galleries/%E7%94%9C%E7%BE%8E%E9%A3%9F%E5%93%81/index.html</loc>
+    
+    <lastmod>2021-06-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huang-junjia.gitee.io/List/galleries/%E8%87%AA%E7%84%B6%E9%A3%8E%E6%99%AF/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -578,14 +578,14 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://huang-junjia.gitee.io/tags/TensorFlow/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/tags/TensorFlow/</loc>
+    <loc>https://huang-junjia.gitee.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -636,14 +636,14 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://huang-junjia.gitee.io/categories/TensorFlow/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/categories/TensorFlow/</loc>
+    <loc>https://huang-junjia.gitee.io/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
