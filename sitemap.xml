@@ -373,13 +373,6 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/about/index.html</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://huang-junjia.gitee.io/archives/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
@@ -387,7 +380,7 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/categories/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/about/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -422,6 +415,20 @@
   </url>
   
   <url>
+    <loc>https://huang-junjia.gitee.io/categories/index.html</loc>
+    
+    <lastmod>2021-06-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://huang-junjia.gitee.io/List/movies/index.html</loc>
+    
+    <lastmod>2021-06-12</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://huang-junjia.gitee.io/List/galleries/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
@@ -444,13 +451,6 @@
   
   <url>
     <loc>https://huang-junjia.gitee.io/List/galleries/%E4%B9%96%E5%B7%A7%E5%B0%8F%E7%8B%97/index.html</loc>
-    
-    <lastmod>2021-06-12</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://huang-junjia.gitee.io/List/movies/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -485,14 +485,14 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/galleries/%E5%91%86%E8%90%8C%E7%8C%AB%E5%92%AA/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/List/galleries/%E5%9F%8E%E5%B8%82%E9%A3%8E%E5%85%89/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/List/galleries/%E5%9F%8E%E5%B8%82%E9%A3%8E%E5%85%89/index.html</loc>
+    <loc>https://huang-junjia.gitee.io/List/galleries/%E5%91%86%E8%90%8C%E7%8C%AB%E5%92%AA/index.html</loc>
     
     <lastmod>2021-06-12</lastmod>
     
@@ -543,14 +543,14 @@
 
   
   <url>
-    <loc>https://huang-junjia.gitee.io/tags/Life/</loc>
+    <loc>https://huang-junjia.gitee.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://huang-junjia.gitee.io/tags/Life/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -585,14 +585,14 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://huang-junjia.gitee.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/tags/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://huang-junjia.gitee.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -601,14 +601,14 @@
 
   
   <url>
-    <loc>https://huang-junjia.gitee.io/categories/Life/</loc>
+    <loc>https://huang-junjia.gitee.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://huang-junjia.gitee.io/categories/Life/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -643,14 +643,14 @@
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
+    <loc>https://huang-junjia.gitee.io/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://huang-junjia.gitee.io/categories/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/</loc>
+    <loc>https://huang-junjia.gitee.io/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/</loc>
     <lastmod>2024-05-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
