@@ -916,7 +916,7 @@
                 <!-- 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-13
+                    2025-11-16
                 </div>
                 -->
 
@@ -1200,118 +1200,505 @@
     </div>
   <!--是否开启评论-->
     
-        <div class="card">
-            <div class="card-content">
-                <div class="music-player">
-                    <!-- 
-                        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
+
         
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
+
+        
+
+        
+
+        
+
+        
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+        
+        background-color: #ffffff;
     }
 
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
         
-        font-size: 15px;
-        color: #bbded6;
     }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/1.gif") 100% 100% no-repeat;
+        
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+        
+
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+        
+        background-color: #fa1414;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #96ceb4;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+    
+
+    #vcomments ol li {
+        list-style-type: decimal;
+        
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+        
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+        
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+        
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+        
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #c50d66;
+        
+    }
+
+    #vcomments table, th, td {
+        
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #f07810;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+        
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+        
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+        
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+        
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+        
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+        
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #282222;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+        
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+        
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+        
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+        
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+        
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #c50d66;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    .v[data-class="v"] .vwrap .vheader .vinput {
+      width: 32%;
+      border-bottom: 1px dashed #dedede;
+    }
+
+    /* 鼠标放置头像旋转  1s  开始*/
+    img.vimg {
+     transition: all 0.5s   /* 旋转时间为 1s */
+    }
+    img.vimg:hover {
+     transform: rotate(360deg);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+    }
+/* 鼠标放置头像旋转  1s  结束*/
+    /* 评论卡片式背景 开始 */
+    #vcomments .vcards .vcard {
+        padding: 15px 5px 0 20px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        box-shadow: 0 0 4px 1px rgb(165, 165, 221);
+        /* transition: all .1s */
+    }
+    #vcomments .vcards .vcard:hover {
+        box-shadow: 0 0 8px 3px rgba(107,119,141,1);
+    }
+    #vcomments .vcards .vcard .vh .vcard {
+        border: none;
+        box-shadow: none;
+        
+    }
+    /* 评论卡片式背景 结束 */
+
+    /* “回复”两字的颜色 */
+    .v[data-class=v] .vcards .vcard .vh .vmeta .vat {
+        font-size: .8125em;
+        color: #ea7070;
+        cursor: pointer;
+        float: right;
+    }
+    /* “回复”两字外框控制 */
+    span.vat {
+        /* font-size: .8125em;
+        color: #fdc4b6;
+        cursor: pointer;
+        float: right; */
+        padding: 1px 3px;
+        box-shadow: 0 0 4px 1px rgb(0 0 0 / 12%);
+        /* border:1px solid rgba(255,182,185,1); */
+        margin-right: 5px;
+        /* transition: all .3s; */
+        border-radius: 10px;
+        transform: translateX(0px) translateY(-23px);
+    }
+    /* 鼠标悬停在“回复”出现阴影效果 */
+    span.vat:hover {
+        box-shadow: 0 0 3px 3px rgba(255,182,185,1);
+        border:1px solid rgba(255,182,185,1);
+    }
+    /*时间的颜色 */
+    .v[data-class=v] .vsys, .v[data-class=v] .vtime {
+        color: rgba(255,182,185,1);
+    }   
+    /* “博主”两字的颜色 */
+    .vtag.vmaster {
+        background: rgb(255 87 34 / 75%);
+    }
+    /* 头像外框颜色 */
+    .v[data-class=v] .vcards .vcard .vimg {
+        width: 3.125em;
+        height: 3.125em;
+        float: left;
+        border-radius: 50%;
+        margin-right: 0.7525em;
+        border: 1px solid rgb(187 222 214);
+        padding: 0.125em;
+    }
+    /* Valine 评论框外颜色 */
+    .v[data-class=v] .vwrap {
+        border: 1px solid #d9d9f3;
+        box-shadow: 0 0 4px 1px #e0e0e0;
+        border-radius: 6px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        position: relative;
+        padding: 10px;
+    }
+    /* 评论框内样式 */
+    .v[data-class=v] .vinput {
+        border: 0px;
+        resize: none;
+        outline: none;
+        padding: 0px 0px;
+        max-width: 100%;
+        font-size: 15px;
+        box-shadow: 0 0 8px 1px rgb(0 0 0 / 10%);
+        border-radius: 10px;
+        text-align: center;
+    }
+    /* 评论权限提示样式 */
+    .v[data-class=v] .txt-center {
+    text-align: center;
+    box-shadow: 0 0 4px 1px rgba(202,62,71,1);
+    border-radius: 10px;
+    color: #f44336;
+    font-size: 16px;
+    }
+    /* 二级回复框竖线颜色 */
+    .v[data-class=v] .vcards .vcard .vquote {
+        padding-left: 1em;
+        border-left: 1px dashed #78fee0;
+    }
+    /* 二级回复框调整 */
+    #vcomments .vcards .vcard .vh .vcard {
+        /* border: 1px rgb(255 87 34 / 75%); */
+        box-shadow: rgb(0 0 0 / 10%);
+        box-shadow: 0 0 4px 1px #42b9836e;
+        width: 99%;
+    }
+    #vcomments .vcards .vcard .vh .vcard:hover {
+        box-shadow: 0 0 8px 3px rgba(107,119,141,1);
+        
+    }
+   /* 打字时评论区图片消失 */
+   #vcomments textarea {
+    box-sizing: border-box;
+    background: url(/medias/1.gif) 100% 100% no-repeat;
+}
+    #vcomments textarea:hover{
+    box-sizing: border-box;
+    background: none;
+}
 
     
 </style>
-<div class="music-player">
-    
-        <div class="title center-align">
-            <i class="fas fa-headphones"></i>&nbsp;&nbsp;听听音乐
-        </div>
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="567496715"
-                   fixed='false'
-                   autoplay='true'
-                   theme='#bbded6'
-                   loop='all'
-                   order='list'
-                   preload='auto'
-                   volume='0.7'
-                   listMaxHeight='525px'
-                   list-folded='false'
-        >
-        </meting-js>
+
+
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;" align="center">
+        <i class="fas  fa-pen-alt"  aria-hidden="true"></i>
+        <span>记录此刻</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
     </div>
 </div>
 
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+let metaPlaceholder = {"nick":"昵称/QQ号(必填)","mail":"邮箱(必填)","link":"网址(https://)"} ;
+//这里要换行
+new Valine({
+        el: '#vcomments',
+        appId: 'Fr7I9pz4LaNMSvS0VxTfoW2J-gzGzoHsz',
+        appKey: 'nxop2oBGIyfJMGzpgroYJguv',
+        notify: 'true' === 'true',
+        verify: 'true' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'monsterid',
+        pageSize: '10',
+        lang: 'zh-CN',
+        placeholder: '万人都要将火熄灭，我一人独自将此火高高举起',
+        meta: ["nick", "mail", "link"],
+        recordIP: 'true' === 'true',
+        enableQQ: 'monsterid',
+        requiredFields: ["730201520a0afb2f8ca537f756182598"],
+        master: ["730201520a0afb2f8ca537f756182598"],
+        friends: ["1e8c540097650cd8a200e68b7e5c40cc", "1E8C540097650CD8A200E68B7E5C40CC"],
+        tagMeta: ["博主", "小伙伴", "访客"],
+        metaPlaceholder: metaPlaceholder,
 
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
- -->
- 
-                        <!-- <div  align="center" text-weight="800">
-                            <span class="inline-tag orange">注意</span>本文未开启评论区！
-                        </div> -->
+    });
 
-                        <div class='tip warning' align="center"><p>本文评论未开启！<p></div>
+    document.body.addEventListener('click', function(e) {
+        if (e.target.classList.contains('vsubmit')) {
+            const email = document.querySelector('input[type=email]');
+            console.log(email);
+            const nick = document.querySelector('input[name=nick]');
+            // 注销以下注释仍有作用
+            // const reg = /^[A-Za-z0-9_-\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+            // if (!email.value || !nick.value || !reg.test(email.value)) {
+            //     const str = `<div class="valert txt-center"><div class="vtext">请填写正确的昵称和邮箱！</div></div>`;
+            //     const vmark = document.querySelector('.vmark');
+            //     vmark.innerHTML = str;
+            //     vmark.style.display = 'block';
 
-                        <style>
-                        .bubbles > .particle {
-                            /*初始透明度为0*/
-                            opacity: 0;
-                            position: absolute;
-                            /*初始颜色为荧光色，透明度为0.7*/
-                            background-color: rgba(8,255,200,1);
-                            /*使用bubbles动画，持续时间18秒，缓慢进入，无限循环*/
-                            animation: bubbles 18s ease-in infinite;
-                            border-radius: 100%;
-                        }
-                        /*css keyframes 动画*/
-                        @keyframes bubbles {
-                            0% {
-                                opacity: 0;
-                            }
-                            5% {
-                                opacity: 1;
-                                transform: translate(0, -20%);
-                            }
-                            /*这里-8000%表示是气泡的8000%*/
-                            100% {
-                                opacity: 0;
-                                transform: translate(0, -6000%);
-                            }
-                        }
-                        </style>
-                        <!-- 这里让元素宽度100%（和页面等宽） -->
-                        <div style="width: 100%; height: 100%; position: relative; bottom: 0px;" class="particletext bubbles">
-                        </div>
-                        <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-                        <script>
-                          function bubbles() {
-                             $.each($(".particletext.bubbles"), function(){
-                                var bubblecount = ($(this).width()/50)*10;
-                                for(var i = 0; i <= bubblecount; i++) {
-                                   var size = ($.rnd(40,80)/10);
-                                   //这里的animation-delay很重要，关系到你的特效是否看上去是连续无断层的，上一步中css是18秒，所以这一步中延迟时间就设置成$.rnd(0,180)/10)
-                                   $(this).append('<span class="particle" style="top:' + $.rnd(20,80) + '%; left:' + $.rnd(0,95) + '%;width:' + size + 'px; height:' + size + 'px;animation-delay: ' + ($.rnd(0,180)/10) + 's;"></span>');
-                                }
-                             });
-                          }
-                          jQuery.rnd = function(m,n) {
-                              m = parseInt(m);
-                              n = parseInt(n);
-                              return Math.floor( Math.random() * (n - m + 1) ) + m;
-                          }
-                          bubbles();
-                        </script>
-                        
-                    
-                </div>
-            </div>
-        </div>
+            //     e.stopPropagation();
 
+            //     setTimeout(function() {
+            //         vmark.style.display = 'none';
+            //         vmark.innerHTML = '';
+            //     }, 2500);
+            // }
+
+            // 设置为仅博主和小伙伴可以评论
+            const myEmail_1 = "1769627803@qq.com";// 博主邮箱
+            const myEmail_2 = "2470776614@qq.com";// 小伙伴邮箱
+            if (!(email.value == myEmail_1||email.value ==myEmail_2)) {
+                const str = `<div class="valert txt-center"><div class="vtext">抱歉，您暂时无权限发表！</div></div>`;
+                const vmark = document.querySelector('.vmark');
+                vmark.innerHTML = str;
+                vmark.style.display = 'block';
+
+                e.stopPropagation();
+
+                setTimeout(function() {
+                    vmark.style.display = 'none';
+                    vmark.innerHTML = '';
+                }, 5000);
+            }
+        }
+        }, true);
+</script>
+
+
+
+        
+
+        
+
+        
     
     
      <!--上一篇 下一篇-->
@@ -1677,7 +2064,7 @@
             <br>
             
             &nbsp;<i class="fas fa-building"></i>&nbsp;本站总字数:&nbsp;<span
-                class="white-color">72.2k</span>&nbsp;字
+                class="white-color">72.8k</span>&nbsp;字
             
             
             
