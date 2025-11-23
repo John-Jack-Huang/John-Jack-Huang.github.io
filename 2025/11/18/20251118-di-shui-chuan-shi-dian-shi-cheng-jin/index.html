@@ -671,10 +671,112 @@
 
 
 
-<main class="container content">
+<main class="post-container content">
 
     
-    <!-- 文章内容详情 -->
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        background-color: white;
+        width: 265px;
+        padding-left: 0px;
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+    
+    #toc-content {
+        height: calc(100vh - 300px);
+        overflow: auto;
+        padding:0px 1px 30px 0px;
+    
+    }
+
+    #toc-content ol {
+        padding-left: 5px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: rgba(49,185,110,1);
+        font-weight:bold;
+        /* text-decoration: underline; 下划线 */
+        font-size: 17px;  
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: rgb(36, 167, 214);
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+
+
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -715,7 +817,7 @@
                 <!-- 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2025-11-19
+                    2025-11-23
                 </div>
                 -->
 
@@ -725,7 +827,7 @@
                     <div class="post-date info-break-policy">
                         
                         <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                        2025-11-19
+                        2025-11-23
                         
                     </div>
                     
@@ -737,7 +839,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    26
+                    513
                 </div>
                 
 
@@ -764,10 +866,44 @@
             <div id="articleContent">
                 <div class="note primary no-icon"> 特开设本版块，记录学习点滴。 </div> 
 
-<p><a target="_blank" rel="noopener" href="https://john-jack-huang.github.io/2020/11/28/20201128-shen-lun-ji-jin/" class="LinkCard">语句背诵</a></p>
+<h3 id="关于申论"><a href="#关于申论" class="headerlink" title="关于申论"></a>关于申论</h3><p>要跟着视频多做多练，比如今天（2025.11.13）听袁东老师的大作文写法，就很有启发，原来我之前写的那种标题、三段式就是袁东老师所教授的方法。需要进行润色，才能对作文有所提升。<br><a target="_blank" rel="noopener" href="https://john-jack-huang.github.io/2020/11/28/20201128-shen-lun-ji-jin/" class="LinkCard">语句背诵</a></p>
 <p><a target="_blank" rel="noopener" href="https://john-jack-huang.github.io/2022/06/19/20220619-yi-cuo-cheng-yu-ji-he/" class="LinkCard">易错成语集合</a></p>
 <p><a target="_blank" rel="noopener" href="https://john-jack-huang.github.io/2021/02/03/20210203-ming-ren-shi-ju/" class="LinkCard">名人诗句</a></p>
-<script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+<h3 id="关于行测"><a href="#关于行测" class="headerlink" title="关于行测"></a>关于行测</h3><p><span class="inline-tag red">重点学习</span>资料分析（15题）、图形推理（10题）、类比推理（5题）、逻辑判断（10题）、数量关系（10题）</p>
+<p><span class="inline-tag blue">日常积累</span>政治理论（10题）、常识判断（10题）</p>
+<p><span class="inline-tag orange">需要注意</span>行测要多做题，做完题目需要及时听讲解和反思错题，才能有效进步，要复盘+听讲解，不要盲目刷题就结束了，不然毫无效果！</p>
+<h3 id="学习计划"><a href="#学习计划" class="headerlink" title="学习计划"></a>学习计划</h3><table>
+<thead>
+<tr>
+<th>科目</th>
+<th>第一轮完成时间</th>
+<th>任务描述</th>
+<th>第二轮完成时间</th>
+<th>任务描述</th>
+<th>第三轮完成时间</th>
+<th>任务描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>行测</td>
+<td>2025.12.20</td>
+<td>- 资料分析模块<br>- 判断推理模块<br>- 数量关系模块<br>- 言语理解模块<br>- 政治理论模块 <br>- 常识判断模块</td>
+<td>2026.1.23</td>
+<td>- 言语理解正确率85%以上 ，时间25分钟以内<br>- 资料分析正确率80%以上，时间20分钟以内<br>- 数量关系正确率50%以上，时间15分钟以内 <br>- 判断推理中：图形推理正确率70%以上，时间10分钟以内 <br>- 政治理论积累 <br>- 常识每日积累</td>
+<td>2026.2.20</td>
+<td>- 全真模拟考试10套<br>- 薄弱环节专项突破<br>- 时间分配优化<br>- 考前冲刺训练</td>
+</tr>
+<tr>
+<td>申论</td>
+<td>2025.12.20</td>
+<td>- 公文写作题型<br>- 作文框架积累<br>- 概括归纳题型<br>- 对策建议题型<br>- 综合分析题型</td>
+<td>2026.1.23</td>
+<td>- 材料阅读理解强化<br>- 写作思路系统训练<br>- 热点话题积累<br>- 范文分析模仿<br>- 答题规范掌握</td>
+<td>2026.2.20</td>
+<td>- 真题实战演练<br>- <strong>写作速度提升</strong> <br>- 观点深度挖掘<br>- 临场应变训练</td>
+</tr>
+</tbody></table>
+<h3 id="关于最后"><a href="#关于最后" class="headerlink" title="关于最后"></a>关于最后</h3><script type="text&#x2F;javascript" src="https://unpkg.com/kity@2.0.4/dist/kity.min.js"></script><script type="text&#x2F;javascript" src="https://unpkg.com/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text&#x2F;javascript" src="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text&#x2F;css" href="https://unpkg.com/hexo-simple-mindmap@0.8.0/dist/mindmap.min.css"><link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
                 
             </div>
             <hr/>
@@ -1497,18 +1633,17 @@ new Valine({
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2025/11/18/20251118-di-shui-chuan-shi-dian-shi-cheng-jin/">
+                <a href="/2025/11/23/20251123-xing-ce-xue-xi-ji-lu-ban-kuai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="滴水穿石，点石成金">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="行测学习记录版块">
                         
-                        <span class="card-title">滴水穿石，点石成金</span>
+                        <span class="card-title">行测学习记录版块</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1518,9 +1653,9 @@ new Valine({
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-11-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-11-23
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1533,7 +1668,6 @@ new Valine({
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1739,6 +1873,100 @@ new Valine({
 <!-- /* 引入链接note 公共样式 */ -->
 <link type='text/css' rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" media='all'/>
 
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
     
 
 </main>
@@ -1764,7 +1992,7 @@ new Valine({
             <br>
             
             &nbsp;<i class="fas fa-building"></i>&nbsp;本站总字数:&nbsp;<span
-                class="white-color">72.8k</span>&nbsp;字
+                class="white-color">73.3k</span>&nbsp;字
             
             
             
